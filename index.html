@@ -144,6 +144,18 @@ section{
   transition:0.4s;
 }
 
+section{
+  border-top:1px solid #00d4ff22;
+}
+
+.card h3{
+  color:#00d4ff;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#7eb8d4;
+}
 .project-img{
   width:100%;
   height:180px;
@@ -152,7 +164,21 @@ section{
   margin-bottom:15px;
 }
 
-.card:hover{
+  .cert-img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-bottom:15px;
+  transition:0.3s;
+}
+
+.cert-img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px #00d4ff;
+}
+  
+  .card:hover{
   transform:translateY(-10px);
   box-shadow:0 0 30px var(--neon-purple);
 }
@@ -177,7 +203,11 @@ footer{
   <div style="font-family:Orbitron;color:#00d4ff;">DN</div>
   <div>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+     <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -204,6 +234,7 @@ footer{
   <p style="max-width:700px;margin:auto;color:#7eb8d4;">
     I am Debdut Nandy, a Computer Science student specializing in Artificial Intelligence and Machine Learning.
     I love building intelligent systems, working with data, and exploring futuristic technologies.
+    I’ve completed AICTE-approved internships on Object Detection and Exploratory Data Analysis.
   </p>
 </section>
 
@@ -234,6 +265,100 @@ footer{
 
 </section>
 
+  <!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+
+  <div class="card">
+    <h3>Programming</h3>
+    <p>Python, Java</p>
+  </div>
+
+  <div class="card">
+    <h3>AI/ML</h3>
+    <p>Machine Learning | Data Analysis | TensorFlow | PyTorch | Scikit-Learn | OpenCV</p>
+  </div>
+
+  <div class="card">
+    <h3>Web Development</h3>
+    <p>HTML | CSS | JavaScript | Node.js | Flask</p>
+  </div>
+
+   <div class="card">
+    <h3>Databases</h3>
+    <p>MySQL | MongoDB</p>
+  </div>
+
+   <div class="card">
+    <h3>Data Vizualization</h3>
+    <p>Numpy | Pandas | Matplotlib | Microsoft Excel | Power BI | Google Colab</p>
+  </div>
+
+   <div class="card">
+    <h3>Deployment</h3>
+    <p>Netlify | Render | Vercel</p>
+  </div>
+
+   <div class="card">
+    <h3>Others</h3>
+    <p>GitHub | Docker | Kubernetes | Figma | Canva</p>
+  </div>
+  
+  
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2 class="section-title">Experience</h2>
+
+  <div class="card">
+    <h3>Object Detection Intern [October 2025 - November 2025]</h3>
+    <p>Engaged in project planning, data preprocessing, visualization, and modelling tasks. Participated in mentoring sessions and collaborative discussions on AI-driven sustainability.
+</p>
+  </div>
+
+  <div class="card">
+    <h3>Conversational Data Analyst Intern [September 2025 - October 2025]</h3>
+    <p>The program involved real-world case studies, project-based learning, and certified training via the VOIS for Tech LMS, providing practical exposure to data-driven problem solving and conversational AI applications.</p>
+  </div>
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="section-title">Education</h2>
+
+  <div class="card">
+    <h3>B.Tech in Computer Science from Brainware University.</h3>
+    <p>Specialization in AI & ML</p>
+  </div>
+</section>
+
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <h2 class="section-title">Certifications</h2>
+
+  <div class="card">
+    <img src="images/cert1.jpg" class="cert-img">
+    <h3>Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
+    <p>Earned a certificate from Oracle University on  </p>
+  </div>
+
+  <div class="card">
+    <img src="images/cert2.jpg" class="cert-img">
+    <h3>Data Analytics Job Simulation from Deloitte Australia</h3>
+    <p>Learned and practice skills like Data cleaning, Exploratory Data Analysis etc.</p>
+  </div>
+
+   <div class="card">
+     <img src="images/cert3.jpg" class="cert-img">
+    <h3>Basics of Power BI from UniAthena</h3>
+    <p>Learnt Power BI and performed EDA.</p>
+  </div>
+</section>
+  
 <!-- CONTACT -->
 <section id="contact">
   <h2 class="section-title">Contact</h2>
@@ -243,6 +368,13 @@ footer{
   <p>
     LinkedIn:
     <a href="https://www.linkedin.com/in/debdut-nandy-4b0a88321/" target="_blank">
+      Visit Profile
+    </a>
+  </p>
+
+  <p>
+    GitHub:
+    <a href="https://github.com/Deb124-source" target="_blank">
       Visit Profile
     </a>
   </p>
