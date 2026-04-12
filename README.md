@@ -61,7 +61,7 @@ cd Personal-Portfolio-Website
 ---
 
 ## 🚀 Deployment
-<p align="center"> <img src="https://skillicons.dev/icons?i=github,vercel,netlify" /> </p>
+<p align="center"> <img src="https://skillicons.dev/icons?i=github,netlify" /> </p>
 
 ---
 
