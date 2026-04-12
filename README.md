@@ -47,7 +47,7 @@
 ## 🎥 Preview  
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=Portfolio+Preview" width="800"/>
+  <img src="Preview_image.png" width="800"/>
 </p>
 
 ---
