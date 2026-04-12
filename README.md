@@ -65,12 +65,6 @@ cd Personal-Portfolio-Website
 
 ---
 
-## 📊 Project Card
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Deb124-source&repo=Personal-Portfolio-Website&theme=tokyonight" />
-</p>
----
-
 ## 🤝 Connect
 <p align="center"> <a href="https://linkedin.com/in/your-profile"> <img src="https://skillicons.dev/icons?i=linkedin"/> </a> <a href="mailto:debdut937@gmail.com"> <img src="https://skillicons.dev/icons?i=gmail"/> </a> <a href="https://github.com/Deb124-source"> <img src="https://skillicons.dev/icons?i=github"/> </a> </p>
 
