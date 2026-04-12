@@ -66,7 +66,10 @@ cd Personal-Portfolio-Website
 ---
 
 ## 📊 Project Card
-<p align="center"> <img src="https://github-readme-stats.vercel.app/api/pin/?username=Deb124-source&repo=Personal-Portfolio-Website&theme=radical" /> </p>
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Deb124-source&repo=Personal-Portfolio-Website&theme=tokyonight" />
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=Deb124-source&repo=another-project&theme=tokyonight" />
+</p>
 
 ---
 
