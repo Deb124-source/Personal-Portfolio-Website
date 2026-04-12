@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Debdut Nandy | AI & ML Portfolio</title>
-<meta name="description" content="Futuristic portfolio of Debdut Nandy, Computer Science student specializing in AI & ML"/>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
 
@@ -78,10 +77,6 @@ nav a:hover{
   font-family:'Share Tech Mono';
 }
 
-.profile-img{
-  margin-top:30px;
-}
-
 .profile-img img{
   width:180px;
   height:180px;
@@ -95,8 +90,8 @@ nav a:hover{
 .profile-img img:hover{
   transform:scale(1.05);
   box-shadow:0 0 40px #b44fff;
-    }
-    
+}
+
 .typing{
   border-right:2px solid #00d4ff;
   white-space:nowrap;
@@ -117,14 +112,7 @@ nav a:hover{
   text-decoration:none;
   border-radius:6px;
   transition:0.3s;
-}
-  .btn{
-  margin-top:15px;
   display:inline-block;
-}
-
-.btn:hover{
-  box-shadow:0 0 25px #00d4ff;
 }
 
 .btn:hover{
@@ -137,6 +125,30 @@ nav a:hover{
 section{
   padding:100px 20px;
   text-align:center;
+  border-top:1px solid #00d4ff22;
+}
+
+/* GRID FOR PROJECTS */
+.projects-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  padding:25px;
+  width:300px;
+  border-radius:15px;
+  transition:0.4s;
+  text-align:left;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px var(--neon-purple);
 }
 
 .section-title{
@@ -145,25 +157,6 @@ section{
   font-size:2rem;
 }
 
-/* CARDS */
-.card{
-  background:var(--card);
-  padding:25px;
-  margin:15px;
-  border-radius:15px;
-  display:inline-block;
-  width:300px;
-  transition:0.4s;
-}
-
-section{
-  border-top:1px solid #00d4ff22;
-}
-  
-section{
-  transition: all 0.6s ease;
-}
-  
 .card h3{
   color:#00d4ff;
   margin-bottom:10px;
@@ -172,6 +165,7 @@ section{
 .card p{
   color:#7eb8d4;
 }
+
 .project-img{
   width:100%;
   height:180px;
@@ -180,7 +174,7 @@ section{
   margin-bottom:15px;
 }
 
-  .proj-btn{
+.proj-btn{
   display:inline-block;
   margin-top:10px;
   padding:8px 15px;
@@ -197,7 +191,9 @@ section{
   color:#000;
   box-shadow:0 0 15px #00d4ff;
 }
-  .cert-img{
+
+/* CERTIFICATE IMAGE */
+.cert-img{
   width:100%;
   height:200px;
   object-fit:cover;
@@ -210,18 +206,7 @@ section{
   transform:scale(1.05);
   box-shadow:0 0 25px #00d4ff;
 }
-  
-  .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 30px var(--neon-purple);
-}
 
-/* CONTACT */
-a{
-  color:var(--neon-blue);
-}
-
-/* FOOTER */
 footer{
   text-align:center;
   padding:20px;
@@ -237,13 +222,11 @@ footer{
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
-     <a href="#education">Education</a>
+    <a href="#education">Education</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#certifications">Certifications</a>
-    <a href="RESUME OF DEBDUT NANDY.pdf" download class="btn">
-  Download Resume
-</a>
+    <a href="RESUME OF DEBDUT NANDY.pdf" download class="btn">Download Resume</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -251,26 +234,22 @@ footer{
 <!-- HERO -->
 <section id="hero">
   <h1 class="hero-name">Debdut Nandy</h1>
-
   <p class="hero-subtitle typing">
     AI/ML Developer • Data Driven Decision Maker • Tech Lover
   </p>
 
   <div class="profile-img">
-  <img src="Professional_Photograph.jpeg" alt="Debdut Nandy">
-</div>
-  
+    <img src="Professional_Photograph.jpeg">
+  </div>
+
   <a href="#projects" class="btn">Explore My Work</a>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
   <h2 class="section-title">About Me</h2>
-
   <p style="max-width:700px;margin:auto;color:#7eb8d4;">
-    I am Debdut Nandy, a Computer Science student specializing in Artificial Intelligence and Machine Learning.
-    I love building intelligent systems, working with data, and exploring futuristic technologies.
-    I’ve completed AICTE-approved internships on Object Detection and Exploratory Data Analysis.
+    I am a Computer Science student specializing in AI/ML with a keen interest in Data Analysis.
   </p>
 </section>
 
@@ -278,72 +257,51 @@ footer{
 <section id="projects">
   <h2 class="section-title">Projects</h2>
 
-  <div class="card">
-  <img src="Helmet_detection.jpg" class="project-img">
-     <h2>Helmet Detection System</h2>
-        <p>AI-based system to detect helmet usage in real-time traffic surveillance.</p>
+  <div class="projects-container">
 
-     <h3>Problem</h3>
-        <p>Road accidents due to no helmet usage.</p>
-
-     <h3>Solution</h3>
-        <p>Built a deep learning-based detection system using YOLO/CNN.</p>
-
-     <h3>Results</h3>
-        <p>Achieved high accuracy and real-time detection.</p>
-  
-        <a href="https://github.com/Deb124-source/AICTE_Edunet_Shell_Bike_Helmet_Detection_using_yolov8n_Debdut_Nandy" target="_blank" class="proj-btn">
-    View Code
-        </a>
-  </div>
-
-  <div class="card">
+    <!-- PROJECT 1 -->
     <div class="card">
-  <img src="Helmet_detection.jpg" class="project-img">
-     <h2>Bank Loan Approval System</h2>
-        <p>AI-based system to predict eligibility for Bank Loan.</p>
+      <img src="Helmet_detection.jpg" class="project-img">
+      <h3>Helmet Detection</h3>
+      <p>Real-time helmet detection using YOLO.</p>
+      <p><b>Problem:</b> No helmet usage accidents</p>
+      <p><b>Solution:</b> Deep learning model</p>
+      <p><b>Result:</b> High accuracy detection</p>
+      <a href="https://github.com/Deb124-source/AICTE_Edunet_Shell_Bike_Helmet_Detection_using_yolov8n_Debdut_Nandy.git" class="proj-btn">View Code</a>
+    </div>
 
-    <h3>Problem</h3>
-        <p>Manual loan approval is slow, inconsistent, and biased.</p>
+    <!-- PROJECT 2 -->
+    <div class="card">
+      <img src="loan_approval.jpg" class="project-img">
+      <h3>Loan Approval System</h3>
+      <p>ML model for loan prediction</p>
+      <p><b>Problem:</b> Manual approval delay</p>
+      <p><b>Solution:</b> Random Forest model</p>
+      <p><b>Result:</b> Faster prediction</p>
+      <a href="https://github.com/Deb124-source/Bank-Loan-Approval-System-ML.git" class="proj-btn">View Code</a>
+    </div>
 
-    <h3>Solution</h3>
-        <p>Built a classification model using ML algorithms like Random Forest and Logistic Regression.</p>
+    <!-- PROJECT 3 -->
+    <div class="card">
+      <img src="Netflix.jpg" class="project-img">
+      <h3>Netflix Analysis</h3>
+      <p>EDA on Netflix dataset</p>
+      <p><b>Problem:</b> No content insight</p>
+      <p><b>Solution:</b> Data visualization</p>
+      <p><b>Result:</b> Trend discovery</p>
+      <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git" class="proj-btn">View Code</a>
+    </div>
 
-    <h3>Results</h3>
-        <p>Improved prediction accuracy and reduced decision-making time.</p>
-
-  <a href="https://github.com/Deb124-source/Bank-Loan-Approval-System-ML.git" target="_blank" class="proj-btn">
-    View Code
-  </a>
- </div>
-    
-  <div class="card">
-  <img src="Netflix.jpg" class="project-img">  
-  <h2>Netflix Dataset Analysis</h2>
-     <p>Exploratory Data Analysis of Netflix content to find trends and insights.</p>
-
-  <h3>Problem</h3>
-     <p>Netflix has huge data but lacks clear insight into content trends.</p>
-
-  <h3>Solution</h3>
-     <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn.</p>
-
-  <h3>Results</h3>
-     <p>Identified top genres, content distribution, and yearly growth trends.</p>
-
-  <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git" target="_blank" class="proj-btn">
-    View Code
-  </a>
-</div>
+  </div>
 </section>
 
-  <!-- SKILLS -->
+<!-- SKILLS -->
 <section id="skills">
   <h2 class="section-title">Skills</h2>
 
   <div class="card">
     <h3>Programming</h3>
-    <p>Python, Java</p>
+    <p>Python | Java</p>
   </div>
 
   <div class="card">
@@ -375,10 +333,7 @@ footer{
     <h3>Others</h3>
     <p>GitHub | Docker | Kubernetes | Figma | Canva</p>
   </div>
-  
-  
 </section>
-
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -411,83 +366,61 @@ footer{
   </div>
 </section>
 
-
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <h2 class="section-title">Certifications</h2>
-
   <div class="card">
     <img src="Oracle_certificate.jpg" class="cert-img">
-    <h3>Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
-    <p>Earned a certificate from Oracle University on  </p>
+    <h3>Oracle AI Foundations Associate</h3>
   </div>
-
   <div class="card">
     <img src="Deloitte_certificate.jpg" class="cert-img">
     <h3>Data Analytics Job Simulation from Deloitte Australia</h3>
     <p>Learned and practice skills like Data cleaning, Exploratory Data Analysis etc.</p>
   </div>
-
    <div class="card">
      <img src="Microsoft_Certificate.png" class="cert-img">
     <h3>Prepare Data for Analysis with Power BI from Microsoft Learn</h3>
     <p> Learned to profile, clean, and load data into Power BI before modeling the data.</p>
   </div>
 </section>
-  
+
 <!-- CONTACT -->
 <section id="contact">
   <h2 class="section-title">Contact</h2>
-
   <p>Email: debdut937@gmail.com</p>
-
-  <p>
+</section>
+   <p>
     LinkedIn:
     <a href="https://www.linkedin.com/in/debdut-nandy-4b0a88321/" target="_blank">
       Visit Profile
     </a>
-  </p>
-
+   </p>
   <p>
     GitHub:
     <a href="https://github.com/Deb124-source" target="_blank">
       Visit Profile
     </a>
   </p>
-</section>
-
 <footer>
-  © 2026 Debdut Nandy | AI & ML Portfolio
+  © 2026 Debdut Nandy
 </footer>
+
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
-// Animate sections
 gsap.utils.toArray("section").forEach(section => {
   gsap.from(section, {
     opacity: 0,
     y: 80,
     duration: 1,
-    ease: "power3.out",
     scrollTrigger: {
       trigger: section,
       start: "top 80%",
     }
   });
 });
-
-// Animate cards
-gsap.utils.toArray(".card").forEach(card => {
-  gsap.from(card, {
-    opacity: 0,
-    scale: 0.8,
-    duration: 0.8,
-    scrollTrigger: {
-      trigger: card,
-      start: "top 85%",
-    }
-  });
-});
 </script>
+
 </body>
 </html>
