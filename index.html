@@ -23,7 +23,40 @@
   --card:#071525;
   --text:#e8f4ff;
 }
+.modal{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+}
 
+.modal-content{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+  box-shadow:0 0 30px #00d4ff;
+  animation:zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn{
+  from{transform:scale(0.7)}
+  to{transform:scale(1)}
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:40px;
+  color:#fff;
+  font-size:40px;
+  cursor:pointer;
+}
 body{
   font-family:'Exo 2',sans-serif;
   background:var(--bg);
@@ -335,7 +368,7 @@ footer{
 <div class="projects-container">
   
   <div class="card">
-  <img src="Helmet_detection.jpg" class="project-img">
+  <img src="Helmet_detection.jpg" class="project-img clickable">
      <h2>Helmet Detection System</h2>
         <p>AI-based system to detect helmet usage in real-time traffic surveillance.</p>
 
@@ -351,7 +384,7 @@ footer{
   </div>
 
   <div class="card">
-  <img src="Bank_Loan.jpg" class="project-img">
+  <img src="Bank_Loan.jpg" class="project-img clickable">
      <h2>Bank Loan Approval System</h2>
         <p>AI-based system to predict eligibility for Bank Loan.</p>
 
@@ -367,7 +400,7 @@ footer{
  </div>
     
   <div class="card">
-  <img src="Netflix.jpg" class="project-img">  
+  <img src="Netflix.jpg" class="project-img clickable">  
   <h2>Netflix Dataset Analysis</h2>
      <p>Exploratory Data Analysis of Netflix content to find trends and insights.</p>
 
@@ -431,7 +464,7 @@ footer{
   <h2 class="section-title">Experience</h2>
 
   <div class="card">
-    <img src="Shell_certificate.jpeg" class="exp-img">
+    <img src="Shell_certificate.jpeg" class="exp-img clickable">
 
     <h3>Object Detection Intern</h3>
     <p>
@@ -440,7 +473,7 @@ footer{
   </div>
 
   <div class="card">
-    <img src="VOIS_certificate.jpeg" class="exp-img">
+    <img src="VOIS_certificate.jpeg" class="exp-img clickable">
 
     <h3>Conversational Data Analyst Intern</h3>
     <p>
@@ -469,25 +502,25 @@ footer{
   <div class="cert-container">
 
     <div class="card">
-      <img src="Oracle_certificate.jpg" class="cert-img">
+      <img src="Oracle_certificate.jpg" class="cert-img clickable">
       <h3>Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
       <p>Earned a certificate from Oracle University.</p>
     </div>
 
     <div class="card">
-      <img src="Google_badge.jpeg" class="cert-img">
+      <img src="Google_badge.jpeg" class="cert-img clickable">
       <h3>Introduction to Large Language Models - Google</h3>
       <p>Learned and explored fundamental concepts of LLMs.</p>
     </div>
 
     <div class="card">
-      <img src="Deloitte_certificate.jpg" class="cert-img">
+      <img src="Deloitte_certificate.jpg" class="cert-img clickable">
       <h3>Data Analytics Job Simulation - Deloitte Australia</h3>
       <p>Practiced data cleaning, EDA, and analytics workflows.</p>
     </div>
 
     <div class="card">
-      <img src="TATA_certificate.jpeg" class="cert-img">
+      <img src="TATA_certificate.jpeg" class="cert-img clickable">
       <h3>Gen AI Powered Data Analytics Simulation - TATA</h3>
       <p>Worked on key data analytics operations using AI tools.</p>
     </div>
@@ -550,6 +583,32 @@ gsap.utils.toArray(".card").forEach(card => {
     }
   });
 });
+</script>
+  <script>
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+// Select all clickable images
+const images = document.querySelectorAll(".clickable");
+
+images.forEach(img => {
+  img.addEventListener("click", function(){
+    modal.style.display = "flex";
+    modalImg.src = this.src;
+  });
+});
+    
+closeBtn.onclick = function(){
+  modal.style.display = "none";
+}
+
+// Close on outside click
+modal.onclick = function(e){
+  if(e.target !== modalImg){
+    modal.style.display = "none";
+  }
+}
 </script>
 </body>
 </html>
