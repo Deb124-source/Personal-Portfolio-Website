@@ -557,6 +557,7 @@ footer{
 <footer>
   © 2026 Debdut Nandy | AI & ML Portfolio
 </footer>
+  
 <script>
 gsap.registerPlugin(ScrollTrigger);
 
@@ -587,35 +588,42 @@ gsap.utils.toArray(".card").forEach(card => {
   });
 });
 </script>
-  <script>
-const modal = document.getElementById("imgModal");
-const modalImg = document.getElementById("modalImg");
-const closeBtn = document.querySelector(".close");
-
-// Select all clickable images
-const images = document.querySelectorAll(".clickable");
-
-images.forEach(img => {
-  img.addEventListener("click", function(){
-    modal.style.display = "flex";
-    modalImg.src = this.src;
-  });
-});
-    
-closeBtn.onclick = function(){
-  modal.style.display = "none";
-}
-
-// Close on outside click
-modal.onclick = function(e){
-  if(e.target !== modalImg){
-    modal.style.display = "none";
-  }
-}
-</script>
+  
+<!-- IMAGE PREVIEW MODAL -->
 <div id="imgModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="modalImg">
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".close");
+
+  const images = document.querySelectorAll(".clickable");
+
+  images.forEach(img => {
+    img.addEventListener("click", function(){
+      modal.style.display = "flex";
+      modalImg.src = this.src;
+    });
+  });
+
+  // Close button
+  closeBtn.onclick = function(){
+    modal.style.display = "none";
+  }
+
+  // Click outside to close
+  modal.onclick = function(e){
+    if(e.target !== modalImg){
+      modal.style.display = "none";
+    }
+  }
+
+});
+</script>
 </body>
 </html>
