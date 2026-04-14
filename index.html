@@ -229,6 +229,22 @@ section{
   transition:0.3s;
 }
 
+.cert-container{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding:20px;
+  scroll-behavior:smooth;
+}
+
+.cert-container::-webkit-scrollbar{
+  display:none;
+}
+
+.cert-container .card{
+  min-width:300px;
+  flex-shrink:0;
+}
 .cert-img:hover{
   transform:scale(1.05);
   box-shadow:0 0 25px #00d4ff;
@@ -447,35 +463,38 @@ footer{
   </div>
 </section>
 
-
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <h2 class="section-title">Certifications</h2>
+  <div class="cert-container">
 
-  <div class="card">
-    <img src="Oracle_certificate.jpg" class="cert-img">
-    <h3>Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
-    <p>Earned a certificate from Oracle University on  </p>
-  </div>
+    <div class="card">
+      <img src="Oracle_certificate.jpg" class="cert-img">
+      <h3>Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
+      <p>Earned a certificate from Oracle University.</p>
+    </div>
 
-   <div class="card">
-    <img src="Google_badge.jpeg" class="cert-img">
-    <h3>Introduction to Large Language Models badge from Google</h3>
-    <p>Learned and explored some basic concepts of LLMs</p>
-  </div>
+    <div class="card">
+      <img src="Google_badge.jpeg" class="cert-img">
+      <h3>Introduction to Large Language Models - Google</h3>
+      <p>Learned and explored fundamental concepts of LLMs.</p>
+    </div>
 
-  <div class="card">
-    <img src="Deloitte_certificate.jpg" class="cert-img">
-    <h3>Data Analytics Job Simulation from Deloitte Australia</h3>
-    <p>Learned and practice skills like Data cleaning, Exploratory Data Analysis etc.</p>
-  </div>
+    <div class="card">
+      <img src="Deloitte_certificate.jpg" class="cert-img">
+      <h3>Data Analytics Job Simulation - Deloitte Australia</h3>
+      <p>Practiced data cleaning, EDA, and analytics workflows.</p>
+    </div>
 
-  <div class="card">
-     <img src="TATA_certificate.jpeg" class="cert-img">
-    <h3>Gen AI Powered Data Analytics Job Simulation</h3>
-    <p> Practiced key operations of Data Analytics.</p>
+    <div class="card">
+      <img src="TATA_certificate.jpeg" class="cert-img">
+      <h3>Gen AI Powered Data Analytics Simulation - TATA</h3>
+      <p>Worked on key data analytics operations using AI tools.</p>
+    </div>
+
   </div>
 </section>
+```
 
 
 <!-- CONTACT -->
