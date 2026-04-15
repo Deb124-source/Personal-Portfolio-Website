@@ -313,17 +313,27 @@ section{
 a{
   color:var(--neon-blue);
 }
-  /* CONTACT FORM FIX */
-#contact-form {
-  width: 320px;
+/* CONTACT SECTION */
+.contact {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-container {
+  max-width: 400px;
   margin: auto;
-  padding: 20px;
+}
+
+/* FORM */
+#contact-form {
   background: rgba(30, 30, 50, 0.6);
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 173, 181, 0.2);
   backdrop-filter: blur(10px);
 }
 
+/* INPUTS */
 #contact-form input,
 #contact-form textarea {
   width: 100%;
@@ -335,6 +345,12 @@ a{
   color: white;
 }
 
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+/* BUTTON */
 #contact-form button {
   width: 100%;
   padding: 10px;
@@ -342,16 +358,36 @@ a{
   border-radius: 6px;
   background: #00adb5;
   color: white;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 #contact-form button:hover {
   background: #00c6ff;
 }
 
+/* SUCCESS MESSAGE */
 #success-msg {
+  display: none;
   margin-top: 10px;
   color: #00ffae;
+}
+
+/* SOCIAL LINKS */
+.contact-links {
+  margin-top: 20px;
+}
+
+.contact-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #00adb5;
+  font-weight: bold;
+}
+
+.contact-links a:hover {
+  color: #00c6ff;
 }
 
 /* FOOTER */
@@ -591,13 +627,15 @@ footer{
 
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="contact">
   <h2 class="section-title">Contact Me</h2>
 
-  <div class="card">
-    <form action="https://formspree.io/f/maqanzkv" method="POST">
+  <div class="contact-container">
+
+    <!-- FORM -->
+    <form id="contact-form">
       
-      <input type="hidden" name ="_captcha" value="false">
+      <input type="hidden" name="_captcha" value="false">
       
       <input type="text" name="name" placeholder="Your Name" required>
       
@@ -608,24 +646,19 @@ footer{
       <button type="submit">Send Message</button>
 
     </form>
+
+    <!-- SUCCESS MESSAGE -->
     <p id="success-msg">Message sent successfully!</p>
+
+    <!-- SOCIAL LINKS -->
+    <div class="contact-links">
+      <p>Or connect with me </p>
+      <a href="https://www.linkedin.com/in/debdut-nandy-4b0a88321/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/Deb124-source" target="_blank">GitHub</a>
+    </div>
+
   </div>
-  
-  <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com/in/debdut-nandy-4b0a88321/" target="_blank">
-      Visit Profile
-    </a>
-  </p>
-
-  <p>
-    GitHub:
-    <a href="https://github.com/Deb124-source" target="_blank">
-      Visit Profile
-    </a>
-  </p>
 </section>
-
 <footer>
   © 2026 Debdut Nandy | AI & ML Portfolio
 </footer>
