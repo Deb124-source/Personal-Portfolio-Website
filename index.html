@@ -790,12 +790,6 @@ footer{
 </div> 
 </section>
 
-<!-- Modal Viewer -->
-<div id="imgModal" class="modal">
-  <span class="close-btn" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg">
-</div>
-
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <h2 class="section-title">Contact Me</h2>
@@ -829,26 +823,24 @@ footer{
 
   </div>
 </section>
-<div id="imageModal" class="modal">
+  <div id="imgModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="modalImg">
 </div>
 <footer>
   © 2026 Debdut Nandy | AI & ML Portfolio
 </footer>
+
+  //--------JS----------//
 <script>
-  // ============================
-// GSAP ANIMATIONS
-// ============================
 gsap.registerPlugin(ScrollTrigger);
 
-// Animate Sections
+// Section animation
 gsap.utils.toArray("section").forEach(section => {
   gsap.from(section, {
     opacity: 0,
     y: 80,
     duration: 1,
-    ease: "power3.out",
     scrollTrigger: {
       trigger: section,
       start: "top 80%",
@@ -856,37 +848,20 @@ gsap.utils.toArray("section").forEach(section => {
   });
 });
 
-// Animate Cards (Skills, Projects, Events, etc.)
+// Card animation
 gsap.utils.toArray(".card, .event-card").forEach(card => {
   gsap.from(card, {
     opacity: 0,
     scale: 0.85,
     duration: 0.8,
-    ease: "power2.out",
     scrollTrigger: {
       trigger: card,
       start: "top 85%",
     }
   });
 });
-<!-- ================= JS ================= -->
-<script>
-// GSAP
-gsap.registerPlugin(ScrollTrigger);
 
-gsap.utils.toArray("section").forEach(section => {
-  gsap.from(section, {
-    opacity: 0,
-    y: 80,
-    duration: 1,
-    scrollTrigger: {
-      trigger: section,
-      start: "top 80%",
-    }
-  });
-});
-
-// MODAL FIXED
+// MODAL
 document.addEventListener("DOMContentLoaded", function(){
 
   const modal = document.getElementById("imgModal");
@@ -913,13 +888,10 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 
 });
-// ============================
-// CONTACT FORM (Formspree)
-// ============================
+
+// CONTACT FORM
 const form = document.getElementById("contact-form");
 const successMsg = document.getElementById("success-msg");
-
-if (successMsg) successMsg.style.display = "none";
 
 if (form) {
   form.addEventListener("submit", async function(e) {
@@ -927,33 +899,20 @@ if (form) {
 
     const data = new FormData(form);
 
-    try {
-      const response = await fetch("https://formspree.io/f/maqanzkv", {
-        method: "POST",
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+    const response = await fetch("https://formspree.io/f/maqanzkv", {
+      method: "POST",
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
 
-      if (response.ok) {
-        successMsg.style.display = "block";
-        form.reset();
-      } else {
-        alert("Something went wrong!");
-      }
-
-    } catch (error) {
-      alert("Network error!");
+    if (response.ok) {
+      successMsg.style.display = "block";
+      form.reset();
+    } else {
+      alert("Something went wrong!");
     }
   });
 }
-  </script>
-  
-<div id="imgModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImg">
-</div>
-  
+</script>
 </body>
 </html>
