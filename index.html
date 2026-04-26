@@ -829,7 +829,7 @@ footer{
 
   </div>
 </section>
-  <div id="imgModal" class="modal">
+  <div id="imageModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="modalImg">
 </div>
@@ -874,38 +874,34 @@ gsap.utils.toArray(".card, .event-card").forEach(card => {
 
 // ============================
 // IMAGE MODAL (Certificates + Events)
-// ============================
 document.addEventListener("DOMContentLoaded", function(){
 
-  const modal = document.getElementById("imgageModal");
+  const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
-  const closeBtn = document.querySelector(".close");
+  const closeBtn = document.querySelector(".close-btn");
 
-  // Target ALL clickable images (certificates + events)
-  const images = document.querySelectorAll(".clickable, .event-img");
+  const images = document.querySelectorAll(".clickable");
 
   images.forEach(img => {
     img.addEventListener("click", function(){
-      modal.style.display = "flex";
+      modal.style.display = "block";
       modalImg.src = this.src;
     });
   });
 
   // Close button
-  closeBtn.onclick = function(){
+  closeBtn.addEventListener("click", function(){
     modal.style.display = "none";
-  };
+  });
 
-  // Click outside image to close
+  // Click outside
   modal.addEventListener("click", function(e){
-    if(e.target !== modalImg){
+    if(e.target === modal){
       modal.style.display = "none";
     }
   });
 
 });
-
-
 // ============================
 // CONTACT FORM (Formspree)
 // ============================
