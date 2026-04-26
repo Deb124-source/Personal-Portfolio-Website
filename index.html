@@ -873,11 +873,34 @@ gsap.utils.toArray(".card, .event-card").forEach(card => {
 
 // ============================
 // IMAGE MODAL (Certificates + Events)
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+// GSAP
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray("section").forEach(section => {
+  gsap.from(section, {
+    opacity: 0,
+    y: 80,
+    duration: 1,
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%",
+    }
+  });
+});
+
+// MODAL FIXED
 document.addEventListener("DOMContentLoaded", function(){
 
   const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
-  const closeBtn = document.querySelector(".close-btn");
+  const closeBtn = document.querySelector(".close");
 
   const images = document.querySelectorAll(".clickable");
 
@@ -888,12 +911,10 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   });
 
-  // Close button
   closeBtn.addEventListener("click", function(){
     modal.style.display = "none";
   });
 
-  // Click outside
   modal.addEventListener("click", function(e){
     if(e.target === modal){
       modal.style.display = "none";
