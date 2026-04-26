@@ -829,11 +829,10 @@ footer{
 
   </div>
 </section>
-  <div id="imageModal" class="modal">
+<div id="imageModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="modalImg">
 </div>
-  
 <footer>
   © 2026 Debdut Nandy | AI & ML Portfolio
 </footer>
@@ -884,7 +883,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   images.forEach(img => {
     img.addEventListener("click", function(){
-      modal.style.display = "block";
+      modal.style.display = "flex";
       modalImg.src = this.src;
     });
   });
