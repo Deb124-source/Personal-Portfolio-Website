@@ -47,7 +47,7 @@
 ## 🎥 Preview  
 
 <p align="center">
-  <img src="Preview_image.png" width="800"/>
+  <img src="images/Preview_image.png" width="800"/>
 </p>
 
 ---
