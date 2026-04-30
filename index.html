@@ -320,11 +320,29 @@ section{
   color: #00e6e6;
 }
 
-.events-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+.events-container{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding:20px;
+  scroll-behavior:smooth;
+}
+
+.events-container::-webkit-scrollbar{
+  display:none;
+}
+
+.event-card{
+  min-width:300px;
+  flex-shrink:0;
+}
+
+.events-container{
+  scroll-snap-type:x mandatory;
+}
+
+.event-card{
+  scroll-snap-align:start;
 }
 
 .event-card {
