@@ -224,9 +224,9 @@ section{
   display:flex;
   gap:20px;
   overflow-x:auto;
-  padding:20px 10px;
+  padding:20px;
+  scroll-behavior:smooth;
   scroll-snap-type:x mandatory;
-  flex-wrap:nowrap;
 }
 
 .projects-container::-webkit-scrollbar{
@@ -234,69 +234,63 @@ section{
 }
 
 .project-card{
-  flex:0 0 280px;   /* smaller width */
-  background:#07182e;
+  width:280px;
+  min-width:280px;
 
+  background:#0b1c2c;
   border-radius:15px;
-  padding:18px;
 
-  display:flex;
-  flex-direction:column;
+  overflow:hidden;
 
-  text-align:center;
-
-  border:1px solid rgba(255,255,255,0.08);
+  flex-shrink:0;
+  scroll-snap-align:start;
 
   transition:0.3s ease;
-  scroll-snap-align:start;
+  box-shadow:0 0 15px rgba(0,255,255,0.1);
 }
 
 .project-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 0 20px rgba(0,212,255,0.3);
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 0 25px rgba(0,255,255,0.4);
 }
 
 .project-img{
   width:100%;
-  height:170px;
+  height:180px;
   object-fit:cover;
-  border-radius:10px;
-  margin-bottom:15px;
 }
 
-.project-card h3{
-  font-size:1.2rem;
+.project-content{
+  padding:15px;
+}
+
+.project-content h3{
   margin-bottom:10px;
-  color:white;
+  color:#00e6e6;
 }
 
-.project-card p{
-  font-size:0.9rem;
-  line-height:1.5;
-  color:#ccc;
-
-  flex-grow:1;   /* equal spacing */
+.project-content p{
+  font-size:14px;
+  margin-bottom:15px;
+  color:#ddd;
 }
 
 .proj-btn{
   display:inline-block;
-  margin-top:15px;
   padding:8px 15px;
 
-  border:1px solid #00d4ff;
-  color:#00d4ff;
+  border:none;
+  background:#00e6e6;
+  color:black;
 
+  border-radius:8px;
   text-decoration:none;
-  border-radius:5px;
 
-  font-size:0.8rem;
   transition:0.3s;
 }
 
 .proj-btn:hover{
-  background:#00d4ff;
-  color:#000;
-  box-shadow:0 0 15px #00d4ff;
+  background:white;
 }
   .cert-img{
   width:100%;
@@ -660,6 +654,7 @@ footer{
   
   <div class="card">
   <img src="images/Helmet_detection.jpg" class="project-img clickable">
+       <div class="project-content">
      <h2>Helmet Detection System</h2>
         <p>AI-based system to detect helmet usage in real-time traffic surveillance.</p>
 
@@ -673,9 +668,11 @@ footer{
     View Code
         </a>
   </div>
+  </div>
 
    <div class="card">
   <img src="images/demo_prediction.png" class="project-img clickable">  
+        <div class="project-content">
   <h2>House Price Prediction System</h2>
      <p>Built a ML model to predict House price of Bengalore, using Linear Regression.</p>
 
@@ -688,10 +685,12 @@ footer{
   <a href="https://github.com/Deb124-source/House-Price-Prediction-System-Debdut-Nandy.git" target="_blank" class="proj-btn">
     View Code
   </a>
+   </div>
 </div>
   
   <div class="card">
   <img src="images/Bank_Loan.jpg" class="project-img clickable">
+       <div class="project-content">
      <h2>Bank Loan Approval System</h2>
         <p>AI-based system to predict eligibility for Bank Loan.</p>
 
@@ -704,10 +703,12 @@ footer{
   <a href="https://github.com/Deb124-source/Bank-Loan-Approval-System-ML.git" target="_blank" class="proj-btn">
     View Code
   </a>
+       </div>
  </div>
 
   <div class="card">
   <img src="images/Netflix.jpg" class="project-img clickable">  
+      <div class="project-content">
   <h2>Netflix Dataset Analysis</h2>
      <p>Exploratory Data Analysis of Netflix content to find trends and insights.</p>
 
@@ -720,15 +721,21 @@ footer{
   <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git" target="_blank" class="proj-btn">
     View Code
   </a>
+      </div>
+  </div>
+  
   <div class="card">
   <img src="images/Bank_Loan.jpg" class="project-img clickable">
+       <div class="project-content">
      <h2>Personal Portfolio Website</h2>
         <p>A clean and responsive personal portfolio website showcasing my skills, projects, certifications, and achievements. Built using HTML, CSS, and JavaScript with modern UI design, smooth animations, and fully responsive layouts to provide an engaging user experience across all devices.
 </p>
        <a href="https://deb124-source.github.io/Personal-Portfolio-Website/" target="_blank" class="proj-btn">
     Visit Website
   </a>
+       </div>
 </div>
+    
 </section>
 
   <!-- SKILLS -->
