@@ -91,6 +91,25 @@ nav a{
 nav a:hover{
   color:var(--neon-blue);
 }
+nav ul{
+  display:flex;
+  align-items:center;
+  gap:18px;
+
+  list-style:none;
+  margin:0;
+  padding:0;
+
+  flex-wrap:wrap;
+}
+
+/* Navbar links */
+nav ul li a{
+  text-decoration:none;
+  color:white;
+  font-size:15px;
+}
+  
 
 /* HERO */
 #hero{
@@ -168,30 +187,26 @@ nav a:hover{
 .btn:hover{
   background:var(--neon-blue);
   color:#000;
-  box-shadow:0/* Keep dropdown aligned with navbar */
+  box-shadow:0
+}
+
+/* Dropdown */
 .dropdown {
     position: relative;
-    display: flex;
-    align-items: center;
 }
 
-/* Same style as other nav buttons */
-.dropdown .nav-link {
+/* More button */
+.dropbtn {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    font-size: 15px;
 }
 
-/* Dropdown menu */
-.dropdown-menu {
+/* Hidden menu */
+.dropdown-content {
     display: none;
-    position: absolute;
 
+    position: absolute;
     top: 100%;
     left: 0;
 
@@ -199,32 +214,31 @@ nav a:hover{
     min-width: 220px;
 
     border-radius: 10px;
-    padding: 10px 0;
+    overflow: hidden;
 
-    list-style: none;
     z-index: 1000;
 }
 
-/* Dropdown items */
-.dropdown-menu li a {
+/* Dropdown links */
+.dropdown-content a {
     display: block;
-    padding: 10px 18px;
+
+    padding: 12px 16px;
+
     color: white;
     text-decoration: none;
-    font-size: 15px;
 }
 
-/* Hover effects */
-.dropdown-menu li a:hover {
+/* Hover */
+.dropdown-content a:hover {
     background: #222;
 }
 
 /* Show dropdown */
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-content {
     display: block;
-} 0 20px var(--neon-blue);
-}
-/* Dropdown container */
+}  
+
 
 /* SECTION */
 section{
