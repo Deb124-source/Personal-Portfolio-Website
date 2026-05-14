@@ -71,15 +71,18 @@ body{
 
 /* NAV */
 nav{
-  position:fixed;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  padding:1rem 2rem;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-  overflow: visible !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 1rem 2rem;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  overflow: visible;
 }
 
 nav a{
@@ -105,10 +108,11 @@ nav ul{
 }
 
 /* Navbar links */
-nav ul li a{
-  text-decoration:none;
-  color:white;
-  font-size:15px;
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: nowrap;   /* prevents breaking weirdly */
 }
   
 
