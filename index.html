@@ -473,6 +473,112 @@ section{
   opacity: 1;
   transform: translateY(0);
 }
+
+/* BLOG SECTION */
+
+.blogs-section {
+  padding: 100px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.blogs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.blog-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: 0.4s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0,255,255,0.2);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-content h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.blog-content p {
+  color: #bdbdbd;
+  line-height: 1.6;
+}
+
+.blog-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.blog-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: cyan;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.blog-btn:hover {
+  background: #00bcd4;
+}
+
+/* MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
   
 /* CONTACT */
 a{
@@ -916,6 +1022,73 @@ footer{
 </div> 
 </section>
 
+<!-- BLOG SECTION -->
+<section class="blogs-section" id="blogs">
+  <div class="container">
+    <h2 class="section-title">Published Blogs</h2>
+
+    <div class="blogs-container">
+
+      <!-- BLOG CARD 1 -->
+      <div class="blog-card">
+        <img src="images/Screenshot 2026-05-12 091324.png" alt="Blog Thumbnail">
+
+        <div class="blog-content">
+          <h3>YOLOv8 Helmet Detection System</h3>
+
+          <p>
+            From theory to deployment — built a real-time AI powered
+            helmet detection system using YOLOv8.
+          </p>
+
+          <div class="blog-buttons">
+            <a href="https://debdut-techhashnodedev.hashnode.dev/from-theory-to-deployment-built-a-real-time-bike-helmet-detection-system-using-yolov8" target="_blank" class="blog-btn">
+              Read Blog
+            </a>
+
+            <button class="blog-btn preview-btn"
+              onclick="openModal('images/Screenshot 2026-05-12 091324.png')">
+              Preview
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOG CARD 2 -->
+      <div class="blog-card">
+        <img src="images/image.png" alt="Blog Thumbnail">
+
+        <div class="blog-content">
+          <h3>Deadlock prevention , avoidance and recovery techniques</h3>
+
+          <p>
+            Understanding Deadlock in Operating Systems: Prevention, Avoidance, and Recovery
+          </p>
+
+          <div class="blog-buttons">
+            <a href="https://debdut-aihashnodedev.hashnode.dev/understanding-deadlock-in-operating-systems-prevention-avoidance-and-recovery" target="_blank" class="blog-btn">
+              Read Blog
+            </a>
+
+            <button class="blog-btn preview-btn"
+              onclick="openModal('images/image.png')">
+              Preview
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="blogModal" class="modal">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
+
+  <img class="modal-content" id="modalImage">
+</div>
+
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <h2 class="section-title">Contact Me</h2>
@@ -1081,6 +1254,25 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
 });
+</script>
+<script>
+  function openModal(imageSrc) {
+    document.getElementById("blogModal").style.display = "block";
+    document.getElementById("modalImage").src = imageSrc;
+  }
+
+  function closeModal() {
+    document.getElementById("blogModal").style.display = "none";
+  }
+
+  // Close when clicking outside image
+  window.onclick = function(event) {
+    const modal = document.getElementById("blogModal");
+
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
 </script>
 </body>
 </html>
