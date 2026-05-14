@@ -784,20 +784,7 @@ footer{
 
 <body>
 
-
-
-<!-- HERO -->
-<section id="hero">
-  <h1 class="hero-name">Debdut Nandy</h1>
-
-  <p class="hero-subtitle typing">
-    AI/ML Developer • Data Driven Decision Maker • Tech Lover
-  </p>
-
-  <div class="profile-img">
-  <img src="images/Professional_Photograph.jpeg" alt="Debdut Nandy" class="clickable profile-img-click">
-    
-    <nav>
+<nav>
   <div class="logo" style="font-family:Orbitron;color:#00d4ff;">DN</div>
 
   <div class="nav-links">
@@ -813,21 +800,32 @@ footer{
 
     <a href="#contact">Contact</a>
 
-    <!-- DROPDOWN -->
     <div class="dropdown">
-  <a href="#" class="dropbtn" onclick="toggleDropdown(event)">
-    More ▼
-  </a>
+      <a href="#" class="dropbtn" onclick="toggleDropdown(event)">
+        More ▼
+      </a>
 
-  <div class="dropdown-menu" id="dropdownMenu">
-    <a href="#events">Hackathons & Workshops</a>
-    <a href="#certifications">Certificates</a>
-    <a href="#blogs">Published Blogs</a>
-  </div>
+      <div class="dropdown-content" id="dropdownMenu">
+        <a href="#events">Hackathons & Workshops</a>
+        <a href="#certifications">Certificates</a>
+        <a href="#blogs">Published Blogs</a>
+      </div>
     </div>
+
   </div>
 </nav>
-  
+
+
+<!-- HERO -->
+<section id="hero">
+  <h1 class="hero-name">Debdut Nandy</h1>
+
+  <p class="hero-subtitle typing">
+    AI/ML Developer • Data Driven Decision Maker • Tech Lover
+  </p>
+
+  <div class="profile-img">
+  <img src="images/Professional_Photograph.jpeg" alt="Debdut Nandy" class="clickable profile-img-click">  
   <a href="#projects" class="btn">Explore My Work</a>
 </section>
 
@@ -1351,7 +1349,6 @@ function toggleDropdown(event) {
   document.getElementById("dropdownMenu").classList.toggle("show");
 }
 
-// close when clicking outside
 document.addEventListener("click", function (event) {
   const dropdown = document.querySelector(".dropdown");
   const menu = document.getElementById("dropdownMenu");
