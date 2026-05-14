@@ -195,46 +195,65 @@ nav ul li a{
 
 /* More button */
 .dropbtn {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    cursor: pointer;
+  color: #00d4ff;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+
+  text-shadow: 0 0 8px #00d4ff, 0 0 15px #00d4ff;
+  transition: 0.3s ease;
 }
 
+/* hover glow */
+.dropbtn:hover {
+  color: #b44fff;
+  text-shadow: 0 0 10px #b44fff, 0 0 20px #b44fff;
+}
+  
 /* Hidden menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* dropdown box */
 .dropdown-content {
-    display: none;
+  display: none;
 
-    position: absolute;
-    top: 100%;
-    left: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
 
-    background: #111;
-    min-width: 220px;
+  background: #111;
+  min-width: 220px;
 
-    border-radius: 10px;
-    overflow: hidden;
+  border-radius: 10px;
 
-    z-index: 1000;
+  /* IMPORTANT FIXES */
+  z-index: 99999;
+  overflow: visible;
+
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
-/* Dropdown links */
+/* links */
 .dropdown-content a {
-    display: block;
-    padding: 12px 16px;
-
-    color: white;
-    text-decoration: none;
+  display: block;
+  padding: 12px 16px;
+  color: #7eb8d4;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-/* Hover effect on items */
+/* hover */
 .dropdown-content a:hover {
-    background: #222;
+  background: #222;
+  color: #00d4ff;
 }
 
-/* SHOW CLASS (used by JS, NOT hover) */
+/* show */
 .dropdown-content.show {
-    display: block;
+  display: block;
 }
 
 /* SECTION */
@@ -776,6 +795,13 @@ footer{
   transform: scale(1.1);
 }
 
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+}
 </style>
 </head>
 
@@ -815,6 +841,7 @@ footer{
 
 <!-- HERO -->
 <section id="hero">
+
   <h1 class="hero-name">Debdut Nandy</h1>
 
   <p class="hero-subtitle typing">
@@ -822,11 +849,18 @@ footer{
   </p>
 
   <div class="profile-img">
-  <img src="images/Professional_Photograph.jpeg" alt="Debdut Nandy" class="clickable profile-img-click">  
+    <img src="images/Professional_Photograph.jpeg"
+         alt="Debdut Nandy"
+         class="clickable profile-img-click">
+  </div>
+
+  <!-- SEPARATE BUTTON (IMPORTANT FIX) -->
+  <div class="hero-buttons">
     <a href="#projects" class="btn hero-btn">
-    Explore My Work
+      Explore My Work
     </a>
-  </div> 
+  </div>
+
 </section>
 
 <!-- ABOUT -->
