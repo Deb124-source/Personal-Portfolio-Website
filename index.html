@@ -488,21 +488,20 @@ section{
 }
 
 .blogs-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 18px;   
+  gap: 15px;  
 }
   
 .blog-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 300px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 15px;
   overflow: hidden;
   backdrop-filter: blur(10px);
   transition: 0.3s ease;
-
-  max-width: 320px;
 }
   
 .blog-card:hover {
@@ -1097,12 +1096,11 @@ footer{
 </section>
 
 <!-- MODAL -->
-<div id="blogModal" class="modal">
-  <span class="close-btn" onclick="closeModal()">&times;</span>
-
-  <img class="modal-content" id="modalImage">
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
 </div>
-
+  
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <h2 class="section-title">Contact Me</h2>
@@ -1268,25 +1266,6 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
 });
-</script>
-<script>
-  function openModal(imageSrc) {
-    document.getElementById("blogModal").style.display = "block";
-    document.getElementById("modalImage").src = imageSrc;
-  }
-
-  function closeModal() {
-    document.getElementById("blogModal").style.display = "none";
-  }
-
-  // Close when clicking outside image
-  window.onclick = function(event) {
-    const modal = document.getElementById("blogModal");
-
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
-  }
 </script>
 </body>
 </html>
