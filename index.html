@@ -804,6 +804,62 @@ footer{
 .hero-buttons .btn {
   display: inline-block;
 }
+
+/* HAMBURGER ICON */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 2000;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #00d4ff;
+  box-shadow: 0 0 10px #00d4ff;
+  transition: 0.3s;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
+
+    padding: 20px;
+    display: none;   
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .dropdown-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
 </style>
 </head>
 
@@ -811,7 +867,11 @@ footer{
 
 <nav>
   <div class="logo" style="font-family:Orbitron;color:#00d4ff;">DN</div>
-
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -1380,6 +1440,9 @@ document.addEventListener("DOMContentLoaded", function(){
 </script>
 
 <script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("show");
+}
 function toggleDropdown(event) {
   event.preventDefault();
   document.getElementById("dropdownMenu").classList.toggle("show");
