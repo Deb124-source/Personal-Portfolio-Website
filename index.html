@@ -168,45 +168,64 @@ nav a:hover{
 .btn:hover{
   background:var(--neon-blue);
   color:#000;
-  box-shadow:0 0 20px var(--neon-blue);
+  box-shadow:0/* Keep dropdown aligned with navbar */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Same style as other nav buttons */
+.dropdown .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    background: #111;
+    min-width: 220px;
+
+    border-radius: 10px;
+    padding: 10px 0;
+
+    list-style: none;
+    z-index: 1000;
+}
+
+/* Dropdown items */
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 18px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* Hover effects */
+.dropdown-menu li a:hover {
+    background: #222;
+}
+
+/* Show dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+} 0 20px var(--neon-blue);
 }
 /* Dropdown container */
-.dropdown {
-  position: relative;
-}
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-
-  background: #111;
-  min-width: 220px;
-
-  border-radius: 10px;
-  padding: 10px 0;
-
-  list-style: none;
-  z-index: 1000;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 18px;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.dropdown-menu li a:hover {
-  background: #222;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-  }
-  
 /* SECTION */
 section{
   padding:100px 20px;
@@ -764,15 +783,17 @@ footer{
 </a>
     <a href="#contact">Contact</a>
   </div>
-  <li class="dropdown">
-  <a href="#">More ▼</a>
+<li class="nav-item dropdown">
+    <a href="#" class="nav-link">
+        More ▼
+    </a>
 
-  <ul class="dropdown-menu">
-    <li><a href="#hackathons">Hackathons & Workshops</a></li>
-    <li><a href="#certificates">Certificates</a></li>
-    <li><a href="#blogs">Published Blogs</a></li>
-  </ul>
-  </li>
+    <ul class="dropdown-menu">
+        <li><a href="#hackathons">Hackathons & Workshops</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#blogs">Published Blogs</a></li>
+    </ul>
+</li>
 </nav>
 
 <!-- HERO -->
