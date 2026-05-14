@@ -190,9 +190,10 @@ nav ul li a{
   box-shadow:0
 }
 
-/* Dropdown */
+/* Dropdown container */
 .dropdown {
     position: relative;
+    display: inline-block;
 }
 
 /* More button */
@@ -200,6 +201,7 @@ nav ul li a{
     color: white;
     text-decoration: none;
     font-size: 15px;
+    cursor: pointer;
 }
 
 /* Hidden menu */
@@ -222,23 +224,21 @@ nav ul li a{
 /* Dropdown links */
 .dropdown-content a {
     display: block;
-
     padding: 12px 16px;
 
     color: white;
     text-decoration: none;
 }
 
-/* Hover */
+/* Hover effect on items */
 .dropdown-content a:hover {
     background: #222;
 }
 
-/* Show dropdown */
-.dropdown:hover .dropdown-content {
+/* SHOW CLASS (used by JS, NOT hover) */
+.dropdown-content.show {
     display: block;
-}  
-
+}
 
 /* SECTION */
 section{
@@ -784,31 +784,7 @@ footer{
 
 <body>
 
-<nav>
-  <div style="font-family:Orbitron;color:#00d4ff;">DN</div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-     <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="RESUME OF DEBDUT NANDY.pdf" download class="btn">
-  Download Resume
-</a>
-    <a href="#contact">Contact</a>
-  </div>
-<li class="nav-item dropdown">
-    <a href="#" class="nav-link">
-        More ▼
-    </a>
 
-    <ul class="dropdown-menu">
-        <li><a href="#events">Hackathons & Workshops</a></li>
-        <li><a href="#certifications">Certificates</a></li>
-        <li><a href="#blogs">Published Blogs</a></li>
-    </ul>
-</li>
-</nav>
 
 <!-- HERO -->
 <section id="hero">
@@ -820,8 +796,37 @@ footer{
 
   <div class="profile-img">
   <img src="images/Professional_Photograph.jpeg" alt="Debdut Nandy" class="clickable profile-img-click">
-</div>
-</div>
+    
+    <nav>
+  <div class="logo" style="font-family:Orbitron;color:#00d4ff;">DN</div>
+
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+
+    <a href="RESUME OF DEBDUT NANDY.pdf" download class="btn">
+      Download Resume
+    </a>
+
+    <a href="#contact">Contact</a>
+
+    <!-- DROPDOWN -->
+    <div class="dropdown">
+  <a href="#" class="dropbtn" onclick="toggleDropdown(event)">
+    More ▼
+  </a>
+
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="#events">Hackathons & Workshops</a>
+    <a href="#certifications">Certificates</a>
+    <a href="#blogs">Published Blogs</a>
+  </div>
+    </div>
+  </div>
+</nav>
   
   <a href="#projects" class="btn">Explore My Work</a>
 </section>
@@ -1337,6 +1342,23 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }
 
+});
+</script>
+
+<script>
+function toggleDropdown(event) {
+  event.preventDefault();
+  document.getElementById("dropdownMenu").classList.toggle("show");
+}
+
+// close when clicking outside
+document.addEventListener("click", function (event) {
+  const dropdown = document.querySelector(".dropdown");
+  const menu = document.getElementById("dropdownMenu");
+
+  if (!dropdown.contains(event.target)) {
+    menu.classList.remove("show");
+  }
 });
 </script>
 </body>
