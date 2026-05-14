@@ -79,7 +79,7 @@ nav{
   background:rgba(0,0,0,0.7);
   backdrop-filter:blur(10px);
   z-index:1000;
-  overflow:visible;
+  overflow: visible !important;
 }
 
 nav a{
@@ -188,10 +188,11 @@ nav ul li a{
   box-shadow: 0 0 20px var(--neon-blue);
   transform: translateY(-2px);
   }
+
 /* Dropdown container */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 /* More button */
@@ -205,36 +206,30 @@ nav ul li a{
   transition: 0.3s ease;
 }
 
-/* hover glow */
 .dropbtn:hover {
   color: #b44fff;
   text-shadow: 0 0 10px #b44fff, 0 0 20px #b44fff;
-}
-  
-/* Hidden menu */
-.dropdown {
-  position: relative;
-  display: inline-block;
 }
 
 /* dropdown box */
 .dropdown-content {
   display: none;
-
   position: absolute;
-  top: 100%;
+
+  top: calc(100% + 10px);
   left: 0;
 
-  background: #111;
+  background: rgba(10, 10, 20, 0.95);
   min-width: 220px;
 
   border-radius: 10px;
 
-  /* IMPORTANT FIXES */
-  z-index: 99999;
+  z-index: 999999;   /* IMPORTANT */
   overflow: visible;
 
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+
+  backdrop-filter: blur(10px);
 }
 
 /* links */
@@ -246,7 +241,6 @@ nav ul li a{
   transition: 0.3s;
 }
 
-/* hover */
 .dropdown-content a:hover {
   background: #222;
   color: #00d4ff;
@@ -255,6 +249,9 @@ nav ul li a{
 /* show */
 .dropdown-content.show {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 /* SECTION */
