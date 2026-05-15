@@ -389,12 +389,14 @@ section + section{
 .github-card{
   width:420px;
   max-width:95%;
-
   border-radius:15px;
-
   transition:0.4s ease;
 
-  box-shadow:0 0 20px rgba(0,212,255,0.15);
+  display:block;
+
+  background:#111827;
+
+  min-height:180px;
 }
 
 .github-card:hover{
@@ -1360,17 +1362,18 @@ footer{
   <div class="github-container">
 
     <!-- GitHub Stats -->
- <img 
-  src="https://github-readme-stats.vercel.app/api?username=Deb124-source&show_icons=true&theme=tokyonight&hide_border=true" 
+<img
+  class="github-card"
+  src="https://github-readme-stats.vercel.app/api?username=Deb124-source&show_icons=true&theme=tokyonight&hide_border=true&cache_seconds=1800"
   alt="GitHub Stats"
 />
 
     <!-- Top Languages -->
-<img 
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Deb124-source&layout=compact&theme=tokyonight&hide_border=true" 
+<img
+  class="github-card"
+  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Deb124-source&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=1800"
   alt="Top Languages"
 />
-
     <!-- GitHub Streak -->
     <img
       src="https://streak-stats.demolab.com?user=Deb124-source&theme=tokyonight&hide_border=true"
