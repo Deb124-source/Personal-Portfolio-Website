@@ -294,6 +294,88 @@ section + section{
   width:300px;
   transition:0.4s;
 }
+/* SKILLS */
+
+.skill{
+  margin:20px 0;
+  text-align:left;
+}
+
+.skill span{
+  display:block;
+  margin-bottom:8px;
+
+  color:#e8f4ff;
+  font-size:14px;
+}
+
+.skill-bar{
+  width:100%;
+  height:16px;
+
+  background:rgba(255,255,255,0.08);
+
+  border-radius:30px;
+  overflow:hidden;
+
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+}
+
+.skill-fill{
+  height:100%;
+  width:0;
+
+  border-radius:30px;
+
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+
+  padding-right:8px;
+
+  font-size:11px;
+  font-weight:bold;
+
+  color:black;
+
+  transition:2s ease;
+
+  box-shadow:0 0 15px rgba(0,212,255,0.6);
+}
+
+/* COLORS */
+
+.python,.html,.github{
+  background:linear-gradient(90deg,#00d4ff,#00ffff);
+}
+
+.java,.tensorflow,.mysql{
+  background:linear-gradient(90deg,#ff9800,#ffd54f);
+}
+
+.pytorch,.css,.mongodb{
+  background:linear-gradient(90deg,#b44fff,#ff00ff);
+}
+
+.sklearn,.javascript,.numpy{
+  background:linear-gradient(90deg,#00ff99,#00d4ff);
+}
+
+.opencv,.flask,.pandas{
+  background:linear-gradient(90deg,#ff4d6d,#ff758f);
+}
+
+.nodejs,.matplotlib,.docker{
+  background:linear-gradient(90deg,#00c853,#64dd17);
+}
+
+.netlify,.vercel,.figma{
+  background:linear-gradient(90deg,#00bcd4,#2196f3);
+}
+
+.kubernetes{
+  background:linear-gradient(90deg,#2962ff,#82b1ff);
+}
 
 section{
   border-top:1px solid rgba(0,212,255,0.15);
@@ -314,6 +396,7 @@ section{
   font-size: 15px;
   letter-spacing: 1px;
 }
+
 .education-container {
   display: flex;
   flex-wrap: wrap;
@@ -1049,58 +1132,196 @@ footer{
 
   <!-- SKILLS -->
 <section id="skills">
-  <h2 class="section-title">Skills</h2>
+  <h2 class="section-title typing-title">Skills</h2>
 
+  <!-- Programming -->
   <div class="card">
     <h3>Programming</h3>
-    <p>Python</p>
-    <p>Java</p>
+
+    <div class="skill">
+      <span>Python</span>
+      <div class="skill-bar">
+        <div class="skill-fill python" data-width="90%">90%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Java</span>
+      <div class="skill-bar">
+        <div class="skill-fill java" data-width="75%">75%</div>
+      </div>
+    </div>
   </div>
 
+  <!-- AI/ML -->
   <div class="card">
     <h3>AI/ML</h3>
-    <p>TensorFlow</p>
-    <p>PyTorch</p>
-    <p>Scikit-Learn</p>
-    <p>OpenCV</p>
+
+    <div class="skill">
+      <span>TensorFlow</span>
+      <div class="skill-bar">
+        <div class="skill-fill tensorflow" data-width="80%">80%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>PyTorch</span>
+      <div class="skill-bar">
+        <div class="skill-fill pytorch" data-width="70%">70%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Scikit-Learn</span>
+      <div class="skill-bar">
+        <div class="skill-fill sklearn" data-width="78%">78%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>OpenCV</span>
+      <div class="skill-bar">
+        <div class="skill-fill opencv" data-width="72%">72%</div>
+      </div>
+    </div>
   </div>
 
+  <!-- Web Development -->
   <div class="card">
     <h3>Web Development</h3>
-    <p>HTML</p>
-    <p>CSS</p>
-    <p>JavaScript</p>
-    <p>Node.js</p>
-    <p>Flask</p>
+
+    <div class="skill">
+      <span>HTML</span>
+      <div class="skill-bar">
+        <div class="skill-fill html" data-width="92%">92%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>CSS</span>
+      <div class="skill-bar">
+        <div class="skill-fill css" data-width="85%">85%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>JavaScript</span>
+      <div class="skill-bar">
+        <div class="skill-fill javascript" data-width="78%">78%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Node.js</span>
+      <div class="skill-bar">
+        <div class="skill-fill nodejs" data-width="65%">65%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Flask</span>
+      <div class="skill-bar">
+        <div class="skill-fill flask" data-width="70%">70%</div>
+      </div>
+    </div>
   </div>
 
+  <!-- Databases -->
   <div class="card">
     <h3>Databases</h3>
-    <p>MySQL</p>
-    <p>MongoDB</p>
+
+    <div class="skill">
+      <span>MySQL</span>
+      <div class="skill-bar">
+        <div class="skill-fill mysql" data-width="80%">80%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>MongoDB</span>
+      <div class="skill-bar">
+        <div class="skill-fill mongodb" data-width="68%">68%</div>
+      </div>
+    </div>
   </div>
 
+  <!-- Data Visualization -->
   <div class="card">
     <h3>Data Visualization</h3>
-    <p>NumPy</p>
-    <p>Pandas</p>
-    <p>Matplotlib</p>
+
+    <div class="skill">
+      <span>NumPy</span>
+      <div class="skill-bar">
+        <div class="skill-fill numpy" data-width="82%">82%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Pandas</span>
+      <div class="skill-bar">
+        <div class="skill-fill pandas" data-width="85%">85%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Matplotlib</span>
+      <div class="skill-bar">
+        <div class="skill-fill matplotlib" data-width="75%">75%</div>
+      </div>
+    </div>
   </div>
 
+  <!-- Deployment -->
   <div class="card">
     <h3>Deployment</h3>
-    <p>Netlify</p>
-    <p>Vercel</p>
+
+    <div class="skill">
+      <span>Netlify</span>
+      <div class="skill-bar">
+        <div class="skill-fill netlify" data-width="78%">78%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Vercel</span>
+      <div class="skill-bar">
+        <div class="skill-fill vercel" data-width="80%">80%</div>
+      </div>
+    </div>
   </div>
 
+  <!-- Others -->
   <div class="card">
     <h3>Others</h3>
-    <p>GitHub</p>
-    <p>Figma</p>
-    <p>Docker</p>
-    <p>Kubernetes</p>
-  </div>
 
+    <div class="skill">
+      <span>GitHub</span>
+      <div class="skill-bar">
+        <div class="skill-fill github" data-width="88%">88%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Figma</span>
+      <div class="skill-bar">
+        <div class="skill-fill figma" data-width="65%">65%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Docker</span>
+      <div class="skill-bar">
+        <div class="skill-fill docker" data-width="60%">60%</div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span>Kubernetes</span>
+      <div class="skill-bar">
+        <div class="skill-fill kubernetes" data-width="50%">50%</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -1520,6 +1741,28 @@ document.addEventListener("click", function (event) {
   if (!dropdown.contains(event.target)) {
     menu.classList.remove("show");
   }
+});
+
+const skillBars = document.querySelectorAll(".skill-fill");
+
+const skillObserver = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      const width = entry.target.getAttribute("data-width");
+
+      entry.target.style.width = width;
+
+    }
+
+  });
+
+},{ threshold:0.4 });
+
+skillBars.forEach(bar => {
+  skillObserver.observe(bar);
 });
 </script>
 </body>
