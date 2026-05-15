@@ -282,15 +282,7 @@ section{
 }
 
 /* CARDS */
-  .card{
-  flex: 0 0 auto;
-  width: 320px;
-  background: #071525;
-  padding: 20px;
-  border-radius: 15px;
-  transition: 0.4s;
-  scroll-snap-align: start;
-}
+
   .card{
   background:var(--card);
   padding:25px;
@@ -319,6 +311,22 @@ section{
   font-size: 15px;
   letter-spacing: 1px;
 }
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.education-container .card {
+  width: 320px;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+}
+
 .projects-container{
   display:flex;
   gap:20px;
@@ -1120,15 +1128,23 @@ footer{
 <section id="education">
   <h2 class="section-title typing-title">Education</h2>
 
-  <div class="card">
-    <h3>B.Tech in Computer Science from Brainware University [2024-2028]</h3>
-    <p>Specialization in AI & ML</p>
-  </div>
-  <div class="card">
-    <h3>Higher Secondary Education from Birati High School(H.S) [2016-2024]</h3>
-    <p>Higher Secondary (Science) – 90.28%</p>
+  <div class="education-container">
+
+    <div class="card">
+      <h3>B.Tech in Computer Science</h3>
+      <p>Brainware University (2024–2028)</p>
+      <p>Specialization: AI & ML</p>
+    </div>
+
+    <div class="card">
+      <h3>Higher Secondary (Science)</h3>
+      <p>Birati High School (2016–2024)</p>
+      <p>Score: 90.28%</p>
+    </div>
+
   </div>
 </section>
+
 
 <!-- CERTIFICATIONS -->
 <section id="certifications">
