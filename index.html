@@ -376,7 +376,35 @@ section + section{
 .kubernetes{
   background:linear-gradient(90deg,#2962ff,#82b1ff);
 }
+/* GITHUB SECTION */
 
+.github-container{
+  display:flex;
+  flex-wrap:wrap;
+
+  justify-content:center;
+  gap:25px;
+
+  margin-top:40px;
+}
+
+.github-card{
+  width:420px;
+  max-width:95%;
+
+  border-radius:15px;
+
+  transition:0.4s ease;
+
+  box-shadow:0 0 20px rgba(0,212,255,0.15);
+}
+
+.github-card:hover{
+  transform:translateY(-8px) scale(1.02);
+
+  box-shadow:0 0 30px rgba(0,212,255,0.45);
+}
+  
 section{
   border-top:1px solid rgba(0,212,255,0.15);
   box-shadow: inset 0 1px 0 rgba(0,212,255,0.08);
@@ -983,6 +1011,7 @@ footer{
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
+    <a href="#github">GitHub Stats</a>
 
     <a href="RESUME OF DEBDUT NANDY.pdf" download class="btn">
       Download Resume
@@ -1132,7 +1161,7 @@ footer{
 
   <!-- SKILLS -->
 <section id="skills">
-  <h2 class="section-title typing-title">Skills</h2>
+  <h2 class="section-title">Skills</h2>
 
   <!-- Programming -->
   <div class="card">
@@ -1324,6 +1353,38 @@ footer{
   </div>
 </section>
 
+<section id="github">
+
+  <h2 class="section-title typing-title">
+    GitHub Stats
+  </h2>
+
+  <div class="github-container">
+
+    <!-- GitHub Stats -->
+    <img
+      src="https://github-readme-stats.vercel.app/api?username=Deb124-source&show_icons=true&theme=tokyonight&hide_border=true"
+      alt="GitHub Stats"
+      class="github-card"
+    >
+
+    <!-- Top Languages -->
+    <img
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=Deb124-source&layout=compact&theme=tokyonight&hide_border=true"
+      alt="Top Languages"
+      class="github-card"
+    >
+
+    <!-- GitHub Streak -->
+    <img
+      src="https://streak-stats.demolab.com?user=Deb124-source&theme=tokyonight&hide_border=true"
+      alt="GitHub Streak"
+      class="github-card"
+    >
+
+  </div>
+
+</section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
