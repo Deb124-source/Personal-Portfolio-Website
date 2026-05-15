@@ -185,11 +185,10 @@ nav ul{
   transition: 0.3s ease;
 }
 
-.typing-title {
-  min-height: 40px;
-  display: inline-block;
+.typing-title::after {
+  content: "|";
+  animation: blink 0.8s infinite;
 }
-
 
 @keyframes blink {
   50% { opacity: 0; }
@@ -1361,26 +1360,16 @@ gsap.utils.toArray("section").forEach(section => {
 });
 
 gsap.utils.toArray(".typing-title").forEach(title => {
-
-  const originalText = title.textContent;
-
-  gsap.from(title, {
-    opacity: 0,
-    y: 40,
-    duration: 0.8,
-
-    scrollTrigger: {
-      trigger: title,
-      start: "top 85%",
-
-      once: true,
-
-      onEnter: () => {
-        robotType(title, originalText);
-      }
+  ScrollTrigger.create({
+    trigger: title,
+    start: "top 85%",
+    once: true,
+    onEnter: () => {
+      typeTitle(title, title.textContent, 70); 
     }
   });
 });
+
 // Card animation
 gsap.utils.toArray(".card, .event-card, .project-card").forEach(card => {
   gsap.from(card, {
