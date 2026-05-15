@@ -1119,7 +1119,7 @@ footer{
 
 <!-- EDUCATION -->
 <section id="education">
-  <h2 class="section-title">Education</h2>
+  <h2 class="section-title typing-title">Education</h2>
 
   <div class="card">
     <h3>B.Tech in Computer Science from Brainware University [2024-2028]</h3>
@@ -1356,7 +1356,7 @@ gsap.utils.toArray(".typing-title").forEach(title => {
       trigger: title,
       start: "top 85%",
       onEnter: () => {
-        typeText(title, originalText, 50);
+        robotType(title, originalText);
       }
     }
   });
@@ -1469,19 +1469,29 @@ document.addEventListener("DOMContentLoaded", function(){
 </script>
 
 <script>
-function typeText(element, text, speed = 60) {
+function robotType(element, text) {
   element.textContent = "";
+
   let i = 0;
 
-  const timer = setInterval(() => {
-    element.textContent += text.charAt(i);
-    i++;
+  function typeNext() {
+    if (i < text.length) {
 
-    if (i === text.length) {
-      clearInterval(timer);
+      // random robotic delay (fast + occasional pause)
+      const delay = Math.random() < 0.15
+        ? 180   // pause (machine thinking)
+        : 60;   // normal typing
+
+      element.textContent += text.charAt(i);
+      i++;
+
+      setTimeout(typeNext, delay);
+    } else {
       element.classList.remove("typing-title");
     }
-  }, speed);
+  }
+
+  typeNext();
 }
 
 function toggleMenu() {
