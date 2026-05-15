@@ -139,7 +139,43 @@ nav ul{
   color:#7eb8d4;
   font-family:'Share Tech Mono';
 }
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
 
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.6); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.hero-tagline {
+  margin-top: 10px;
+  color: #94a3b8;
+  font-size: 15px;
+  max-width: 600px;
+}
+  
 .profile-img{
   margin-top:30px;
 }
@@ -1043,13 +1079,24 @@ footer{
     AI/ML Developer • Data Driven Decision Maker • Tech Lover
   </p>
 
+ 
+  <div class="hero-status">
+    <span class="dot"></span>
+    Currently working on: Machine Learning Projects
+  </div>
+
+  <!-- OPTIONAL ONE-LINE VALUE STATEMENT -->
+  <p class="hero-tagline">
+    I build Machine Learning Models and data-driven applications.
+  </p>
+
   <div class="profile-img">
     <img src="images/Professional_Photograph.jpeg"
          alt="Debdut Nandy"
          class="clickable profile-img-click">
   </div>
 
-  <!-- SEPARATE BUTTON (IMPORTANT FIX) -->
+  <!-- BUTTONS (you can keep single or expand later) -->
   <div class="hero-buttons">
     <a href="#projects" class="btn hero-btn">
       Explore My Work
