@@ -283,6 +283,73 @@ section + section{
   margin-top:50px;
 }
 
+#about {
+  padding: 80px 10%;
+  background: #0a0f1c;
+  color: white;
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.about-card {
+  flex: 2;
+  min-width: 300px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  padding: 25px;
+  border-radius: 16px;
+  line-height: 1.7;
+}
+
+.about-text {
+  color: #cbd5e1;
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: #22c55e;
+  font-weight: 500;
+}
+
+.about-stats {
+  flex: 1;
+  min-width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stat {
+  padding: 15px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  border-color: rgba(34,197,94,0.4);
+}
+
+.stat h3 {
+  color: #22c55e;
+  font-size: 1.5rem;
+}
+
+.stat p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
 /* CARDS */
 
   .card{
@@ -1060,20 +1127,47 @@ footer{
 <!-- ABOUT -->
 <section id="about">
   <h2 class="section-title">About Me</h2>
+  <div class="about-container">
 
-  <p style="max-width:700px;margin:auto;color:#7eb8d4;">
-    I'm Debdut Nandy, a passionate coder and problem solver with a keen interest in Artificial Intelligence, Machine Learning, and Data Analytics.<br><br>
+    <div class="about-card">
 
-   • I’m currently pursuing a B.Tech in Computer Science and Engineering (AI & ML specialization) at Brainware University, where I’m building strong foundations in algorithms, data structures, and intelligent systems.<br><br>
+      <p class="about-text">
+        I am an AI/ML Developer with a strong interest in building intelligent,
+        data-driven applications and scalable backend systems.
+      </p>
 
-   • My technical toolkit includes C, HTML, CSS, JavaScript, and Python, along with hands-on exposure to data analysis and machine learning workflows.<br><br>
+      <p class="about-text">
+        I enjoy solving real-world problems through code, exploring machine learning,
+        and creating efficient and user-friendly software solutions.
+      </p>
 
-   • I’ve completed AICTE-approved internships on Conversational Data Analysis using LLMs and Artificial Intelligence with Green Skills through Edunet Foundation, where I am gaining practical experience in applying AI models to real-world datasets.<br><br>
+      <p class="about-text highlight">
+        Currently focused on improving my backend development skills and building impactful projects.
+      </p>
 
-   • I’m particularly interested in exploring how data-driven insights and AI solutions can enhance decision-making and user experience.<br><br>
-    
-   • Currently I'm seeking opportunities to apply my skills in AI/ML development, building machine learning projects, data analytics, and software engineering roles that challenge me to grow further.
-  </p>
+    </div>
+
+    <div class="about-stats">
+
+      <div class="stat">
+        <h3>5+</h3>
+        <p>Projects Built</p>
+      </div>
+
+      <div class="stat">
+        <h3>AI/ML</h3>
+        <p>Focus Area</p>
+      </div>
+
+      <div class="stat">
+        <h3>Java</h3>
+        <p>Backend Strength</p>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <!-- PROJECTS -->
