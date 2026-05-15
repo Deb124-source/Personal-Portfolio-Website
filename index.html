@@ -185,12 +185,11 @@ nav ul{
   transition: 0.3s ease;
 }
 
-.typing-title::after {
-  content: "|";
-  margin-left: 5px;
-  color: #00d4ff;
-  animation: blink 0.8s infinite;
+.typing-title {
+  min-height: 40px;
+  display: inline-block;
 }
+
 
 @keyframes blink {
   50% { opacity: 0; }
@@ -1346,22 +1345,26 @@ gsap.utils.toArray("section").forEach(section => {
 });
 
 gsap.utils.toArray(".typing-title").forEach(title => {
+
   const originalText = title.textContent;
 
   gsap.from(title, {
     opacity: 0,
     y: 40,
     duration: 0.8,
+
     scrollTrigger: {
       trigger: title,
       start: "top 85%",
+
+      once: true,
+
       onEnter: () => {
         robotType(title, originalText);
       }
     }
   });
 });
-
 // Card animation
 gsap.utils.toArray(".card, .event-card, .project-card").forEach(card => {
   gsap.from(card, {
@@ -1374,7 +1377,6 @@ gsap.utils.toArray(".card, .event-card, .project-card").forEach(card => {
     }
   });
 });
-
 
 // ============================
 // DOM CONTENT LOADED (IMPORTANT)
@@ -1470,6 +1472,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 <script>
 function robotType(element, text) {
+  if (element.dataset.typed === "true") return; // prevents repeat bugs
+  element.dataset.typed = "true";
+
   element.textContent = "";
 
   let i = 0;
@@ -1477,17 +1482,14 @@ function robotType(element, text) {
   function typeNext() {
     if (i < text.length) {
 
-      // random robotic delay (fast + occasional pause)
-      const delay = Math.random() < 0.15
-        ? 180   // pause (machine thinking)
-        : 60;   // normal typing
+      const delay = Math.random() < 0.12
+        ? 180
+        : 55;
 
       element.textContent += text.charAt(i);
       i++;
 
       setTimeout(typeNext, delay);
-    } else {
-      element.classList.remove("typing-title");
     }
   }
 
