@@ -456,20 +456,46 @@ section + section{
 .github-card{
   width:420px;
   max-width:95%;
-  border-radius:15px;
-  transition:0.4s ease;
-
-  display:block;
+  min-height:180px;
 
   background:#111827;
 
-  min-height:180px;
+  border-radius:15px;
+
+  overflow:hidden;
+
+  transition:0.4s ease;
 }
 
 .github-card:hover{
   transform:translateY(-8px) scale(1.02);
 
   box-shadow:0 0 30px rgba(0,212,255,0.45);
+}
+
+/* Contribution Graph */
+.graph-container{
+  width:95%;
+  max-width:950px;
+
+  margin:40px auto;
+
+  padding:12px;
+
+  background:#111827;
+
+  border-radius:15px;
+
+  overflow-x:auto;
+}
+
+.graph-container img{
+  width:100%;
+  height:220px;
+
+  object-fit:contain;
+
+  border-radius:10px;
 }
   
 section{
@@ -1473,11 +1499,15 @@ footer{
       class="github-card"
     >
 
-   <img
-    src= 
-    "https://github-readme-activity-graph.vercel.app/graph?username=Deb124-source"
-    alt="Activity Graph"
-    >
+<div class="graph-container">
+
+  <img
+    src="https://github-readme-activity-graph.vercel.app/graph?username=Deb124-source&theme=tokyo-night&hide_border=true&area=true"
+    alt="GitHub Activity Graph"
+  >
+
+</div>
+    
 
      
   </div>
