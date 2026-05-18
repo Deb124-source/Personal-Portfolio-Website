@@ -659,6 +659,21 @@ section{
   transition:0.3s ease;
   box-shadow:0 0 15px rgba(0,255,255,0.1);
 }
+.badges span:nth-child(1) {
+  background: #3776ab;
+}
+
+.badges span:nth-child(2) {
+  background: #ff6b6b;
+}
+
+.badges span:nth-child(3) {
+  background: #10b981;
+}
+
+.badges span:nth-child(4) {
+  background: #8b5cf6;
+}
 
 .project-card:hover{
   transform:translateY(-10px) scale(1.02);
@@ -1376,10 +1391,14 @@ footer{
 <!-- PROJECTS -->
 <section id="projects">
   <h2 class="section-title">Projects</h2>
-  
+  <div class="filter-buttons">
+  <button onclick="filterProjects('all')">All</button>
+  <button onclick="filterProjects('data analysis')">Web</button>
+  <button onclick="filterProjects('ml')">AI/ML</button>
+</div>
 <div class="projects-container">
   
-  <div class="project-card">
+  <div class="project-card ml">
   <img src="images/Helmet_detection.jpg" class="project-img clickable">
        <div class="project-content">
      <h2>Helmet Detection System</h2>
@@ -1390,14 +1409,20 @@ footer{
     
      <h3>Solution</h3>
         <p>Built a deep learning-based detection system using YOLO/CNN.</p>
-    
+      <div class="badges">
+    <span>Python</span>
+    <span>Flask</span>
+    <span>OpenCV</span>
+    <span>TensorFlow</span>
+  </div>
+
         <a href="https://github.com/Deb124-source/AICTE_Edunet_Shell_Bike_Helmet_Detection_using_yolov8n_Debdut_Nandy" target="_blank" class="proj-btn">
     View Code
         </a>
   </div>
   </div>
 
-   <div class="project-card">
+   <div class="project-card ml">
   <img src="images/demo_prediction.png" class="project-img clickable">  
         <div class="project-content">
   <h2>House Price Prediction System</h2>
@@ -1415,7 +1440,7 @@ footer{
    </div>
 </div>
   
-  <div class="project-card">
+  <div class="project-card ml">
   <img src="images/Bank_Loan.jpg" class="project-img clickable">
        <div class="project-content">
      <h2>Bank Loan Approval System</h2>
@@ -1426,6 +1451,11 @@ footer{
 
     <h3>Solution</h3>
         <p>Built a classification model using ML algorithms like Random Forest and Logistic Regression.</p>
+     <div class="badges">
+    <span>Python</span>
+    <span>Flask</span>
+    <span>Scikit-Learn</span>
+  </div>
 
   <a href="https://github.com/Deb124-source/Bank-Loan-Approval-System-ML.git" target="_blank" class="proj-btn">
     View Code
@@ -1433,7 +1463,7 @@ footer{
        </div>
  </div>
 
-  <div class="project-card">
+  <div class="project-card data analysis ">
   <img src="images/Netflix.jpg" class="project-img clickable">  
       <div class="project-content">
   <h2>Netflix Dataset Analysis</h2>
@@ -1444,6 +1474,12 @@ footer{
 
   <h3>Solution</h3>
      <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn.</p>
+   <div class="badges">
+    <span>Python</span>
+    <span>Numpy</span>
+    <span>Pandas</span>
+    <span>Jupyter Notebook</span>
+  </div>
 
   <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git" target="_blank" class="proj-btn">
     View Code
@@ -2134,7 +2170,20 @@ function robotType(element, text) {
 
   typeNext();
 }
+function filterProjects(category) {
+  const projects = document.querySelectorAll('.project-card');
 
+  projects.forEach(project => {
+    if (
+      category === 'all' ||
+      project.classList.contains(category)
+    ) {
+      project.style.display = 'block';
+    } else {
+      project.style.display = 'none';
+    }
+  });
+}
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("show");
 }
