@@ -1513,12 +1513,26 @@ footer{
 <!-- PROJECTS -->
 <section id="projects">
   <h2 class="section-title">Projects</h2>
+
   <div class="filter-buttons">
-  <button onclick="filterProjects('all')">All</button>
-  <button onclick="filterProjects('data analysis')">Web</button>
-  <button onclick="filterProjects('ml')">AI/ML</button>
-</div>
-<div class="projects-container">
+
+    <button class="active" onclick="filterProjects('all')">
+      All Projects
+    </button>
+
+    <button onclick="filterProjects('ml')">
+      AI / ML
+    </button>
+
+    <button onclick="filterProjects('python')">
+      Python
+    </button>
+
+     <button onclick="filterProjects('data analysis')">
+      Data Analysis
+    </button>
+
+  </div>ss="projects-container">
   
   <div class="project-card ml">
   <img src="images/Helmet_detection.jpg" class="project-img clickable">
@@ -1531,12 +1545,6 @@ footer{
     
      <h3>Solution</h3>
         <p>Built a deep learning-based detection system using YOLO/CNN.</p>
-      <div class="badges">
-    <span>Python</span>
-    <span>Flask</span>
-    <span>OpenCV</span>
-    <span>TensorFlow</span>
-  </div>
 
         <a href="https://github.com/Deb124-source/AICTE_Edunet_Shell_Bike_Helmet_Detection_using_yolov8n_Debdut_Nandy" target="_blank" class="proj-btn">
     View Code
@@ -1573,16 +1581,12 @@ footer{
 
     <h3>Solution</h3>
         <p>Built a classification model using ML algorithms like Random Forest and Logistic Regression.</p>
-     <div class="badges">
-    <span>Python</span>
-    <span>Flask</span>
-    <span>Scikit-Learn</span>
   </div>
 
   <a href="https://github.com/Deb124-source/Bank-Loan-Approval-System-ML.git" target="_blank" class="proj-btn">
     View Code
   </a>
-       </div>
+      
  </div>
 
   <div class="project-card data analysis ">
@@ -1596,12 +1600,6 @@ footer{
 
   <h3>Solution</h3>
      <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn.</p>
-   <div class="badges">
-    <span>Python</span>
-    <span>Numpy</span>
-    <span>Pandas</span>
-    <span>Jupyter Notebook</span>
-  </div>
 
   <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git" target="_blank" class="proj-btn">
     View Code
