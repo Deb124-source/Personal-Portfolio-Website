@@ -1514,27 +1514,9 @@ footer{
 <section id="projects">
   <h2 class="section-title">Projects</h2>
 
-  <div class="filter-buttons">
-
-    <button class="active" onclick="filterProjects('all')">
-      All Projects
-    </button>
-
-    <button onclick="filterProjects('ml')">
-      AI / ML
-    </button>
-
-    <button onclick="filterProjects('python')">
-      Python
-    </button>
-
-     <button onclick="filterProjects('data analysis')">
-      Data Analysis
-    </button>
-
-  </div>ss="projects-container">
+<div class="projects-container">
   
-  <div class="project-card ml">
+  <div class="project-card">
   <img src="images/Helmet_detection.jpg" class="project-img clickable">
        <div class="project-content">
      <h2>Helmet Detection System</h2>
@@ -1552,7 +1534,7 @@ footer{
   </div>
   </div>
 
-   <div class="project-card ml">
+   <div class="project-card">
   <img src="images/demo_prediction.png" class="project-img clickable">  
         <div class="project-content">
   <h2>House Price Prediction System</h2>
@@ -1570,7 +1552,7 @@ footer{
    </div>
 </div>
   
-  <div class="project-card ml">
+  <div class="project-card">
   <img src="images/Bank_Loan.jpg" class="project-img clickable">
        <div class="project-content">
      <h2>Bank Loan Approval System</h2>
@@ -1589,7 +1571,7 @@ footer{
       
  </div>
 
-  <div class="project-card data analysis ">
+  <div class="project-card">
   <img src="images/Netflix.jpg" class="project-img clickable">  
       <div class="project-content">
   <h2>Netflix Dataset Analysis</h2>
@@ -2290,21 +2272,6 @@ function robotType(element, text) {
 
   typeNext();
 }
-const filterBtns = document.querySelectorAll('.filter-buttons button');
-
-filterBtns.forEach(button => {
-
-  button.addEventListener('click', () => {
-
-    filterBtns.forEach(btn =>
-      btn.classList.remove('active')
-    );
-
-    button.classList.add('active');
-
-  });
-
-});
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("show");
 }
