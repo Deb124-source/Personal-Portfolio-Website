@@ -1010,6 +1010,128 @@ section{
   margin-top:18px;
 }
 
+/* =========================
+   PROJECT FILTER BUTTONS
+========================= */
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 18px;
+  margin: 50px 0;
+}
+
+/* Main Button Style */
+
+.filter-buttons button {
+  position: relative;
+
+  padding: 14px 32px;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.06);
+
+  backdrop-filter: blur(12px);
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* Gradient Glow Layer */
+
+.filter-buttons button::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(56,189,248,0.25),
+    rgba(139,92,246,0.25)
+  );
+
+  opacity: 0;
+
+  transition: 0.35s ease;
+}
+
+/* Hover Effect */
+
+.filter-buttons button:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(56,189,248,0.45);
+
+  box-shadow:
+    0 12px 30px rgba(56,189,248,0.18);
+
+  color: #38bdf8;
+}
+
+.filter-buttons button:hover::before {
+  opacity: 1;
+}
+
+/* Active Selected Button */
+
+.filter-buttons button.active {
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #8b5cf6
+  );
+
+  border: none;
+
+  color: white;
+
+  box-shadow:
+    0 10px 30px rgba(56,189,248,0.35);
+}
+
+/* Click Animation */
+
+.filter-buttons button:active {
+  transform: scale(0.96);
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+  .filter-buttons {
+    gap: 12px;
+  }
+
+  .filter-buttons button {
+    width: 100%;
+    max-width: 250px;
+
+    font-size: 14px;
+
+    padding: 13px 20px;
+  }
+}
+
 /* BUTTON */
 .blog-btn{
   padding:10px 20px;
@@ -2170,20 +2292,21 @@ function robotType(element, text) {
 
   typeNext();
 }
-function filterProjects(category) {
-  const projects = document.querySelectorAll('.project-card');
+const filterBtns = document.querySelectorAll('.filter-buttons button');
 
-  projects.forEach(project => {
-    if (
-      category === 'all' ||
-      project.classList.contains(category)
-    ) {
-      project.style.display = 'block';
-    } else {
-      project.style.display = 'none';
-    }
+filterBtns.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    filterBtns.forEach(btn =>
+      btn.classList.remove('active')
+    );
+
+    button.classList.add('active');
+
   });
-}
+
+});
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("show");
 }
