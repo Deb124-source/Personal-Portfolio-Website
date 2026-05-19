@@ -317,20 +317,25 @@ section + section{
 }
 
 .about-stats {
-  flex: 1;
-  min-width: 200px;
 
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns:
+    repeat(auto-fit, minmax(160px, 1fr));
 
-  gap: 15px;
-}
+  gap: 18px;
+
+  margin-top: 30px;
+
+  width: 100%;
+ }
+
 
 .stat {
-  padding: 18px 12px;
 
-  border-radius: 14px;
+  padding: 22px 15px;
+
+  border-radius: 16px;
 
   background: rgba(255,255,255,0.04);
 
@@ -342,7 +347,7 @@ section + section{
 
   backdrop-filter: blur(10px);
 
-  min-height: 90px;
+  min-height: 110px;
 
   display: flex;
 
@@ -350,6 +355,7 @@ section + section{
 
   justify-content: center;
 }
+
 .stat:hover {
   transform: translateY(-6px) scale(1.03);
 
