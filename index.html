@@ -390,6 +390,182 @@ section + section{
   }
 
 }
+
+/* =========================
+   TERMINAL SECTION
+========================= */
+
+#terminal-section {
+
+    padding: 110px 8%;
+}
+
+/* TERMINAL BOX */
+
+.terminal-box {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    background: #08111f;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(12px);
+}
+
+/* HEADER */
+
+.terminal-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 20px;
+
+    background: rgba(255,255,255,0.04);
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.06);
+}
+
+/* DOTS */
+
+.dot {
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+/* TITLE */
+
+.terminal-title {
+
+    margin-left: 10px;
+
+    color: #94a3b8;
+
+    font-size: 0.9rem;
+}
+
+/* BODY */
+
+.terminal-body {
+
+    padding: 35px 28px;
+
+    font-family: monospace;
+
+    color: #e2e8f0;
+
+    line-height: 2;
+}
+
+/* PROMPT */
+
+.prompt {
+
+    color: #38bdf8;
+
+    margin-right: 10px;
+
+    font-weight: bold;
+}
+
+/* OUTPUT */
+
+.terminal-output {
+
+    color: #22c55e;
+
+    margin-left: 28px;
+
+    margin-bottom: 18px;
+}
+
+/* TYPING EFFECT */
+
+.typing {
+
+    width: fit-content;
+
+    border-right: 2px solid #22c55e;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    animation:
+    typing 4s steps(30) infinite,
+    blink 0.7s infinite;
+}
+
+/* ANIMATION */
+
+@keyframes typing {
+
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .terminal-body {
+
+        font-size: 0.9rem;
+
+        padding: 28px 20px;
+    }
+
+    .terminal-box {
+
+        border-radius: 16px;
+    }
+}
+  
   
 /* CARDS */
 
@@ -1688,6 +1864,96 @@ footer{
   </div>
 
 </section>
+
+
+<!-- =========================
+     TERMINAL SECTION
+========================= -->
+
+<section id="terminal-section">
+
+    <h2 class="section-title">
+        Developer Terminal
+    </h2>
+
+    <div class="terminal-box">
+
+        <!-- TERMINAL TOP -->
+
+        <div class="terminal-header">
+
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+
+            <p class="terminal-title">
+                debdut@portfolio:~
+            </p>
+
+        </div>
+
+        <!-- TERMINAL BODY -->
+
+        <div class="terminal-body">
+
+            <p>
+                <span class="prompt">></span>
+                whoami
+            </p>
+
+            <p class="terminal-output">
+                Debdut Nandy
+            </p>
+
+
+            <p>
+                <span class="prompt">></span>
+                skills
+            </p>
+
+            <p class="terminal-output">
+                Python, AIML, Flask,
+                HTML, CSS, JavaScript
+            </p>
+
+
+            <p>
+                <span class="prompt">></span>
+                currently_learning
+            </p>
+
+            <p class="terminal-output">
+                Generative AI, LLMs,
+                Deployment & Cybersecurity
+            </p>
+
+
+            <p>
+                <span class="prompt">></span>
+                goal
+            </p>
+
+            <p class="terminal-output">
+                Seeking AIML Internship
+                Opportunities
+            </p>
+
+
+            <p>
+                <span class="prompt">></span>
+                status
+            </p>
+
+            <p class="terminal-output typing">
+                Building intelligent systems...
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+  
 
 <section id="stats">
 
