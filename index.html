@@ -1258,6 +1258,140 @@ section{
   font-size: 40px;
   cursor: pointer;
 }
+
+/* =========================
+   ACHIEVEMENTS SECTION
+========================= */
+
+#achievements{
+
+  padding:100px 8%;
+}
+
+/* GRID */
+
+.achievements-container{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(250px,1fr));
+
+  gap:25px;
+
+  margin-top:45px;
+}
+
+/* CARD */
+
+.achievement-card{
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  border-radius:18px;
+
+  padding:30px 24px;
+
+  text-align:center;
+
+  transition:0.35s ease;
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,0.2);
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* GLOW EFFECT */
+
+.achievement-card::before{
+
+  content:'';
+
+  position:absolute;
+
+  inset:0;
+
+  background:linear-gradient(
+    135deg,
+    rgba(56,189,248,0.08),
+    transparent
+  );
+
+  opacity:0;
+
+  transition:0.3s ease;
+}
+
+.achievement-card:hover::before{
+  opacity:1;
+}
+
+/* HOVER */
+
+.achievement-card:hover{
+
+  transform:
+  translateY(-8px);
+
+  border-color:
+  rgba(56,189,248,0.4);
+
+  box-shadow:
+  0 15px 35px rgba(56,189,248,0.15);
+}
+
+/* ICON */
+
+.achievement-icon{
+
+  width:72px;
+  height:72px;
+
+  margin:auto auto 20px;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:2rem;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(56,189,248,0.15),
+    rgba(139,92,246,0.15)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+/* TITLE */
+
+.achievement-card h3{
+  color:#38bdf8;
+  margin-bottom:14px;
+  font-size:1.15rem;
+}
+/* TEXT */
+
+.achievement-card p{
+  color:#cbd5e1;
+  line-height:1.6;
+  font-size:0.95rem;
+}
   
 /* CONTACT */
 a{
@@ -1497,6 +1631,8 @@ footer{
         <a href="#certifications">Certificates</a>
         <a href="#events">Hackathons & Workshops</a>
         <a href="#blogs">Published Blogs</a>
+        <a href="#achievements">Achievements</a>
+        
       </div>
     </div>
 
@@ -2146,6 +2282,107 @@ footer{
   </div>
 </section>
 
+
+
+<!-- =========================
+     ACHIEVEMENTS SECTION
+========================= -->
+
+<section id="achievements">
+
+    <h2 class="section-title">
+        Achievements
+    </h2>
+
+    <div class="achievements-container">
+
+        <!-- CARD 1 -->
+
+        <div class="achievement-card">
+
+            <div class="achievement-icon">
+                🎓
+            </div>
+
+            <h3>
+                9.28 SGPA
+            </h3>
+
+            <p>
+                Maintaining strong academic
+                performance in Computer
+                Science Engineering.
+            </p>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+
+        <div class="achievement-card">
+
+            <div class="achievement-icon">
+                🤖
+            </div>
+
+            <h3>
+                99.5% ML Model Accuracy
+            </h3>
+
+            <p>
+                Built a Bank Loan Approval
+                Prediction System using Random
+                Forest and classification models.
+            </p>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+
+        <div class="achievement-card">
+
+            <div class="achievement-icon">
+                ☁️
+            </div>
+
+            <h3>
+                Google AI Certifications
+            </h3>
+
+            <p>
+                Completed certifications in
+                Large Language Models and
+                Responsible AI by Google.
+            </p>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+
+        <div class="achievement-card">
+
+            <div class="achievement-icon">
+                🚀
+            </div>
+
+            <h3>
+                GDG Build with AI Event
+            </h3>
+
+            <p>
+                Participated in Google Developer
+                Groups Build with AI event,
+                exploring Generative AI and
+                modern AI technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 <!-- MODAL -->
 <div id="imgModal" class="modal">
   <span class="close">&times;</span>
