@@ -837,6 +837,73 @@ section{
 
 }
 
+.ml-modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(10px);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.ml-modal-content{
+  width:80%;
+  max-width:700px;
+  padding:30px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 0 40px rgba(0,212,255,0.15);
+  color:white;
+  animation:fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn{
+  from{transform:scale(0.8); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+
+.close-btn{
+  float:right;
+  font-size:22px;
+  cursor:pointer;
+  color:#00d4ff;
+}
+
+.pipeline-flow{
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* PIPELINE BOX */
+.step{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(0,212,255,0.3);
+  background:rgba(0,212,255,0.05);
+  text-align:center;
+  animation:slideUp 0.4s ease forwards;
+}
+
+@keyframes slideUp{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.arrow{
+  text-align:center;
+  color:#00d4ff;
+  font-size:18px;
+}
+  
+
 .projects-container{
   display:flex;
   gap:20px;
@@ -992,6 +1059,48 @@ section{
   transform:translateY(-3px);
 
   box-shadow:0 0 18px rgba(0,212,255,0.45);
+}
+
+.projects-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+
+/* Keep your original style (no change) */
+.projects-btn{
+  padding:12px 28px;
+  border-radius:10px;
+  border:1px solid #00d4ff;
+  background:transparent;
+  color:#00d4ff;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  transition:0.3s ease;
+}
+
+/* HOVER */
+.projects-btn:hover{
+  background:#00d4ff;
+  color:#0b0f1a;
+  transform:translateY(-3px);
+  box-shadow:0 0 18px rgba(0,212,255,0.45);
+}
+
+.projects-btn.pipeline{
+  border-color:#8b5cf6;
+  color:#8b5cf6;
+}
+
+/* PIPELINE HOVER */
+.projects-btn.pipeline:hover{
+  background:#8b5cf6;
+  color:#0b0f1a;
+  box-shadow:0 0 18px rgba(139,92,246,0.45);
 }
   
   .cert-img{
@@ -2002,6 +2111,10 @@ footer{
         <a href="https://github.com/Deb124-source/AICTE_Edunet_Shell_Bike_Helmet_Detection_using_yolov8n_Debdut_Nandy" target="_blank" class="proj-btn">
     View Code
         </a>
+         <button class="projects-btn pipeline-btn" onclick="openPipeline('helmet')">
+  View ML Pipeline
+</button>
+         
   </div>
   </div>
 
@@ -2020,6 +2133,10 @@ footer{
   <a href="https://github.com/Deb124-source/House-Price-Prediction-System-Debdut-Nandy.git" target="_blank" class="proj-btn">
     View Code
   </a>
+<button class="projects-btn pipeline-btn" onclick="openPipeline('house')">
+  View ML Pipeline
+</button>
+          
    </div>
 </div>
   
@@ -2038,6 +2155,9 @@ footer{
   <a href="https://github.com/Deb124-source/Bank-Loan-Approval-System-ML.git" target="_blank" class="proj-btn">
     View Code
   </a>
+      <button class="projects-btn pipeline-btn" onclick="openPipeline('loan')">
+  View ML Pipeline
+</button>
        </div> 
  </div>
 
@@ -2816,6 +2936,7 @@ document.addEventListener("DOMContentLoaded", function(){
 </script>
 
 <script>
+
 function robotType(element, text) {
   if (element.dataset.typed === "true") return; // prevents repeat bugs
   element.dataset.typed = "true";
@@ -2879,5 +3000,85 @@ skillBars.forEach(bar => {
   skillObserver.observe(bar);
 });
 </script>
+
+
+<script>
+function openPipeline(project){
+
+  const modal = document.getElementById("mlModal");
+  const title = document.getElementById("ml-title");
+  const flow = document.getElementById("pipeline-flow");
+
+  modal.style.display = "flex";
+
+  let content = [];
+
+  if(project === "helmet"){
+    title.innerText = "Helmet Detection ML Pipeline";
+
+    content = [
+      "Input Image (Traffic Camera)",
+      "YOLO / CNN Model",
+      "Object Detection (Helmet / No Helmet)",
+      "Bounding Box Extraction",
+      "Alert System / Violation Log"
+    ];
+  }
+
+  if(project === "house"){
+    title.innerText = "House Price Prediction Pipeline";
+
+    content = [
+      "Input Features (Area, Location, Rooms)",
+      "Data Preprocessing",
+      "Regression Model (Linear / XGBoost)",
+      "Training & Validation",
+      "Price Prediction Output"
+    ];
+  }
+
+  if(project === "loan"){
+    title.innerText = "Bank Loan Approval Pipeline";
+
+    content = [
+      "User Application Data",
+      "Data Cleaning & Encoding",
+      "Classification Model (Logistic / RF)",
+      "Risk Scoring System",
+      "Approve / Reject Decision"
+    ];
+  }
+
+  flow.innerHTML = "";
+
+  content.forEach((step, i) => {
+    flow.innerHTML += `<div class="step">${step}</div>`;
+    if(i !== content.length - 1){
+      flow.innerHTML += `<div class="arrow">↓</div>`;
+    }
+  });
+
+}
+
+function closePipeline(){
+  document.getElementById("mlModal").style.display = "none";
+}
+</script>
+
+
+<div id="mlModal" class="ml-modal">
+
+  <div class="ml-modal-content">
+
+    <span class="close-btn" onclick="closePipeline()">×</span>
+
+    <h2 id="ml-title">ML Pipeline</h2>
+
+    <div id="pipeline-flow" class="pipeline-flow"></div>
+
+  </div>
+
+</div>
+  
 </body>
 </html>
