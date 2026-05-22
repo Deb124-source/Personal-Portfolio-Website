@@ -2186,6 +2186,9 @@ footer{
   <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git" target="_blank" class="proj-btn">
     View Code
   </a>
+    <button class="projects-btn pipeline-btn" onclick="openPipeline('data')">
+  View Analytics Pipeline
+</button>    
       </div>
   </div>
 
@@ -3056,6 +3059,18 @@ function openPipeline(project){
       "Classification Model (Logistic / RF)",
       "Risk Scoring System",
       "Approve / Reject Decision"
+    ];
+  }
+
+  if(project === "data"){
+    title.innerText = "House Price Prediction Pipeline";
+
+    content = [
+      "Netflix Dataset",
+      "Data Cleaning & Formatting",
+      "Exploratory Data Analysis",
+      "Visualizations",
+      "Insight Extraction"
     ];
   }
 
