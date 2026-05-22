@@ -3077,18 +3077,40 @@ function robotType(element, text) {
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("show");
 }
+
 function toggleDropdown(event) {
   event.preventDefault();
-  document.getElementById("dropdownMenu").classList.toggle("show");
+
+  document
+    .getElementById("dropdownMenu")
+    .classList.toggle("show");
 }
 
-document.addEventListener("click", function (event) {
+document.addEventListener("click", function(event) {
+
   const dropdown = document.querySelector(".dropdown");
+
   const menu = document.getElementById("dropdownMenu");
 
   if (!dropdown.contains(event.target)) {
     menu.classList.remove("show");
   }
+});
+
+document.querySelectorAll(".dropdown-content a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    document
+      .getElementById("dropdownMenu")
+      .classList.remove("show");
+
+    document
+      .getElementById("navLinks")
+      .classList.remove("show");
+
+  });
+
 });
 
 const skillBars = document.querySelectorAll(".skill-fill");
