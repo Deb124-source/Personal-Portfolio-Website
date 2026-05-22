@@ -745,14 +745,10 @@ section{
    CARD BASE (FLIP ENABLED)
 ========================= */
 .education-card{
-  width:320px;
-  height:320px;
-
   perspective:1000px;
-
+  cursor:pointer;
   position:relative;
-
-  border-radius:18px;
+  height:320px;
 }
 
 /* =========================
@@ -762,15 +758,15 @@ section{
   position:relative;
   width:100%;
   height:100%;
-
   transition:transform 0.8s ease;
   transform-style:preserve-3d;
 }
 
-/* FLIP ON HOVER */
-.education-card:hover .education-inner{
+/* CLICK STATE */
+.education-card.flipped .education-inner{
   transform:rotateY(180deg);
 }
+
 
 /* =========================
    FRONT + BACK COMMON STYLE
@@ -2548,36 +2544,30 @@ footer{
   <div class="education-container">
 
     <!-- CARD 1 -->
-    <div class="education-card">
+ <div class="education-card" onclick="this.classList.toggle('flipped')">
   <div class="education-inner">
 
     <!-- FRONT -->
     <div class="education-front">
-
       <div class="edu-icon">🎓</div>
 
       <div class="edu-content">
         <h3>Bachelor of Technology</h3>
         <h4>CSE (AI + ML)</h4>
         <span>2024 - 2028</span>
-
         <p>
-          Pursuing B.Tech in CSE with focus on AI,
-          Machine Learning, Web Development and Problem Solving.
+          Pursuing B.Tech in CSE with focus on AI, Machine Learning, Web Development and Problem Solving.
         </p>
       </div>
-
     </div>
 
     <!-- BACK -->
     <div class="education-back">
       <h3>Top Skills Learned</h3>
-
       <ul>
-        <li>Data Structures & Algorithms</li>
-        <li>Python and Java Programming</li>
-        <li>Machine Learning Basics</li>
-        <li>Web Development (MERN)</li>
+        <li>DSA</li>
+        <li>Python and Java</li>
+        <li>Machine Learning</li>
         <li>Problem Solving</li>
       </ul>
     </div>
@@ -2586,7 +2576,7 @@ footer{
 </div>
 
     <!-- CARD 2 -->
-   <div class="education-card">
+  <div class="education-card" onclick="this.classList.toggle('flipped')">
   <div class="education-inner">
 
     <!-- FRONT -->
@@ -2600,8 +2590,7 @@ footer{
         <span>2016 - 2024</span>
 
         <p>
-          Built strong foundations in Mathematics, Physics,
-          and improved leadership & communication skills.
+          Built strong foundations in Mathematics, Physics, and developed communication and leadership skills through school activities.
         </p>
       </div>
 
@@ -2609,15 +2598,17 @@ footer{
 
     <!-- BACK -->
     <div class="education-back">
-      <h3>Key Learnings</h3>
+
+      <h3>Top Skills Learned</h3>
 
       <ul>
-        <li>Mathematics & Physics Fundamentals</li>
-        <li>Analytical Thinking</li>
-        <li>Problem Solving Skills</li>
+        <li>Mathematics Fundamentals</li>
+        <li>Physics & Logical Thinking</li>
+        <li>Analytical Problem Solving</li>
         <li>Communication Skills</li>
         <li>Leadership & Teamwork</li>
       </ul>
+
     </div>
 
   </div>
@@ -3204,6 +3195,16 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+</script>
+
+<script>
+document.querySelectorAll('.education-card').forEach(card => {
+  card.addEventListener('click', () => {
+    document.querySelectorAll('.education-card').forEach(c => {
+      if (c !== card) c.classList.remove('flipped');
+    });
+  });
+});
 </script>
 
 <div id="mlModal" class="ml-modal">
