@@ -331,38 +331,31 @@ section + section{
 
   width: 100%;
 }
-  
+
+.stats-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
 
 .stat {
-
   padding: 20px 15px;
-
   border-radius: 16px;
-
   background: rgba(255,255,255,0.04);
-
   border: 1px solid rgba(255,255,255,0.08);
-
   text-align: center;
-
   transition: 0.3s ease;
-
   backdrop-filter: blur(10px);
-
   min-height: 110px;
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 }
   
 .stat:hover {
   transform: translateY(-6px) scale(1.03);
-
   border-color: rgba(56,189,248,0.5);
-
   box-shadow: 0 12px 30px rgba(56,189,248,0.12);
 }
 
@@ -382,13 +375,9 @@ section + section{
 }
 
 @media (max-width: 480px) {
-
   .stat {
-
     width: calc(50% - 8px);
-
   }
-
 }
 
 /* =========================
@@ -1972,14 +1961,9 @@ footer{
             <h3>300+</h3>
             <p>GitHub Contributions</p>
         </div>
-
+      
         <div class="stat">
-            <h3>200+</h3>
-            <p>DSA Problems Solved</p>
-        </div>
-
-        <div class="stat">
-            <h3>95%</h3>
+            <h3>98%</h3>
             <p>Best ML Model Accuracy</p>
         </div>
 
