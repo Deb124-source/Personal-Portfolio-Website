@@ -52,6 +52,14 @@
 
 ---
 
+
+## 📂 Project Structure
+
+<p align="center">
+  <img src="images/CHHOBI.png" alt="Project Structure" width="800">
+</p>
+
+---
 ## 🧩 Setup  
 
 ```bash
