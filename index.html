@@ -727,21 +727,42 @@ section{
 /* =========================
    EDUCATION SECTION
 ========================= */
+.education-section{
+  padding:100px 8%;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.education-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+}
+
+/* =========================
+   CARD BASE
+========================= */
 .education-card{
   perspective:1000px;
   cursor:pointer;
-  position:relative;
+
   width:320px;
-  height:320px;
-  transform-style:preserve-3d;
+  height:340px;
+
+  position:relative;
 }
 
-/* INNER */
+/* =========================
+   INNER FLIP WRAPPER
+========================= */
 .education-inner{
-  position:relative;
   width:100%;
   height:100%;
-  transition:transform 0.8s ease;
+  position:relative;
+
+  transition:transform 0.85s ease;
   transform-style:preserve-3d;
 }
 
@@ -750,19 +771,16 @@ section{
   transform:rotateY(180deg);
 }
 
-/* FRONT + BACK */
+/* =========================
+   FRONT + BACK COMMON STYLE
+========================= */
 .education-front,
 .education-back{
   position:absolute;
   inset:0;
 
-  border-radius:18px;
+  border-radius:20px;
   padding:28px 22px;
-
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-
-  backdrop-filter:blur(12px);
 
   display:flex;
   flex-direction:column;
@@ -770,22 +788,154 @@ section{
   align-items:center;
   text-align:center;
 
-  /* CRITICAL FIX */
+  /* GLASS + NEON THEME */
+  background:linear-gradient(
+    135deg,
+    rgba(0,212,255,0.08),
+    rgba(255,255,255,0.04)
+  );
+
+  border:1px solid rgba(0,212,255,0.15);
+
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+
+  box-shadow:
+    0 0 25px rgba(0,212,255,0.08),
+    inset 0 0 20px rgba(0,212,255,0.05);
+
   backface-visibility:hidden;
   -webkit-backface-visibility:hidden;
 }
 
-/* FRONT */
+/* =========================
+   FRONT SIDE
+========================= */
 .education-front{
   transform:rotateY(0deg);
-  z-index:2;
 }
 
-/* BACK */
+/* ICON */
+.edu-icon{
+  width:72px;
+  height:72px;
+
+  margin-bottom:18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  font-size:1.8rem;
+
+  color:#00d4ff;
+
+  background:rgba(0,212,255,0.1);
+
+  border:1px solid rgba(0,212,255,0.3);
+
+  box-shadow:0 0 18px rgba(0,212,255,0.25);
+}
+
+/* TEXT FRONT */
+.edu-content h3{
+  color:#00d4ff;
+  font-size:1.25rem;
+  margin-bottom:8px;
+
+  text-shadow:0 0 10px rgba(0,212,255,0.25);
+}
+
+.edu-content h4{
+  color:#ffffff;
+  font-size:1rem;
+  margin-bottom:10px;
+  font-weight:500;
+  opacity:0.9;
+}
+
+.edu-content span{
+  display:inline-block;
+  margin-bottom:15px;
+  color:#9ca3af;
+  font-size:0.9rem;
+}
+
+.edu-content p{
+  color:rgba(255,255,255,0.75);
+  line-height:1.6;
+  font-size:0.95rem;
+}
+
+/* =========================
+   BACK SIDE
+========================= */
 .education-back{
   transform:rotateY(180deg);
+
+  background:linear-gradient(
+    135deg,
+    rgba(0,0,0,0.25),
+    rgba(0,212,255,0.05)
+  );
 }
 
+/* BACK TITLE */
+.education-back h3{
+  color:#00d4ff;
+  margin-bottom:15px;
+  text-shadow:0 0 10px rgba(0,212,255,0.3);
+}
+
+/* LIST */
+.education-back ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.education-back li{
+  margin:10px 0;
+  color:rgba(255,255,255,0.85);
+  font-size:0.95rem;
+  position:relative;
+  padding-left:15px;
+}
+
+/* bullet */
+.education-back li::before{
+  content:"▹";
+  color:#00d4ff;
+  position:absolute;
+  left:0;
+}
+
+/* =========================
+   HOVER LIFT EFFECT (NO FLIP CONFLICT)
+========================= */
+.education-card:hover{
+  transform:translateY(-8px);
+  transition:0.3s ease;
+  box-shadow:0 0 30px rgba(0,212,255,0.18);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+
+  .education-card{
+    width:100%;
+    max-width:340px;
+    height:340px;
+  }
+
+  .education-container{
+    gap:25px;
+  }
+}
 
 .ml-modal{
   display:none;
