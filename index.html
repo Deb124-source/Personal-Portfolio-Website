@@ -723,52 +723,94 @@ section{
   font-size: 15px;
   letter-spacing: 1px;
 }
+
+/* =========================
+   EDUCATION SECTION
+========================= */
 .education-section{
   padding:100px 8%;
 }
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
 .education-container{
   display:flex;
   flex-wrap:wrap;
-
   justify-content:center;
-
   gap:20px;
 }
 
-/* CARD */
+/* =========================
+   CARD BASE (FLIP ENABLED)
+========================= */
 .education-card{
   width:320px;
+  height:320px;
 
-  background:rgba(255,255,255,0.05);
+  perspective:1000px;
 
-  border:1px solid rgba(255,255,255,0.1);
+  position:relative;
 
   border-radius:18px;
+}
+
+/* =========================
+   INNER FLIP WRAPPER
+========================= */
+.education-inner{
+  position:relative;
+  width:100%;
+  height:100%;
+
+  transition:transform 0.8s ease;
+  transform-style:preserve-3d;
+}
+
+/* FLIP ON HOVER */
+.education-card:hover .education-inner{
+  transform:rotateY(180deg);
+}
+
+/* =========================
+   FRONT + BACK COMMON STYLE
+========================= */
+.education-front,
+.education-back{
+  position:absolute;
+  inset:0;
 
   padding:28px 22px;
 
-  backdrop-filter:blur(12px);
+  border-radius:18px;
 
-  transition:0.3s ease;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
+  backface-visibility:hidden;
 
   text-align:center;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
 }
 
-/* HOVER */
-.education-card:hover{
-  transform:translateY(-8px);
-
-  box-shadow:0 0 25px rgba(0,212,255,0.18);
-}
+/* =========================
+   FRONT SIDE CONTENT
+========================= */
 
 /* ICON */
 .edu-icon{
   width:70px;
   height:70px;
 
-  margin:auto;
   margin-bottom:18px;
 
   display:flex;
@@ -780,52 +822,83 @@ section{
   font-size:1.8rem;
 
   background:rgba(0,212,255,0.12);
-
   border:1px solid rgba(0,212,255,0.25);
-
   color:#00d4ff;
 }
 
-/* DEGREE */
+/* TEXT CONTENT */
 .edu-content h3{
   color:#00d4ff;
-
   font-size:1.25rem;
-
   margin-bottom:8px;
 }
 
-/* STREAM */
 .edu-content h4{
   color:#ffffff;
-
   font-size:1rem;
-
   margin-bottom:10px;
-
   font-weight:500;
 }
 
-
 .edu-content span{
   display:inline-block;
-
   margin-bottom:15px;
-
   color:#9ca3af;
-
   font-size:0.9rem;
 }
 
-
 .edu-content p{
   color:rgba(255,255,255,0.75);
-
   line-height:1.6;
-
   font-size:0.95rem;
 }
 
+/* =========================
+   BACK SIDE
+========================= */
+.education-back{
+  transform:rotateY(180deg);
+  overflow-y:auto;
+}
+
+/* BACK TITLE */
+.education-back h3{
+  color:#00d4ff;
+  margin-bottom:15px;
+}
+
+/* BACK LIST */
+.education-back ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.education-back li{
+  margin:10px 0;
+  color:rgba(255,255,255,0.85);
+  font-size:0.95rem;
+  position:relative;
+  padding-left:15px;
+}
+
+/* bullet effect */
+.education-back li::before{
+  content:"•";
+  color:#00d4ff;
+  position:absolute;
+  left:0;
+}
+
+/* =========================
+   HOVER EFFECT (LIFT + GLOW)
+========================= */
+.education-card:hover{
+  transform:translateY(-8px);
+  transition:0.3s ease;
+  box-shadow:0 0 30px rgba(0,212,255,0.2);
+}
+  
 /* MOBILE */
 @media(max-width:768px){
   .education-card{
@@ -2476,44 +2549,79 @@ footer{
 
     <!-- CARD 1 -->
     <div class="education-card">
+  <div class="education-inner">
+
+    <!-- FRONT -->
+    <div class="education-front">
 
       <div class="edu-icon">🎓</div>
 
       <div class="edu-content">
         <h3>Bachelor of Technology</h3>
-
-        <h4>CSE(AI+ML)</h4>
-
+        <h4>CSE (AI + ML)</h4>
         <span>2024 - 2028</span>
 
         <p>
-          Pursuing B.Tech in CSE with focus on
-          AI, Machine Learning, Web Development
-          and Problem Solving.
+          Pursuing B.Tech in CSE with focus on AI,
+          Machine Learning, Web Development and Problem Solving.
         </p>
       </div>
 
     </div>
 
+    <!-- BACK -->
+    <div class="education-back">
+      <h3>Top Skills Learned</h3>
+
+      <ul>
+        <li>Data Structures & Algorithms</li>
+        <li>Python and Java Programming</li>
+        <li>Machine Learning Basics</li>
+        <li>Web Development (MERN)</li>
+        <li>Problem Solving</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
     <!-- CARD 2 -->
-    <div class="education-card">
+   <div class="education-card">
+  <div class="education-inner">
+
+    <!-- FRONT -->
+    <div class="education-front">
 
       <div class="edu-icon">🏫</div>
 
       <div class="edu-content">
         <h3>Higher Secondary</h3>
-
         <h4>Science Stream</h4>
-
         <span>2016 - 2024</span>
 
         <p>
-          Built strong foundations in core subjects like Mathematics,
-          Physics and strengthen my soft skills like Leadership skills and communication skills.
+          Built strong foundations in Mathematics, Physics,
+          and improved leadership & communication skills.
         </p>
       </div>
 
     </div>
+
+    <!-- BACK -->
+    <div class="education-back">
+      <h3>Key Learnings</h3>
+
+      <ul>
+        <li>Mathematics & Physics Fundamentals</li>
+        <li>Analytical Thinking</li>
+        <li>Problem Solving Skills</li>
+        <li>Communication Skills</li>
+        <li>Leadership & Teamwork</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
 
   </div>
 
