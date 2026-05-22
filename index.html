@@ -727,6 +727,9 @@ section{
 /* =========================
    EDUCATION SECTION
 ========================= */
+/* =========================
+   EDUCATION SECTION WRAPPER
+========================= */
 .education-section{
   padding:100px 8%;
 }
@@ -742,13 +745,14 @@ section{
 }
 
 /* =========================
-   CARD BASE (FLIP ENABLED)
+   CARD BASE
 ========================= */
 .education-card{
   perspective:1000px;
   cursor:pointer;
   position:relative;
   height:320px;
+  width:320px;
 }
 
 /* =========================
@@ -758,15 +762,15 @@ section{
   position:relative;
   width:100%;
   height:100%;
+
   transition:transform 0.8s ease;
   transform-style:preserve-3d;
 }
 
-/* CLICK STATE */
+/* CLICK FLIP */
 .education-card.flipped .education-inner{
   transform:rotateY(180deg);
 }
-
 
 /* =========================
    FRONT + BACK COMMON STYLE
@@ -789,6 +793,7 @@ section{
   box-shadow:0 10px 30px rgba(0,0,0,0.25);
 
   backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
 
   text-align:center;
 
@@ -799,10 +804,8 @@ section{
 }
 
 /* =========================
-   FRONT SIDE CONTENT
+   FRONT SIDE ICON
 ========================= */
-
-/* ICON */
 .edu-icon{
   width:70px;
   height:70px;
@@ -822,7 +825,9 @@ section{
   color:#00d4ff;
 }
 
-/* TEXT CONTENT */
+/* =========================
+   FRONT TEXT
+========================= */
 .edu-content h3{
   color:#00d4ff;
   font-size:1.25rem;
@@ -878,7 +883,7 @@ section{
   padding-left:15px;
 }
 
-/* bullet effect */
+/* bullet */
 .education-back li::before{
   content:"•";
   color:#00d4ff;
@@ -887,21 +892,34 @@ section{
 }
 
 /* =========================
-   HOVER EFFECT (LIFT + GLOW)
+   LIFT + GLOW EFFECT
 ========================= */
 .education-card:hover{
   transform:translateY(-8px);
   transition:0.3s ease;
   box-shadow:0 0 30px rgba(0,212,255,0.2);
 }
-  
-/* MOBILE */
-@media(max-width:768px){
-  .education-card{
-    flex-direction:column;
-    align-items:center;
 
-    text-align:center;
+/* =========================
+   IMPORTANT FIX (hover conflicts)
+========================= */
+.education-card:hover .education-inner{
+  transform: inherit;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+@media(max-width:768px){
+
+  .education-card{
+    width:100%;
+    max-width:340px;
+    height:340px;
+  }
+
+  .education-container{
+    gap:25px;
   }
 
 }
