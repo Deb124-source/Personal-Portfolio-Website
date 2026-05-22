@@ -227,7 +227,7 @@ nav ul{
 /* dropdown box */
 .dropdown-content {
   display: none;
-  position: absolute;
+  position: static;
 
   top: calc(100% + 10px);
   left: 0;
@@ -237,9 +237,9 @@ nav ul{
 
   border-radius: 10px;
 
-  z-index: 999999;   /* IMPORTANT */
+  z-index: 100000;
   overflow: visible;
-
+  margin-top:10px;
   box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
 
   backdrop-filter: blur(10px);
@@ -1981,6 +1981,11 @@ footer{
     width: 100%;
   }
 }
+nav,
+.nav-links,
+.dropdown{
+  overflow: visible !important;
+}
 </style>
 </head>
 
@@ -1993,7 +1998,7 @@ footer{
     <span></span>
     <span></span>
   </div>
-  <div class="nav-links">
+ <div class="nav-links" id="navLinks">
     <a href="#about">About Me</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
