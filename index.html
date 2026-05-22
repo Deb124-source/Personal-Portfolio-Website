@@ -861,6 +861,7 @@ section{
   box-shadow:0 0 40px rgba(0,212,255,0.15);
   color:white;
   animation:fadeIn 0.3s ease;
+  position: relative;
 }
 
 @keyframes fadeIn{
@@ -869,12 +870,21 @@ section{
 }
 
 .close-btn{
-  float:right;
-  font-size:22px;
-  cursor:pointer;
-  color:#00d4ff;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #00d4ff;
+  z-index: 1001;
+  transition: 0.3s ease;
 }
 
+.close-btn:hover{
+  transform: scale(1.2);
+  color: #38bdf8;
+}
+  
 .pipeline-flow{
   margin-top:20px;
   display:flex;
@@ -3063,8 +3073,15 @@ function openPipeline(project){
 function closePipeline(){
   document.getElementById("mlModal").style.display = "none";
 }
-</script>
 
+window.onclick = function(event) {
+  const modal = document.getElementById("mlModal");
+
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
 <div id="mlModal" class="ml-modal">
 
