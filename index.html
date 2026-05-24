@@ -3251,6 +3251,24 @@ document.querySelectorAll('.education-card').forEach(card => {
 });
 </script>
 
+  <script>
+const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const navItems = document.querySelectorAll(".nav-links a");
+
+  // Toggle menu
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  // Auto close after clicking any menu item
+  navItems.forEach(item => {
+    item.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+    });
+  });
+  </script>
+  
 <div id="mlModal" class="ml-modal">
 
   <div class="ml-modal-content">
