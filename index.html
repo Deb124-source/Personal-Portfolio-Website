@@ -115,55 +115,128 @@ nav ul{
   flex-wrap: nowrap;   /* prevents breaking weirdly */
 }
   
+/* HERO SECTION */
 
-/* HERO */
 #hero{
-  height:100vh;
+  min-height:100vh;
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
   align-items:center;
-  text-align:center;
-  flex-direction:column;
+
+  padding:0 8%;
+  gap:60px;
+}
+
+/* LEFT SIDE */
+
+.hero-left{
+  flex:1;
 }
 
 .hero-name{
   font-family:'Orbitron';
   font-size:4rem;
+  line-height:1.1;
+
   background:linear-gradient(90deg,#00d4ff,#b44fff,#00ffff);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
 .hero-subtitle{
-  margin-top:10px;
+  margin-top:18px;
   color:#7eb8d4;
   font-family:'Share Tech Mono';
+  font-size:1.3rem;
 }
 
-.profile-img{
+/* INFO TEXT */
+
+.hero-info{
   margin-top:30px;
 }
 
+.hero-info p{
+  margin:12px 0;
+  color:#d7e7ef;
+  font-size:1.05rem;
+}
+
+/* BUTTONS */
+
+.hero-buttons{
+  margin-top:35px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+
+  border:1px solid var(--neon-blue);
+  color:var(--neon-blue);
+
+  text-decoration:none;
+  border-radius:8px;
+
+  transition:0.3s ease;
+}
+
+.btn:hover{
+  background:var(--neon-blue);
+  color:#000;
+
+  box-shadow:0 0 20px var(--neon-blue);
+
+  transform:translateY(-2px);
+}
+
+/* RIGHT SIDE */
+
+.hero-right{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+/* PROFILE IMAGE */
+
 .profile-img img{
-  width:180px;
-  height:180px;
+  width:320px;
+  height:320px;
+
   border-radius:50%;
   object-fit:cover;
-  border:3px solid #00d4ff;
-  box-shadow:0 0 25px #00d4ff;
-  transition:0.3s;
+
+  border:4px solid #00d4ff;
+
+  box-shadow:
+    0 0 25px #00d4ff,
+    0 0 60px rgba(0,212,255,0.4);
+
+  transition:0.4s;
 }
 
 .profile-img img:hover{
   transform:scale(1.05);
-  box-shadow:0 0 40px #b44fff;
-    }
-    
+  box-shadow:
+    0 0 40px #b44fff,
+    0 0 80px rgba(180,79,255,0.5);
+}
+
+/* TYPING EFFECT */
+
 .typing{
   border-right:2px solid #00d4ff;
   white-space:nowrap;
   overflow:hidden;
-  animation:typing 4s steps(40) infinite alternate;
+  display:inline-block;
+
+  animation:
+    typing 4s steps(40) infinite alternate,
+    blinkCursor 0.8s infinite;
 }
 
 @keyframes typing{
@@ -171,36 +244,39 @@ nav ul{
   to{width:100%}
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-
-  border: 1px solid var(--neon-blue);
-  color: var(--neon-blue);
-
-  text-decoration: none;
-  border-radius: 6px;
-
-  transition: 0.3s ease;
+@keyframes blinkCursor{
+  50%{border-color:transparent;}
 }
 
-.typing-title {
-  animation: blink 0.8s infinite;
-}
+/* MOBILE RESPONSIVE */
 
-@keyframes blink {
-  50% { opacity: 0; }
-}
+@media(max-width:900px){
 
-
-/* hover */
-.btn:hover {
-  background: var(--neon-blue);
-  color: #000;
-  box-shadow: 0 0 20px var(--neon-blue);
-  transform: translateY(-2px);
+  #hero{
+    flex-direction:column-reverse;
+    text-align:center;
+    padding-top:120px;
   }
+
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .hero-name{
+    font-size:3rem;
+  }
+
+  .profile-img img{
+    width:230px;
+    height:230px;
+  }
+
+  .hero-subtitle{
+    white-space:normal;
+    border-right:none;
+    animation:none;
+  }
+}
 
 /* Dropdown container */
 .dropdown {
@@ -2032,22 +2108,34 @@ nav,
 <!-- HERO -->
 <section id="hero">
 
-  <h1 class="hero-name">Debdut Nandy</h1>
+  <div class="hero-left">
 
-  <p class="hero-subtitle typing">
-    AI/ML Developer • Data Driven Decision Maker • Tech Lover
-  </p>
-  <div class="profile-img">
-    <img src="images/Professional_Photograph.jpeg"
-         alt="Debdut Nandy"
-         class="clickable profile-img-click">
+    <h1 class="hero-name">
+      Debdut Nandy
+    </h1>
+
+    <p class="hero-subtitle typing">
+      Data Analyst • ML Enthusiast • Dashboard Developer
+    </p>
+
+    <div class="hero-info">
+      <p>📍 India</p>
+      <p>🎯 Seeking Data Analyst & ML Internship Opportunities</p>
+      <p>⚡ Building Data-Driven Products & Interactive Dashboards</p>
+    </div>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn hero-btn">
+        Explore My Work
+      </a>
   </div>
 
-  <!-- BUTTONS (you can keep single or expand later) -->
-  <div class="hero-buttons">
-    <a href="#projects" class="btn hero-btn">
-      Explore My Work
-    </a>
+  <div class="hero-right">
+    <div class="profile-img">
+      <img src="images/Professional_Photograph.jpeg"
+           alt="Debdut Nandy"
+           class="clickable profile-img-click">
+    </div>
   </div>
 
 </section>
