@@ -2221,6 +2221,28 @@ nav,
 </div>
   
   <div class="project-card">
+  <img src="images/IMG-20260526-WA0001.jpg" class="project-img clickable">
+       <div class="project-content">
+     <h2>Spamify</h2>
+        <p>AI-based system to detect spam emails.</p>
+
+     <h3>Problem</h3>
+        <p>Increasing number of fraud cases due to spam emails.</p>
+    
+     <h3>Solution</h3>
+        <p>Built a logistic regression based detection system with ~98% accuracy</p>
+
+        <a href="https://github.com/Deb124-source/Spam-Email-Classifier-Debdut-Nandy.git" target="_blank" class="proj-btn">
+    View Code
+        </a>
+         <button class="projects-btn pipeline-btn" onclick="openPipeline('email')">
+  View ML Pipeline
+</button>
+         
+  </div>
+  </div>
+  
+  <div class="project-card">
   <img src="images/Bank_Loan.jpg" class="project-img clickable">
        <div class="project-content">
      <h2>Bank Loan Approval System</h2>
@@ -3193,16 +3215,16 @@ function openPipeline(project){
     ];
   }
 
-  if(project === "loan"){
-    title.innerText = "Bank Loan Approval Pipeline";
+  if(project === "email"){
+    title.innerText = "Spam Email Classifier Pipeline";
 
     content = [
-      "User Application Data",
-      "Data Cleaning & Encoding",
-      "Classification Model (Logistic / RF)",
-      "Risk Scoring System",
-      "Approve / Reject Decision"
-    ];
+      "Email Text",
+      "Text Preprocessing",
+      "Count Vectorization",
+      "Multinomial Naive Bayes",
+      "Spam Prediction"
+      ];
   }
 
   if(project === "data"){
