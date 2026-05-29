@@ -1049,9 +1049,8 @@ section{
 
 .projects-container{
   display:grid;
-
   grid-template-columns:repeat(2, 1fr);
-
+  align-items:stretch;
   gap:35px;
 
   width:100%;
@@ -1062,11 +1061,7 @@ section{
 ========================= */
 
 .project-card{
-  width:100%;
-
-  min-height:720px; 
-
-  background:#0b1c2c;
+  background:linear-gradient(180deg,#0b1c2c,#071521);
 
   border-radius:22px;
 
@@ -1074,28 +1069,48 @@ section{
 
   transition:0.35s ease;
 
-  box-shadow:0 0 18px rgba(0,255,255,0.08);
-
   border:1px solid rgba(0,255,255,0.08);
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
 
   display:flex;
 
   flex-direction:column;
+
+  position:relative;
 }
 
-/* IMAGE */
+/* HOVER */
+.project-card:hover{
+  transform:translateY(-8px);
+
+  border-color:rgba(0,255,255,0.35);
+
+  box-shadow:0 15px 35px rgba(0,255,255,0.15);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
 .project-img{
   width:100%;
 
-  height:220px;   
-  object-fit:cover;
+  height:210px;
 
-  cursor:pointer;
+  object-fit:cover;
 
   transition:0.4s ease;
 }
 
-/* CONTENT */
+.project-card:hover .project-img{
+  transform:scale(1.04);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
 .project-content{
   padding:24px;
 
@@ -1103,187 +1118,112 @@ section{
 
   flex-direction:column;
 
-  align-items:center;
-
-  text-align:center;
+  gap:10px;
 
   flex:1;
 }
 
-/* TEXT */
-.project-content p{
-  font-size:0.97rem;
+/* TITLE */
+.project-content h2{
+  font-size:1.9rem;
 
-  line-height:1.65;
+  color:white;
 
-  color:#d4d4d4;
+  text-align:center;
 
-  margin-bottom:15px;
+  margin-bottom:5px;
 }
-  
-/* =========================
-   BADGES
-========================= */
 
-.badges{
-  display:flex;
+/* SUBTITLE */
+.project-content > p:first-of-type{
+  text-align:center;
 
-  flex-wrap:wrap;
+  color:#b8c5d1;
 
-  justify-content:center;
-
-  gap:10px;
+  font-size:0.98rem;
 
   margin-bottom:18px;
 }
 
-.badges span{
-  padding:8px 14px;
+/* HEADINGS */
+.project-content h3{
+  color:#00e6e6;
 
-  border-radius:30px;
+  font-size:1.1rem;
 
-  color:white;
+  margin-top:8px;
 
-  font-size:0.85rem;
-
-  font-weight:600;
+  margin-bottom:2px;
 }
 
-.badges span:nth-child(1){
-  background:#3776ab;
-}
+/* TEXT */
+.project-content p{
+  color:#d6d6d6;
 
-.badges span:nth-child(2){
-  background:#ff6b6b;
-}
+  line-height:1.6;
 
-.badges span:nth-child(3){
-  background:#10b981;
-}
-
-.badges span:nth-child(4){
-  background:#8b5cf6;
+  font-size:0.95rem;
 }
 
 /* =========================
-   BUTTON WRAPPER
+   BUTTONS
 ========================= */
 
-.projects-buttons{
-  display:flex;
-
-  gap:15px;
-
-  flex-wrap:wrap;
-
-  justify-content:center;
-
-  margin-top:15px;
-}
-
-/* =========================
-   MAIN CODE BUTTON
-========================= */
-
-.proj-btn{
-  display:inline-flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  padding:12px 24px;
-
-  border:none;
-
-  border-radius:10px;
-
-  background:#00e6e6;
-
-  color:#04111f;
-
-  text-decoration:none;
-
-  font-weight:700;
-
-  transition:0.3s ease;
-
-  cursor:pointer;
-
-  margin-top:10px;
-}
-
-/* HOVER */
-.proj-btn:hover{
-  background:white;
-
-  transform:translateY(-3px);
-
-  box-shadow:0 0 18px rgba(255,255,255,0.35);
-}
-
-/* =========================
-   COMMON BUTTON STYLE
-========================= */
-
+.proj-btn,
 .projects-btn{
-  padding:12px 26px;
+  width:fit-content;
 
-  border-radius:10px;
-
-  border:1px solid #00d4ff;
-
-  background:transparent;
-
-  color:#00d4ff;
-
-  text-decoration:none;
-
-  font-weight:600;
-
-  display:inline-flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  transition:0.3s ease;
-
-  cursor:pointer;
+  align-self:center;
 
   margin-top:12px;
 }
 
-/* COMMON HOVER */
-.projects-btn:hover{
-  background:#00d4ff;
+/* MAIN BUTTON */
+.proj-btn{
+  padding:12px 28px;
 
-  color:#0b0f1a;
+  border-radius:12px;
 
+  background:#11dce8;
+
+  color:#04111f;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  transition:0.3s ease;
+}
+
+.proj-btn:hover{
   transform:translateY(-3px);
 
-  box-shadow:0 0 18px rgba(0,212,255,0.45);
+  background:white;
 }
 
-/* =========================
-   PIPELINE BUTTON
-========================= */
-
+/* PIPELINE BUTTON */
 .pipeline-btn{
+  padding:11px 24px;
+
+  border-radius:12px;
+
   border:1px solid #8b5cf6;
 
-  color:#8b5cf6;
+  color:#a78bfa;
 
   background:transparent;
+
+  font-weight:600;
+
+  transition:0.3s ease;
 }
 
-/* PIPELINE HOVER */
 .pipeline-btn:hover{
   background:#8b5cf6;
 
-  color:#0b0f1a;
+  color:white;
 
-  box-shadow:0 0 18px rgba(139,92,246,0.45);
+  transform:translateY(-3px);
 }
 
 /* =========================
