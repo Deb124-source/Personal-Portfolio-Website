@@ -1064,6 +1064,8 @@ section{
 .project-card{
   width:100%;
 
+  min-height:720px; 
+
   background:#0b1c2c;
 
   border-radius:22px;
@@ -1076,25 +1078,16 @@ section{
 
   border:1px solid rgba(0,255,255,0.08);
 
-  position:relative;
+  display:flex;
+
+  flex-direction:column;
 }
 
-/* HOVER EFFECT */
-.project-card:hover{
-  transform:translateY(-10px) scale(1.01);
-
-  box-shadow:0 0 28px rgba(0,255,255,0.28);
-}
-
-/* =========================
-   PROJECT IMAGE
-========================= */
-
+/* IMAGE */
 .project-img{
   width:100%;
 
-  height:280px;
-
+  height:220px;   
   object-fit:cover;
 
   cursor:pointer;
@@ -1102,16 +1095,9 @@ section{
   transition:0.4s ease;
 }
 
-.project-card:hover .project-img{
-  transform:scale(1.03);
-}
-
-/* =========================
-   PROJECT CONTENT
-========================= */
-
+/* CONTENT */
 .project-content{
-  padding:28px;
+  padding:24px;
 
   display:flex;
 
@@ -1120,41 +1106,21 @@ section{
   align-items:center;
 
   text-align:center;
+
+  flex:1;
 }
 
-/* PROJECT TITLE */
-.project-content h2{
-  font-size:2rem;
-
-  line-height:1.3;
-
-  color:white;
-
-  margin-bottom:18px;
-}
-
-/* SUBHEADINGS */
-.project-content h3{
-  color:#00e6e6;
-
-  font-size:1.35rem;
-
-  margin-top:10px;
-
-  margin-bottom:10px;
-}
-
-/* PARAGRAPHS */
+/* TEXT */
 .project-content p{
-  font-size:1rem;
+  font-size:0.97rem;
 
-  line-height:1.8;
+  line-height:1.65;
 
   color:#d4d4d4;
 
-  margin-bottom:18px;
+  margin-bottom:15px;
 }
-
+  
 /* =========================
    BADGES
 ========================= */
