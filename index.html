@@ -1306,7 +1306,33 @@ section{
 }
   
 /* =========================
-   CERTIFICATE CONTAINER
+   CERTIFICATES SECTION
+========================= */
+
+#certificates{
+  padding:80px 8%;
+
+  background:#050b14;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+  text-align:center;
+
+  font-size:3rem;
+
+  font-weight:700;
+
+  color:#00e6e6;
+
+  margin-bottom:55px;
+}
+
+/* =========================
+   CERTIFICATE GRID
 ========================= */
 
 .cert-container{
@@ -1314,11 +1340,9 @@ section{
 
   grid-template-columns:repeat(2, 1fr);
 
-  gap:35px;
+  gap:30px;
 
-  width:100%;
-
-  margin-top:30px;
+  align-items:stretch;
 }
 
 /* =========================
@@ -1332,13 +1356,21 @@ section{
 
   overflow:hidden;
 
-  transition:0.35s ease;
-
   border:1px solid rgba(0,212,255,0.08);
+
+  transition:0.35s ease;
 
   box-shadow:0 10px 30px rgba(0,0,0,0.35);
 
   padding:22px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  text-align:center;
 }
 
 /* HOVER */
@@ -1357,52 +1389,50 @@ section{
 .cert-img{
   width:100%;
 
-  height:220px;
+  height:240px;
 
   object-fit:cover;
 
   border-radius:18px;
 
-  margin-bottom:20px;
-
   transition:0.4s ease;
 
-  border:1px solid rgba(255,255,255,0.05);
+  margin-bottom:22px;
 
   box-shadow:0 8px 22px rgba(0,0,0,0.25);
 }
 
 /* IMAGE HOVER */
-.cert-img:hover{
+.cert-container .card:hover .cert-img{
   transform:scale(1.03);
-
-  box-shadow:0 12px 28px rgba(0,212,255,0.35);
-
-  border-color:rgba(0,212,255,0.35);
 }
 
 /* =========================
-   CARD CONTENT
+   TITLE
 ========================= */
 
 .cert-container .card h3{
+  font-size:1.9rem;
+
   color:white;
 
-  font-size:1.4rem;
+  line-height:1.35;
 
-  margin-bottom:12px;
-
-  text-align:center;
+  margin-bottom:14px;
 }
+
+/* =========================
+   DESCRIPTION
+========================= */
 
 .cert-container .card p{
   color:#cfd8e3;
 
+  font-size:1rem;
+
   line-height:1.7;
 
-  font-size:0.96rem;
-
-  text-align:center;
+  max-width:90%;
 }
 
 /* =========================
@@ -1418,8 +1448,16 @@ section{
 
 @media(max-width:600px){
 
+  #certificates{
+    padding:70px 5%;
+  }
+
+  .section-title{
+    font-size:2.2rem;
+  }
+
   .cert-img{
-    height:200px;
+    height:210px;
   }
 
   .cert-container .card{
@@ -1427,10 +1465,13 @@ section{
   }
 
   .cert-container .card h3{
-    font-size:1.2rem;
+    font-size:1.45rem;
+  }
+
+  .cert-container .card p{
+    font-size:0.94rem;
   }
 }
-
 
 
 /* =========================
