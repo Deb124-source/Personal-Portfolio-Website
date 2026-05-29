@@ -1305,126 +1305,331 @@ section{
   }
 }
   
-  .cert-img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:10px;
-  margin-bottom:15px;
-  transition:0.3s;
-}
+/* =========================
+   CERTIFICATE CONTAINER
+========================= */
 
 .cert-container{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  padding:20px;
-  scroll-behavior:smooth;
+  display:grid;
+
+  grid-template-columns:repeat(2, 1fr);
+
+  gap:35px;
+
+  width:100%;
+
+  margin-top:30px;
 }
 
-.cert-container::-webkit-scrollbar{
-  display:none;
-}
+/* =========================
+   CERTIFICATE CARD
+========================= */
 
 .cert-container .card{
-  min-width:300px;
-  flex-shrink:0;
+  background:linear-gradient(180deg,#0b1c2c,#071521);
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+
+  border:1px solid rgba(0,212,255,0.08);
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+  padding:22px;
 }
+
+/* HOVER */
+.cert-container .card:hover{
+  transform:translateY(-8px);
+
+  border-color:rgba(0,212,255,0.35);
+
+  box-shadow:0 15px 35px rgba(0,212,255,0.18);
+}
+
+/* =========================
+   CERTIFICATE IMAGE
+========================= */
+
+.cert-img{
+  width:100%;
+
+  height:220px;
+
+  object-fit:cover;
+
+  border-radius:18px;
+
+  margin-bottom:20px;
+
+  transition:0.4s ease;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
+}
+
+/* IMAGE HOVER */
 .cert-img:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #00d4ff;
+  transform:scale(1.03);
+
+  box-shadow:0 12px 28px rgba(0,212,255,0.35);
+
+  border-color:rgba(0,212,255,0.35);
 }
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.cert-container .card h3{
+  color:white;
+
+  font-size:1.4rem;
+
+  margin-bottom:12px;
+
+  text-align:center;
+}
+
+.cert-container .card p{
+  color:#cfd8e3;
+
+  line-height:1.7;
+
+  font-size:0.96rem;
+
+  text-align:center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+  .cert-container{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  .cert-img{
+    height:200px;
+  }
+
+  .cert-container .card{
+    padding:18px;
+  }
+
+  .cert-container .card h3{
+    font-size:1.2rem;
+  }
+}
+
+
+
+/* =========================
+   EXPERIENCE IMAGE
+========================= */
 
 .exp-img{
   width:100%;
-  height:200px;
+
+  height:220px;
+
   object-fit:cover;
-  border-radius:10px;
-  margin-bottom:15px;
-  transition:0.3s;
+
+  border-radius:18px;
+
+  margin-bottom:18px;
+
+  transition:0.4s ease;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  box-shadow:0 8px 22px rgba(0,0,0,0.25);
 }
 
+/* HOVER EFFECT */
 .exp-img:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #b44fff;
-}
+  transform:scale(1.03);
 
+  box-shadow:0 12px 28px rgba(180,79,255,0.35);
+
+  border-color:rgba(180,79,255,0.35);
+}
   
   .card:hover{
   transform:translateY(-10px);
   box-shadow:0 0 30px var(--neon-purple);
 }
 
-  .events-section {
-  padding: 60px 20px;
-  text-align: center;
+/* =========================
+   EVENTS SECTION
+========================= */
+
+#events-section{
+  padding:80px 8%;
+
+  background:#050b14;
+
+  text-align:center;
 }
 
-.section-title {
-  font-size: 32px;
-  margin-bottom: 40px;
-  color: #00e6e6;
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+  font-size:3rem;
+
+  margin-bottom:60px;
+
+  color:#00e6e6;
+
+  font-weight:700;
 }
+
+/* =========================
+   EVENTS GRID
+========================= */
 
 .events-container{
+  display:grid;
+
+  grid-template-columns:repeat(2, 1fr);
+
+  gap:35px;
+
+  width:100%;
+}
+
+/* =========================
+   EVENT CARD
+========================= */
+
+.event-card{
+  width:100%;
+
+  background:linear-gradient(180deg,#0b1c2c,#071521);
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+
+  border:1px solid rgba(0,255,255,0.08);
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+  position:relative;
+}
+
+/* HOVER */
+.event-card:hover{
+  transform:translateY(-8px);
+
+  border-color:rgba(0,255,255,0.35);
+
+  box-shadow:0 15px 35px rgba(0,255,255,0.18);
+}
+
+/* =========================
+   EVENT IMAGE
+========================= */
+
+.event-img{
+  width:100%;
+
+  height:230px;
+
+  object-fit:cover;
+
+  transition:0.4s ease;
+}
+
+.event-card:hover .event-img{
+  transform:scale(1.04);
+}
+
+/* =========================
+   EVENT CONTENT
+========================= */
+
+.event-content{
+  padding:24px;
+
   display:flex;
-  gap:20px;
-  overflow-x:auto;
-  padding:20px;
-  scroll-behavior:smooth;
+
+  flex-direction:column;
+
+  gap:10px;
+
+  text-align:center;
 }
 
-.events-container::-webkit-scrollbar{
-  display:none;
+/* TITLE */
+.event-content h3{
+  color:white;
+
+  font-size:1.7rem;
+
+  margin-bottom:8px;
 }
 
-.event-card{
-  min-width:300px;
-  flex-shrink:0;
+/* TEXT */
+.event-content p{
+  color:#d6d6d6;
+
+  line-height:1.7;
+
+  font-size:0.97rem;
 }
 
-.events-container{
-  scroll-snap-type:x mandatory;
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+  .events-container{
+    grid-template-columns:1fr;
+  }
 }
 
-.event-card{
-  scroll-snap-align:start;
-}
+@media(max-width:600px){
 
-.event-card {
-  width: 280px;
-  background: #0b1c2c;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: 0.3s ease;
-  box-shadow: 0 0 15px rgba(0,255,255,0.1);
-}
+  #events-section{
+    padding:70px 5%;
+  }
 
-.event-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0,255,255,0.4);
-}
+  .section-title{
+    font-size:2.2rem;
+  }
 
-.event-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
+  .event-img{
+    height:210px;
+  }
 
-.event-content {
-  padding: 15px;
-}
+  .event-content{
+    padding:20px;
+  }
 
-.event-content h3 {
-  margin-bottom: 10px;
-  color: #00e6e6;
-}
+  .event-content h3{
+    font-size:1.4rem;
+  }
 
-.event-content p {
-  font-size: 14px;
-  margin-bottom: 15px;
+  .event-content p{
+    font-size:0.93rem;
+  }
 }
-
+  
 .view-btn {
   padding: 8px 15px;
   border: none;
