@@ -3656,17 +3656,17 @@ function openPipeline(project){
     ];
   }
 
-  if(project === "truth"){
-    title.innerText = "Truthenix Model Pipeline";
+if(project === "truth"){
+  title.innerText = "Truthenix Model Pipeline";
 
-    content = [
-      "News Text",
-      "Text Preprocessing",
-      "CountVectorization,
-      "PassiveAgressiveClassifier",
-      "Fake/Real News Prediction"
-    ];
-  }
+  content = [
+    "News Text",
+    "Text Preprocessing",
+    "CountVectorization",
+    "PassiveAggressiveClassifier",
+    "Fake/Real News Prediction"
+  ];
+}
 
   flow.innerHTML = "";
 
