@@ -1331,10 +1331,11 @@ section{
 ========================= */
 
 .cert-container{
-  display:flex;
-  justify-content:center;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(380px, 1fr));
   gap:35px;
-  flex-wrap:wrap;
+  max-width:1200px;
+  margin:0 auto;
 }
 
 /* =========================
@@ -1342,7 +1343,7 @@ section{
 ========================= */
 
 .cert-container .card{
-  width:420px;
+  width:100%;
   min-height:620px;
 
   background:linear-gradient(
@@ -1356,19 +1357,19 @@ section{
 
   border:1px solid rgba(0,212,255,0.10);
 
-  transition:0.4s ease;
-
-  box-shadow:0 8px 25px rgba(0,0,0,0.30);
-
-  padding:22px;
+  padding:24px;
 
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
+
+  transition:0.4s ease;
+
+  box-shadow:0 8px 25px rgba(0,0,0,0.30);
 }
 
-/* HOVER */
+/* CARD HOVER */
 
 .cert-container .card:hover{
   transform:translateY(-10px);
@@ -1392,11 +1393,17 @@ section{
 
   transition:0.4s ease;
 
+  border:1px solid rgba(255,255,255,0.05);
+
   box-shadow:0 8px 22px rgba(0,0,0,0.25);
 }
 
+/* IMAGE HOVER */
+
 .cert-container .card:hover .cert-img{
   transform:scale(1.03);
+
+  box-shadow:0 12px 28px rgba(0,212,255,0.25);
 }
 
 /* =========================
@@ -1404,11 +1411,15 @@ section{
 ========================= */
 
 .cert-container .card h3{
+  color:#ffffff;
+
   font-size:2rem;
-  color:#fff;
-  line-height:1.3;
-  margin-bottom:18px;
+
   font-weight:700;
+
+  line-height:1.3;
+
+  margin-bottom:18px;
 }
 
 /* =========================
@@ -1417,8 +1428,11 @@ section{
 
 .cert-container .card p{
   color:#cfd8e3;
+
   font-size:1.05rem;
+
   line-height:1.8;
+
   max-width:95%;
 }
 
@@ -1429,32 +1443,34 @@ section{
 @media(max-width:900px){
 
   .cert-container{
-    flex-direction:column;
-    align-items:center;
-  }
-
-  .cert-container .card{
-    width:100%;
-    max-width:450px;
-  }
-}
-
-@media(max-width:600px){
-
-  .section-title{
-    font-size:2.3rem;
+    grid-template-columns:1fr;
   }
 
   .cert-container .card{
     min-height:auto;
   }
+}
+
+@media(max-width:600px){
+
+  #certificates{
+    padding:70px 5%;
+  }
+
+  .section-title{
+    font-size:2.2rem;
+  }
 
   .cert-img{
-    height:260px;
+    height:250px;
   }
 
   .cert-container .card h3{
     font-size:1.6rem;
+  }
+
+  .cert-container .card p{
+    font-size:0.95rem;
   }
 }
   
