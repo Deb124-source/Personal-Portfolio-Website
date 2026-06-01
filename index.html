@@ -1311,7 +1311,6 @@ section{
 
 #certificates{
   padding:80px 8%;
-
   background:#050b14;
 }
 
@@ -1321,13 +1320,9 @@ section{
 
 .section-title{
   text-align:center;
-
   font-size:3rem;
-
   font-weight:700;
-
   color:#00e6e6;
-
   margin-bottom:55px;
 }
 
@@ -1336,13 +1331,10 @@ section{
 ========================= */
 
 .cert-container{
-  display:grid;
-
-  grid-template-columns:repeat(2, 1fr);
-
-  gap:30px;
-
-  align-items:stretch;
+  display:flex;
+  justify-content:center;
+  gap:35px;
+  flex-wrap:wrap;
 }
 
 /* =========================
@@ -1350,36 +1342,38 @@ section{
 ========================= */
 
 .cert-container .card{
-  background:linear-gradient(180deg,#0b1c2c,#071521);
+  width:420px;
+  min-height:620px;
 
-  border-radius:22px;
+  background:linear-gradient(
+      180deg,
+      rgba(4,20,40,0.95),
+      rgba(2,12,24,0.95)
+  );
 
+  border-radius:24px;
   overflow:hidden;
 
-  border:1px solid rgba(0,212,255,0.08);
+  border:1px solid rgba(0,212,255,0.10);
 
-  transition:0.35s ease;
+  transition:0.4s ease;
 
-  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  box-shadow:0 8px 25px rgba(0,0,0,0.30);
 
   padding:22px;
 
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
-
   text-align:center;
 }
 
 /* HOVER */
+
 .cert-container .card:hover{
-  transform:translateY(-8px);
-
+  transform:translateY(-10px);
   border-color:rgba(0,212,255,0.35);
-
-  box-shadow:0 15px 35px rgba(0,212,255,0.18);
+  box-shadow:0 0 30px rgba(0,212,255,0.25);
 }
 
 /* =========================
@@ -1388,21 +1382,19 @@ section{
 
 .cert-img{
   width:100%;
-
-  height:240px;
+  height:300px;
 
   object-fit:cover;
 
   border-radius:18px;
 
-  transition:0.4s ease;
+  margin-bottom:24px;
 
-  margin-bottom:22px;
+  transition:0.4s ease;
 
   box-shadow:0 8px 22px rgba(0,0,0,0.25);
 }
 
-/* IMAGE HOVER */
 .cert-container .card:hover .cert-img{
   transform:scale(1.03);
 }
@@ -1412,13 +1404,11 @@ section{
 ========================= */
 
 .cert-container .card h3{
-  font-size:1.9rem;
-
-  color:white;
-
-  line-height:1.35;
-
-  margin-bottom:14px;
+  font-size:2rem;
+  color:#fff;
+  line-height:1.3;
+  margin-bottom:18px;
+  font-weight:700;
 }
 
 /* =========================
@@ -1427,53 +1417,47 @@ section{
 
 .cert-container .card p{
   color:#cfd8e3;
-
-  font-size:1rem;
-
-  line-height:1.7;
-
-  max-width:90%;
+  font-size:1.05rem;
+  line-height:1.8;
+  max-width:95%;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 
-@media(max-width:950px){
+@media(max-width:900px){
 
   .cert-container{
-    grid-template-columns:1fr;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .cert-container .card{
+    width:100%;
+    max-width:450px;
   }
 }
 
 @media(max-width:600px){
 
-  #certificates{
-    padding:70px 5%;
-  }
-
   .section-title{
-    font-size:2.2rem;
-  }
-
-  .cert-img{
-    height:210px;
+    font-size:2.3rem;
   }
 
   .cert-container .card{
-    padding:18px;
+    min-height:auto;
+  }
+
+  .cert-img{
+    height:260px;
   }
 
   .cert-container .card h3{
-    font-size:1.45rem;
-  }
-
-  .cert-container .card p{
-    font-size:0.94rem;
+    font-size:1.6rem;
   }
 }
-
-
+  
 /* =========================
    EXPERIENCE IMAGE
 ========================= */
