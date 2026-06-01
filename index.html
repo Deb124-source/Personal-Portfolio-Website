@@ -2647,21 +2647,21 @@ nav,
   </div>
   
   <div class="project-card">
-  <img src="images/Bank_Loan.jpg" class="project-img clickable">
+  <img src="images/Screenshot 2026-05-28 092120.png" class="project-img clickable">
        <div class="project-content">
-     <h2>Bank Loan Approval System</h2>
-        <p>AI-based system to predict eligibility for Bank Loan.</p>
+     <h2>Truthenix</h2>
+        <p>AI-based system to detect fake/real news</p>
 
     <h3>Problem</h3>
-        <p>Manual loan approval is slow, inconsistent, and biased.</p>
+        <p>It has become a serious problem to discriminate real news and fake news.</p>
 
     <h3>Solution</h3>
-        <p>Built a classification model using ML algorithms like Random Forest and Logistic Regression.</p>
+        <p>Truthenix uses ML techniques to classify news with ~93% accuracy</p>
 
-  <a href="https://github.com/Deb124-source/Bank-Loan-Approval-System-ML.git" target="_blank" class="proj-btn">
+  <a href="https://github.com/Deb124-source/Truthenix-AI-Debdut-Nandy.git" target="_blank" class="proj-btn">
     View Code
   </a>
-      <button class="projects-btn pipeline-btn" onclick="openPipeline('loan')">
+      <button class="projects-btn pipeline-btn" onclick="openPipeline('truth')">
   View ML Pipeline
 </button>
        </div> 
@@ -3653,6 +3653,18 @@ function openPipeline(project){
       "Exploratory Data Analysis",
       "Visualizations",
       "Insight Extraction"
+    ];
+  }
+
+  if(project === "truth"){
+    title.innerText = "Truthenix Model Pipeline";
+
+    content = [
+      "News Text",
+      "Text Preprocessing",
+      "CountVectorization,
+      "PassiveAgressiveClassifier",
+      "Fake/Real News Prediction"
     ];
   }
 
