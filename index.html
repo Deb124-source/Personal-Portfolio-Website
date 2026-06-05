@@ -1047,262 +1047,31 @@ section{
    PROJECT GRID
 ========================= */
 
-.projects-container{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  align-items:stretch;
-  gap:35px;
+/* =========================
+   PROJECT CATEGORIES
+========================= */
 
+.project-category{
   width:100%;
+  margin-bottom:70px;
 }
 
-/* =========================
-   PROJECT CARD
-========================= */
-
-.project-card{
-  background:linear-gradient(180deg,#0b1c2c,#071521);
-
-  border-radius:22px;
-
-  overflow:hidden;
-
-  transition:0.35s ease;
-
-  border:1px solid rgba(0,255,255,0.08);
-
-  box-shadow:0 10px 30px rgba(0,0,0,0.35);
-
-  display:flex;
-
-  flex-direction:column;
-
-  position:relative;
-}
-
-/* HOVER */
-.project-card:hover{
-  transform:translateY(-8px);
-
-  border-color:rgba(0,255,255,0.35);
-
-  box-shadow:0 15px 35px rgba(0,255,255,0.15);
-}
-
-/* =========================
-   IMAGE
-========================= */
-
-.project-img{
-  width:100%;
-
-  height:210px;
-
-  object-fit:cover;
-
-  transition:0.4s ease;
-}
-
-.project-card:hover .project-img{
-  transform:scale(1.04);
-}
-
-/* =========================
-   CONTENT
-========================= */
-
-.project-content{
-  padding:24px;
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:10px;
-
-  flex:1;
-}
-
-/* TITLE */
-.project-content h2{
-  font-size:1.9rem;
-
-  color:white;
-
-  text-align:center;
-
-  margin-bottom:5px;
-}
-
-/* SUBTITLE */
-.project-content > p:first-of-type{
-  text-align:center;
-
-  color:#b8c5d1;
-
-  font-size:0.98rem;
-
-  margin-bottom:18px;
-}
-
-/* HEADINGS */
-.project-content h3{
-  color:#00e6e6;
-
-  font-size:1.1rem;
-
-  margin-top:8px;
-
-  margin-bottom:2px;
-}
-
-/* TEXT */
-.project-content p{
-  color:#d6d6d6;
-
-  line-height:1.6;
-
-  font-size:0.95rem;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.proj-btn,
-.projects-btn{
-  width:fit-content;
-
-  align-self:center;
-
-  margin-top:12px;
-}
-
-/* MAIN BUTTON */
-.proj-btn{
-  padding:12px 28px;
-
-  border-radius:12px;
-
-  background:#11dce8;
-
-  color:#04111f;
-
+.category-title{
+  font-size:2rem;
   font-weight:700;
-
-  text-decoration:none;
-
-  transition:0.3s ease;
+  color:#00e6e6;
+  margin-bottom:30px;
+  padding-left:10px;
+  border-left:5px solid #00e6e6;
 }
-
-.proj-btn:hover{
-  transform:translateY(-3px);
-
-  background:white;
-}
-
-/* PIPELINE BUTTON */
-.pipeline-btn{
-  padding:11px 24px;
-
-  border-radius:12px;
-
-  border:1px solid #8b5cf6;
-
-  color:#a78bfa;
-
-  background:transparent;
-
-  font-weight:600;
-
-  transition:0.3s ease;
-}
-
-.pipeline-btn:hover{
-  background:#8b5cf6;
-
-  color:white;
-
-  transform:translateY(-3px);
-}
-
-/* =========================
-   VIEW ALL BUTTON CONTAINER
-========================= */
-
-.projects-btn-container{
-  width:100%;
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  margin-top:60px;
-}
-
-/* =========================
-   RESPONSIVE TABLET
-========================= */
-
-@media(max-width:1100px){
-
-  .projects-container{
-    grid-template-columns:1fr;
-  }
-
-  .project-img{
-    height:240px;
-  }
-
-  .project-content h2{
-    font-size:1.8rem;
-  }
-}
-
-/* =========================
-   RESPONSIVE MOBILE
-========================= */
 
 @media(max-width:600px){
 
-  #projects{
-    padding:70px 5%;
-  }
-
-  .section-title{
-    font-size:2.2rem;
-  }
-
-  .projects-container{
-    gap:25px;
-  }
-
-  .project-content{
-    padding:22px;
-  }
-
-  .project-content h2{
+  .category-title{
     font-size:1.5rem;
+    margin-bottom:25px;
   }
 
-  .project-content h3{
-    font-size:1.15rem;
-  }
-
-  .project-content p{
-    font-size:0.95rem;
-  }
-
-  .project-img{
-    height:210px;
-  }
-
-  .proj-btn,
-  .projects-btn{
-    width:100%;
-  }
 }
   
 /* =========================
@@ -2576,153 +2345,303 @@ nav,
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2 class="section-title">Projects</h2>
+
+<h2 class="section-title">Projects</h2>
+
+<!-- =========================
+     MACHINE LEARNING
+========================= -->
+
+<div class="project-category">
+
+<h3 class="category-title">🤖 Machine Learning & AI</h3>
 
 <div class="projects-container">
-  
+
+  <!-- Helmet -->
   <div class="project-card">
-  <img src="images/Helmet_detection.jpg" class="project-img clickable">
-       <div class="project-content">
-     <h2>Helmet Detection System</h2>
-        <p>AI-based system to detect helmet usage in real-time traffic surveillance.</p>
 
-     <h3>Problem</h3>
-        <p>Road accidents due to no helmet usage.</p>
-    
-     <h3>Solution</h3>
-        <p>Built a deep learning-based detection system using YOLO/CNN.</p>
+    <img src="images/Helmet_detection.jpg" class="project-img clickable">
 
-        <a href="https://github.com/Deb124-source/AICTE_Edunet_Shell_Bike_Helmet_Detection_using_yolov8n_Debdut_Nandy" target="_blank" class="proj-btn">
-    View Code
-        </a>
-         <button class="projects-btn pipeline-btn" onclick="openPipeline('helmet')">
-  View ML Pipeline
-</button>
-         
+    <div class="project-content">
+
+      <h2>Helmet Detection System</h2>
+
+      <p>AI-based system to detect helmet usage in real-time traffic surveillance.</p>
+
+      <h3>Problem</h3>
+
+      <p>Road accidents due to no helmet usage.</p>
+
+      <h3>Solution</h3>
+
+      <p>Built a deep learning-based detection system using YOLO/CNN.</p>
+
+      <a href="https://github.com/Deb124-source/AICTE_Edunet_Shell_Bike_Helmet_Detection_using_yolov8n_Debdut_Nandy" target="_blank" class="proj-btn">
+        View Code
+      </a>
+
+      <button class="projects-btn pipeline-btn" onclick="openPipeline('helmet')">
+        View ML Pipeline
+      </button>
+
+    </div>
   </div>
+
+  <!-- House Price -->
+  <div class="project-card">
+
+    <img src="images/demo_prediction.png" class="project-img clickable">
+
+    <div class="project-content">
+
+      <h2>House Price Prediction System</h2>
+
+      <p>Built a ML model to predict House price of Bengalore, using Linear Regression.</p>
+
+      <h3>Problem</h3>
+
+      <p>Estimating house prices manually is time-consuming and often inaccurate.</p>
+
+      <h3>Solution</h3>
+
+      <p>Built a machine learning web app that predicts property prices instantly based on user inputs.</p>
+
+      <a href="https://github.com/Deb124-source/House-Price-Prediction-System-Debdut-Nandy.git" target="_blank" class="proj-btn">
+        View Code
+      </a>
+
+      <button class="projects-btn pipeline-btn" onclick="openPipeline('house')">
+        View ML Pipeline
+      </button>
+
+    </div>
   </div>
 
-   <div class="project-card">
-  <img src="images/demo_prediction.png" class="project-img clickable">  
-        <div class="project-content">
-  <h2>House Price Prediction System</h2>
-     <p>Built a ML model to predict House price of Bengalore, using Linear Regression.</p>
+  <!-- Spamify -->
+  <div class="project-card">
 
-  <h3>Problem</h3>
-     <p>Estimating house prices manually is time-consuming and often inaccurate.</p>
+    <img src="images/IMG-20260526-WA0001.jpg" class="project-img clickable">
 
-  <h3>Solution</h3>
-     <p>Built a machine learning web app that predicts property prices instantly based on user inputs.</p>
+    <div class="project-content">
 
-  <a href="https://github.com/Deb124-source/House-Price-Prediction-System-Debdut-Nandy.git" target="_blank" class="proj-btn">
-    View Code
-  </a>
-<button class="projects-btn pipeline-btn" onclick="openPipeline('house')">
-  View ML Pipeline
-</button>
-          
-   </div>
+      <h2>Spamify</h2>
+
+      <p>AI-based system to detect spam emails.</p>
+
+      <h3>Problem</h3>
+
+      <p>Increasing number of fraud cases due to spam emails.</p>
+
+      <h3>Solution</h3>
+
+      <p>Built a logistic regression based detection system with ~98% accuracy</p>
+
+      <a href="https://github.com/Deb124-source/Spam-Email-Classifier-Debdut-Nandy.git" target="_blank" class="proj-btn">
+        View Code
+      </a>
+
+      <button class="projects-btn pipeline-btn" onclick="openPipeline('email')">
+        View ML Pipeline
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Truthenix -->
+  <div class="project-card">
+
+    <img src="images/Screenshot 2026-05-28 092120.png" class="project-img clickable">
+
+    <div class="project-content">
+
+      <h2>Truthenix</h2>
+
+      <p>AI-based system to detect fake/real news</p>
+
+      <h3>Problem</h3>
+
+      <p>It has become a serious problem to discriminate real news and fake news.</p>
+
+      <h3>Solution</h3>
+
+      <p>Truthenix uses ML techniques to classify news with ~93% accuracy</p>
+
+      <a href="https://github.com/Deb124-source/Truthenix-AI-Debdut-Nandy.git" target="_blank" class="proj-btn">
+        View Code
+      </a>
+
+      <button class="projects-btn pipeline-btn" onclick="openPipeline('truth')">
+        View ML Pipeline
+      </button>
+
+    </div>
+  </div>
+
 </div>
-  
-  <div class="project-card">
-  <img src="images/IMG-20260526-WA0001.jpg" class="project-img clickable">
-       <div class="project-content">
-     <h2>Spamify</h2>
-        <p>AI-based system to detect spam emails.</p>
+</div>
 
-     <h3>Problem</h3>
-        <p>Increasing number of fraud cases due to spam emails.</p>
-    
-     <h3>Solution</h3>
-        <p>Built a logistic regression based detection system with ~98% accuracy</p>
 
-        <a href="https://github.com/Deb124-source/Spam-Email-Classifier-Debdut-Nandy.git" target="_blank" class="proj-btn">
-    View Code
-        </a>
-         <button class="projects-btn pipeline-btn" onclick="openPipeline('email')">
-  View ML Pipeline
-</button>
-         
-  </div>
-  </div>
-  
+<div class="project-category">
+
+<h3 class="category-title">📊 Data Analysis</h3>
+
+<div class="projects-container">
+
   <div class="project-card">
-  <img src="images/Screenshot 2026-05-28 092120.png" class="project-img clickable">
-       <div class="project-content">
-     <h2>Truthenix</h2>
-        <p>AI-based system to detect fake/real news</p>
+  <img src="images/Screenshot 2026-06-04 095333.png" class="project-img clickable">
+
+  <div class="project-content">
+
+    <h2>Blinkit Sales Analysis Dashboard</h2>
+
+    <p>Interactive Power BI dashboard analyzing Blinkit's sales performance, customer preferences, and outlet trends.</p>
 
     <h3>Problem</h3>
-        <p>It has become a serious problem to discriminate real news and fake news.</p>
+
+    <p>Large volumes of sales data made it difficult to identify revenue drivers, product performance, and outlet-wise trends.</p>
 
     <h3>Solution</h3>
-        <p>Truthenix uses ML techniques to classify news with ~93% accuracy</p>
 
-  <a href="https://github.com/Deb124-source/Truthenix-AI-Debdut-Nandy.git" target="_blank" class="proj-btn">
-    View Code
-  </a>
-      <button class="projects-btn pipeline-btn" onclick="openPipeline('truth')">
-  View ML Pipeline
-</button>
-       </div> 
- </div>
+    <p>Built a Power BI dashboard with KPI cards, sales trend analysis, outlet segmentation, and product category insights to support data-driven decision making.</p>
 
-   <div class="project-card">
-  <img src="images/download (3).png" class="project-img clickable">  
-      <div class="project-content">
-  <h2>Healthcare Dataset Analysis</h2>
-     <p>Exploratory Data Analysis of a Hospital's dataset to find trends and insights.</p>
+    <a href="https://github.com/Deb124-source/Blinkit-Data-Analysis-Dashboard-Debdut-Nandy.git" target="_blank" class="proj-btn">
+      View Code
+    </a>
 
-  <h3>Problem</h3>
-     <p>The Healthcare dataset had huge data but lacks clear and deep insight.</p>
+    <button class="projects-btn pipeline-btn" onclick="openPipeline('blinkit')">
+      View Analytics Pipeline
+    </button>
 
-  <h3>Solution</h3>
-     <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn. Extracted significant insights.</p>
-
-  <a href="https://github.com/Deb124-source/Healthcare_Data_Analysis.git" target="_blank" class="proj-btn">
-    View Code
-  </a>
-    <button class="projects-btn pipeline-btn" onclick="openPipeline('data')">
-  View Analytics Pipeline
-</button>    
-      </div>
-   </div>
-
+  </div>
+</div>
 
   <div class="project-card">
-  <img src="images/Netflix.jpg" class="project-img clickable">  
-      <div class="project-content">
-  <h2>Netflix Dataset Analysis</h2>
-     <p>Exploratory Data Analysis of Netflix content to find trends and insights.</p>
+  <img src="iimages/Screenshot 2026-06-02 093516.png" class="project-img clickable">
 
-  <h3>Problem</h3>
-     <p>Netflix has huge data but lacks clear insight into content trends.</p>
+  <div class="project-content">
 
-  <h3>Solution</h3>
-     <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn.</p>
+    <h2>HR Analytics Dashboard</h2>
 
-  <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git" target="_blank" class="proj-btn">
-    View Code
-  </a>
-    <button class="projects-btn pipeline-btn" onclick="openPipeline('data')">
-  View Analytics Pipeline
-</button>    
-      </div>
+    <p>Power BI dashboard developed to analyze employee attrition, workforce demographics, and organizational trends.</p>
+
+    <h3>Problem</h3>
+
+    <p>High employee attrition and workforce data complexity made it difficult for management to identify retention issues.</p>
+
+    <h3>Solution</h3>
+
+    <p>Created an interactive HR dashboard highlighting attrition patterns, employee demographics, department-wise analysis, and key workforce metrics.</p>
+
+    <a href="https://github.com/Deb124-source/HR-Analytics-Dashboard-Debdut-Nandy.git" target="_blank" class="proj-btn">
+      View Code
+    </a>
+
+    <button class="projects-btn pipeline-btn" onclick="openPipeline('hr')">
+      View Analytics Pipeline
+    </button>
+
+  </div>
+</div>
+
+  <div class="project-card">
+  <img src="images/Screenshot 2026-06-03 191258.png" class="project-img clickable">
+
+  <div class="project-content">
+
+    <h2>Global AQI Analysis Dashboard</h2>
+
+    <p>Comprehensive Power BI dashboard analyzing air quality trends across countries and cities worldwide.</p>
+
+    <h3>Problem</h3>
+
+    <p>Air quality datasets contain large amounts of environmental data that are difficult to interpret without effective visualization.</p>
+
+    <h3>Solution</h3>
+
+    <p>Developed an interactive dashboard featuring AQI trends, pollutant analysis, geographical comparisons, and environmental insights for informed decision making.</p>
+
+    <a href="https://github.com/Deb124-source/Global-AQI-Analysis-Dashboard-Debdut-Nandy.git" target="_blank" class="proj-btn">
+      View Code
+    </a>
+
+    <button class="projects-btn pipeline-btn" onclick="openPipeline('aqi')">
+      View Analytics Pipeline
+    </button>
+
+  </div>
+</div>
+
+  <!-- Healthcare -->
+  <div class="project-card">
+    <img src="images/download (3).png" class="project-img clickable">
+
+    <div class="project-content">
+      <h2>Healthcare Dataset Analysis</h2>
+
+      <p>Exploratory Data Analysis of a Hospital's dataset to find trends and insights.</p>
+
+      <h3>Problem</h3>
+      <p>The Healthcare dataset had huge data but lacks clear and deep insight.</p>
+
+      <h3>Solution</h3>
+      <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn. Extracted significant insights.</p>
+
+      <a href="https://github.com/Deb124-source/Healthcare_Data_Analysis.git" target="_blank" class="proj-btn">
+        View Code
+      </a>
+
+      <button class="projects-btn pipeline-btn" onclick="openPipeline('data')">
+        View Analytics Pipeline
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Netflix -->
+  <div class="project-card">
+    <img src="images/Netflix.jpg" class="project-img clickable">
+
+    <div class="project-content">
+
+      <h2>Netflix Dataset Analysis</h2>
+
+      <p>Exploratory Data Analysis of Netflix content to find trends and insights.</p>
+
+      <h3>Problem</h3>
+      <p>Netflix has huge data but lacks clear insight into content trends.</p>
+
+      <h3>Solution</h3>
+      <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn.</p>
+
+      <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git" target="_blank" class="proj-btn">
+        View Code
+      </a>
+
+      <button class="projects-btn pipeline-btn" onclick="openPipeline('data')">
+        View Analytics Pipeline
+      </button>
+
+    </div>
   </div>
 
 </div>
+</div>
 
-  <div class="projects-btn-container">
 
-  <a 
-    href="https://github.com/Deb124-source?tab=repositories"
-    target="_blank"
-    class="projects-btn"
-  >
-    View All Projects
-  </a>
+<div class="projects-btn-container">
 
-  </div>
+<a
+href="https://github.com/Deb124-source?tab=repositories"
+target="_blank"
+class="projects-btn">
+
+View All Projects
+
+</a>
+
+</div>
+
 </section>
 
   <!-- SKILLS -->
@@ -3668,6 +3587,50 @@ if(project === "truth"){
   ];
 }
 
+if(project === "blinkit"){
+  title.innerText = "Blinkit Sales Analysis Pipeline";
+
+  content = [
+    "Blinkit Sales Dataset",
+    "Data Cleaning & Transformation",
+    "Data Modeling",
+    "DAX Measures & KPIs",
+    "Sales & Outlet Analysis",
+    "Interactive Power BI Dashboard",
+    "Business Insights"
+  ];
+}
+
+if(project === "hr"){
+  title.innerText = "HR Analytics Dashboard Pipeline";
+
+  content = [
+    "HR Dataset",
+    "Data Cleaning & Preparation",
+    "Employee Attrition Analysis",
+    "Department-wise Analysis",
+    "Workforce Demographics Analysis",
+    "KPI & DAX Creation",
+    "Interactive Power BI Dashboard",
+    "HR Insights & Reporting"
+  ];
+}
+
+if(project === "aqi"){
+  title.innerText = "Global AQI Analysis Pipeline";
+
+  content = [
+    "Global AQI Dataset",
+    "Data Cleaning & Standardization",
+    "Pollutant Analysis",
+    "Country & City Level Aggregation",
+    "AQI Classification",
+    "Trend & Comparative Analysis",
+    "Interactive Power BI Dashboard",
+    "Environmental Insights"
+  ];
+}
+  
   flow.innerHTML = "";
 
   content.forEach((step, i) => {
