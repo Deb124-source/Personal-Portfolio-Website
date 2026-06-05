@@ -1051,29 +1051,90 @@ section{
    PROJECT CATEGORIES
 ========================= */
 
+/* =========================
+   PROJECT CATEGORIES
+========================= */
+
 .project-category{
   width:100%;
-  margin-bottom:70px;
+  margin-bottom:90px;
 }
 
 .category-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
   font-size:2rem;
   font-weight:700;
-  color:#00e6e6;
-  margin-bottom:30px;
-  padding-left:10px;
-  border-left:5px solid #00e6e6;
+
+  color:#11dce8;
+
+  margin-top:10px;
+  margin-bottom:35px;
+
+  padding-bottom:12px;
+
+  border-bottom:2px solid rgba(17,220,232,0.25);
+}
+
+/* =========================
+   PROJECT GRID
+========================= */
+
+.projects-container{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  align-items:stretch;
+  gap:35px;
+
+  width:100%;
+}
+
+/* =========================
+   UNIFORM PROJECT IMAGES
+========================= */
+
+.project-img{
+  width:100%;
+  height:220px;
+
+  object-fit:cover;
+  object-position:top;
+
+  transition:0.4s ease;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+
+  .projects-container{
+    grid-template-columns:1fr;
+  }
+
+  .project-img{
+    height:240px;
+  }
 }
 
 @media(max-width:600px){
+
+  .project-category{
+    margin-bottom:70px;
+  }
 
   .category-title{
     font-size:1.5rem;
     margin-bottom:25px;
   }
 
+  .project-img{
+    height:210px;
+  }
 }
-  
 /* =========================
    CERTIFICATES SECTION
 ========================= */
