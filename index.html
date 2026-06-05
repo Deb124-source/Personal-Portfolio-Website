@@ -1016,14 +1016,12 @@ section{
   
 
 /* =========================
-   PROJECT SECTION
+   PROJECTS SECTION
 ========================= */
 
 #projects{
   width:100%;
-
   padding:80px 8%;
-
   background:#050b14;
 }
 
@@ -1033,26 +1031,14 @@ section{
 
 .section-title{
   text-align:center;
-
   font-size:3rem;
-
   font-weight:700;
-
   color:white;
-
   margin-bottom:60px;
 }
 
 /* =========================
-   PROJECT GRID
-========================= */
-
-/* =========================
-   PROJECT CATEGORIES
-========================= */
-
-/* =========================
-   PROJECT CATEGORIES
+   CATEGORY SECTIONS
 ========================= */
 
 .project-category{
@@ -1070,12 +1056,11 @@ section{
 
   color:#11dce8;
 
-  margin-top:10px;
   margin-bottom:35px;
 
-  padding-bottom:12px;
+  padding-bottom:15px;
 
-  border-bottom:2px solid rgba(17,220,232,0.25);
+  border-bottom:2px solid rgba(17,220,232,0.18);
 }
 
 /* =========================
@@ -1087,26 +1072,241 @@ section{
   grid-template-columns:repeat(2,1fr);
   align-items:stretch;
   gap:35px;
-
   width:100%;
 }
 
 /* =========================
-   UNIFORM PROJECT IMAGES
+   PROJECT CARD
+========================= */
+
+.project-card{
+  background:linear-gradient(
+    180deg,
+    rgba(11,28,44,0.95),
+    rgba(6,16,28,0.98)
+  );
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(17,220,232,0.12);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.35);
+
+  transition:all 0.35s ease;
+
+  display:flex;
+  flex-direction:column;
+
+  position:relative;
+}
+
+.project-card:hover{
+  transform:translateY(-10px);
+
+  border-color:#11dce8;
+
+  box-shadow:
+  0 15px 40px rgba(17,220,232,0.18);
+}
+
+/* =========================
+   IMAGE
 ========================= */
 
 .project-img{
   width:100%;
-  height:220px;
+  height:240px;
 
   object-fit:cover;
-  object-position:top;
+  object-position:center;
+
+  border-bottom:1px solid rgba(17,220,232,0.12);
 
   transition:0.4s ease;
 }
 
+.project-card:hover .project-img{
+  transform:scale(1.03);
+}
+
 /* =========================
-   MOBILE
+   CONTENT
+========================= */
+
+.project-content{
+  padding:28px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+
+  flex:1;
+}
+
+/* TITLE */
+
+.project-content h2{
+  font-size:1.8rem;
+
+  color:white;
+
+  font-weight:700;
+
+  line-height:1.2;
+
+  margin-bottom:8px;
+}
+
+/* SUBTITLE */
+
+.project-content > p:first-of-type{
+  color:#b9c7d4;
+
+  font-size:1rem;
+
+  line-height:1.6;
+
+  margin-bottom:15px;
+}
+
+/* HEADINGS */
+
+.project-content h3{
+  color:#11dce8;
+
+  font-size:1.05rem;
+
+  font-weight:700;
+
+  margin-top:10px;
+
+  margin-bottom:2px;
+}
+
+/* TEXT */
+
+.project-content p{
+  color:#d7dce2;
+
+  line-height:1.7;
+
+  font-size:0.96rem;
+}
+
+/* =========================
+   BUTTON CONTAINER
+========================= */
+
+.project-buttons{
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  margin-top:18px;
+}
+
+/* =========================
+   VIEW CODE BUTTON
+========================= */
+
+.proj-btn{
+  padding:12px 26px;
+
+  border-radius:12px;
+
+  background:#11dce8;
+
+  color:#04111f;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  transition:0.3s ease;
+}
+
+.proj-btn:hover{
+  background:white;
+
+  transform:translateY(-3px);
+}
+
+/* =========================
+   PIPELINE BUTTON
+========================= */
+
+.pipeline-btn{
+  padding:12px 24px;
+
+  border-radius:12px;
+
+  background:transparent;
+
+  border:1px solid #8b5cf6;
+
+  color:#b497ff;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.pipeline-btn:hover{
+  background:#8b5cf6;
+
+  color:white;
+
+  transform:translateY(-3px);
+}
+
+/* =========================
+   VIEW ALL BUTTON
+========================= */
+
+.projects-btn-container{
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  margin-top:50px;
+}
+
+.projects-btn{
+  padding:14px 34px;
+
+  border-radius:14px;
+
+  background:#11dce8;
+
+  color:#04111f;
+
+  text-decoration:none;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.projects-btn:hover{
+  background:white;
+
+  transform:translateY(-3px);
+}
+
+/* =========================
+   TABLET
 ========================= */
 
 @media(max-width:1100px){
@@ -1116,28 +1316,68 @@ section{
   }
 
   .project-img{
-    height:240px;
+    height:260px;
   }
-}
 
-@media(max-width:600px){
-
-  .project-category{
-    margin-bottom:70px;
+  .project-content h2{
+    font-size:1.7rem;
   }
 
   .category-title{
-    font-size:1.5rem;
-    margin-bottom:25px;
+    font-size:1.8rem;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+  #projects{
+    padding:70px 5%;
+  }
+
+  .section-title{
+    font-size:2.2rem;
+  }
+
+  .category-title{
+    font-size:1.4rem;
+  }
+
+  .projects-container{
+    gap:25px;
+  }
+
+  .project-content{
+    padding:22px;
+  }
+
+  .project-content h2{
+    font-size:1.45rem;
+  }
+
+  .project-content p{
+    font-size:0.95rem;
   }
 
   .project-img{
     height:210px;
   }
+
+  .project-buttons{
+    flex-direction:column;
+  }
+
+  .proj-btn,
+  .pipeline-btn,
+  .projects-btn{
+    width:100%;
+    text-align:center;
+  }
 }
-/* =========================
-   CERTIFICATES SECTION
-========================= */
+
 
 #certificates{
   padding:80px 8%;
@@ -2437,14 +2677,19 @@ nav,
       <h3>Solution</h3>
 
       <p>Built a deep learning-based detection system using YOLO/CNN.</p>
+<div class="project-buttons">
 
-      <a href="https://github.com/Deb124-source/AICTE_Edunet_Shell_Bike_Helmet_Detection_using_yolov8n_Debdut_Nandy" target="_blank" class="proj-btn">
-        View Code
-      </a>
+  <a href="https://github.com/Deb124-source/AICTE_Edunet_Shell_Bike_Helmet_Detection_using_yolov8n_Debdut_Nandy"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
 
-      <button class="projects-btn pipeline-btn" onclick="openPipeline('helmet')">
-        View ML Pipeline
-      </button>
+  <button class="pipeline-btn" onclick="openPipeline('helmet')">
+    View ML Pipeline
+  </button>
+
+</div>
 
     </div>
   </div>
@@ -2468,14 +2713,19 @@ nav,
 
       <p>Built a machine learning web app that predicts property prices instantly based on user inputs.</p>
 
-      <a href="https://github.com/Deb124-source/House-Price-Prediction-System-Debdut-Nandy.git" target="_blank" class="proj-btn">
-        View Code
-      </a>
+    <div class="project-buttons">
 
-      <button class="projects-btn pipeline-btn" onclick="openPipeline('house')">
-        View ML Pipeline
-      </button>
+  <a href="https://github.com/Deb124-source/House-Price-Prediction-System-Debdut-Nandy.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
 
+  <button class="pipeline-btn" onclick="openPipeline('house')">
+    View ML Pipeline
+  </button>
+
+</div>
     </div>
   </div>
 
@@ -2498,13 +2748,19 @@ nav,
 
       <p>Built a logistic regression based detection system with ~98% accuracy</p>
 
-      <a href="https://github.com/Deb124-source/Spam-Email-Classifier-Debdut-Nandy.git" target="_blank" class="proj-btn">
-        View Code
-      </a>
+     <div class="project-buttons">
 
-      <button class="projects-btn pipeline-btn" onclick="openPipeline('email')">
-        View ML Pipeline
-      </button>
+  <a href="https://github.com/Deb124-source/Spam-Email-Classifier-Debdut-Nandy.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
+
+  <button class="pipeline-btn" onclick="openPipeline('email')">
+    View ML Pipeline
+  </button>
+
+</div>
 
     </div>
   </div>
@@ -2528,14 +2784,19 @@ nav,
 
       <p>Truthenix uses ML techniques to classify news with ~93% accuracy</p>
 
-      <a href="https://github.com/Deb124-source/Truthenix-AI-Debdut-Nandy.git" target="_blank" class="proj-btn">
-        View Code
-      </a>
+      <div class="project-buttons">
 
-      <button class="projects-btn pipeline-btn" onclick="openPipeline('truth')">
-        View ML Pipeline
-      </button>
+  <a href="https://github.com/Deb124-source/Truthenix-AI-Debdut-Nandy.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
 
+  <button class="pipeline-btn" onclick="openPipeline('truth')">
+    View ML Pipeline
+  </button>
+
+</div>
     </div>
   </div>
 
@@ -2566,19 +2827,24 @@ nav,
 
     <p>Built a Power BI dashboard with KPI cards, sales trend analysis, outlet segmentation, and product category insights to support data-driven decision making.</p>
 
-    <a href="https://github.com/Deb124-source/Blinkit-Data-Analysis-Dashboard-Debdut-Nandy.git" target="_blank" class="proj-btn">
-      View Code
-    </a>
+    <div class="project-buttons">
 
-    <button class="projects-btn pipeline-btn" onclick="openPipeline('blinkit')">
-      View Analytics Pipeline
-    </button>
+  <a href="https://github.com/Deb124-source/Blinkit-Data-Analysis-Dashboard-Debdut-Nandy.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
 
+  <button class="pipeline-btn" onclick="openPipeline('blinkit')">
+    View Analytics Pipeline
+  </button>
+
+</div>
   </div>
 </div>
 
   <div class="project-card">
-  <img src="iimages/Screenshot 2026-06-02 093516.png" class="project-img clickable">
+  <img src="images/Screenshot 2026-06-02 093516.png" class="project-img clickable">
 
   <div class="project-content">
 
@@ -2594,13 +2860,19 @@ nav,
 
     <p>Created an interactive HR dashboard highlighting attrition patterns, employee demographics, department-wise analysis, and key workforce metrics.</p>
 
-    <a href="https://github.com/Deb124-source/HR-Analytics-Dashboard-Debdut-Nandy.git" target="_blank" class="proj-btn">
-      View Code
-    </a>
+   <div class="project-buttons">
 
-    <button class="projects-btn pipeline-btn" onclick="openPipeline('hr')">
-      View Analytics Pipeline
-    </button>
+  <a href="https://github.com/Deb124-source/HR-Analytics-Dashboard-Debdut-Nandy.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
+
+  <button class="pipeline-btn" onclick="openPipeline('hr')">
+    View Analytics Pipeline
+  </button>
+
+</div>
 
   </div>
 </div>
@@ -2622,13 +2894,19 @@ nav,
 
     <p>Developed an interactive dashboard featuring AQI trends, pollutant analysis, geographical comparisons, and environmental insights for informed decision making.</p>
 
-    <a href="https://github.com/Deb124-source/Global-AQI-Analysis-Dashboard-Debdut-Nandy.git" target="_blank" class="proj-btn">
-      View Code
-    </a>
+    <div class="project-buttons">
 
-    <button class="projects-btn pipeline-btn" onclick="openPipeline('aqi')">
-      View Analytics Pipeline
-    </button>
+  <a href="https://github.com/Deb124-source/Global-AQI-Analysis-Dashboard-Debdut-Nandy.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
+
+  <button class="pipeline-btn" onclick="openPipeline('aqi')">
+    View Analytics Pipeline
+  </button>
+
+</div>
 
   </div>
 </div>
@@ -2647,14 +2925,19 @@ nav,
 
       <h3>Solution</h3>
       <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn. Extracted significant insights.</p>
+<div class="project-buttons">
 
-      <a href="https://github.com/Deb124-source/Healthcare_Data_Analysis.git" target="_blank" class="proj-btn">
-        View Code
-      </a>
+  <a href="https://github.com/Deb124-source/Healthcare_Data_Analysis.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
 
-      <button class="projects-btn pipeline-btn" onclick="openPipeline('data')">
-        View Analytics Pipeline
-      </button>
+  <button class="pipeline-btn" onclick="openPipeline('data')">
+    View Analytics Pipeline
+  </button>
+
+</div>
 
     </div>
   </div>
@@ -2675,13 +2958,19 @@ nav,
       <h3>Solution</h3>
       <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn.</p>
 
-      <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git" target="_blank" class="proj-btn">
-        View Code
-      </a>
+      <div class="project-buttons">
 
-      <button class="projects-btn pipeline-btn" onclick="openPipeline('data')">
-        View Analytics Pipeline
-      </button>
+  <a href="https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
+
+  <button class="pipeline-btn" onclick="openPipeline('data')">
+    View Analytics Pipeline
+  </button>
+
+</div>
 
     </div>
   </div>
