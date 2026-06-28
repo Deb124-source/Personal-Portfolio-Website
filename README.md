@@ -77,7 +77,3 @@ cd Personal-Portfolio-Website
 <p align="center"> <a href="https://www.linkedin.com/in/debdut-nandy-4b0a88321/"> <img src="https://skillicons.dev/icons?i=linkedin"/> </a> <a href="mailto:debdut937@gmail.com"> <img src="https://skillicons.dev/icons?i=gmail"/> </a> <a href="https://github.com/Deb124-source"> <img src="https://skillicons.dev/icons?i=github"/> </a> </p>
 
 ---
-
-## ⭐ Support
-Give a ⭐ if you like this project!
-
