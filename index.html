@@ -2801,6 +2801,12 @@ Linear Regression • Flask • Bengaluru Dataset
      class="proj-btn">
     View Code
   </a>
+     <a href="https://house-price-prediction-system-debdut-nandy.streamlit.app/"
+     target="_blank"
+     class="proj-btn">
+    Live Demo
+  </a>
+        
 
   <button class="pipeline-btn" onclick="openPipeline('house')">
     View ML Pipeline
@@ -2839,7 +2845,13 @@ Logistic Regression • NLP • Flask
      class="proj-btn">
     View Code
   </a>
-
+  </a>
+     <a href="https://spam-email-classifier-debdut-nandy.streamlit.app/"
+     target="_blank"
+     class="proj-btn">
+    Live Demo
+  </a>
+       
   <button class="pipeline-btn" onclick="openPipeline('email')">
     View ML Pipeline
   </button>
@@ -3963,6 +3975,18 @@ function openPipeline(project){
       "Price Prediction Output"
     ];
   }
+
+  if(project === "promail"){
+  title.innerText = "ProMail AI Workflow";
+
+  content = [
+    "User Prompt (Email Purpose & Context)",
+    "Prompt Processing",
+    "Gemini AI Email Generation",
+    "Tone & Content Optimization",
+    "Professional Email Output"
+  ];
+}
 
   if(project === "loan"){
     title.innerText = "Bank Loan Eligibility Pipeline";
