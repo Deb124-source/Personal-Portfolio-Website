@@ -2872,6 +2872,42 @@ Logistic Regression • NLP • Flask
 <div class="projects-container">
 
   <div class="project-card">
+  <img src="images/Youtube_ss.png" class="project-img clickable">
+
+  <div class="project-content">
+
+    <h2>YouTube Content Analysis Dashboard</h2>
+
+    <p>Interactive Power BI dashboard analyzing Blinkit's sales performance, customer preferences, and outlet trends.</p>
+
+    <h3>Problem</h3>
+
+    <p>Creators and analysts often struggle to identify which factors drive video performance and audience engagement from large volumes of YouTube trending data.</p>
+
+    <h3>Solution</h3>
+
+    <p>Developed an analytics dashboard that analyzes YouTube trending videos to uncover content performance patterns, engagement metrics, and category-wise trends through interactive visualizations.</p>
+    <p class="project-meta">
+Power BI • Content Analytics • KPI Tracking • Business Intelligence
+</p>
+
+    <div class="project-buttons">
+
+  <a href="https://github.com/Deb124-source/YouTube-Content-Analysis-Dashboard-Debdut-Nandy.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
+
+  <button class="pipeline-btn" onclick="openPipeline('youtube')">
+    View Analytics Pipeline
+  </button>
+
+</div>
+  </div>
+</div>
+
+  <div class="project-card">
   <img src="images/Screenshot 2026-06-04 095333.png" class="project-img clickable">
 
   <div class="project-content">
@@ -2908,34 +2944,34 @@ Power BI • Sales Analytics • KPI Tracking • Business Intelligence
 </div>
 
   <div class="project-card">
-  <img src="images/Screenshot 2026-06-02 093516.png" class="project-img clickable">
+  <img src="images/Airbnb_ss.png" class="project-img clickable">
 
   <div class="project-content">
 
-    <h2>HR Analytics Dashboard</h2>
+    <h2>Airbnb Hotel Booking Price Analysis</h2>
 
-    <p>Power BI dashboard developed to analyze employee attrition, workforce demographics, and organizational trends.</p>
+    <p>Power BI dashboard developed to analyze Airbnb Pricing trends</p>
 
     <h3>Problem</h3>
 
-    <p>High employee attrition and workforce data complexity made it difficult for management to identify retention issues.</p>
+    <p>Understanding the factors influencing Airbnb property prices is challenging due to the complexity and diversity of listing features and market conditions.</p>
 
     <h3>Solution</h3>
 
-    <p>Created an interactive HR dashboard highlighting attrition patterns, employee demographics, department-wise analysis, and key workforce metrics.</p>
+    <p>Performed exploratory data analysis to identify key pricing factors, uncover market trends, and generate actionable insights that support data-driven pricing strategies.</p>
     <p class="project-meta">
-Power BI • Workforce Analytics • Attrition Analysis • Interactive Reports
+Power BI •  Pricing Analysis Analysis • Interactive Reports
 </p>
 
    <div class="project-buttons">
 
-  <a href="https://github.com/Deb124-source/HR-Analytics-Dashboard-Debdut-Nandy.git"
+  <a href="https://github.com/Deb124-source/Airbnb-Hotel-Booking-Analysis-Debdut-Nandy.git"
      target="_blank"
      class="proj-btn">
     View Code
   </a>
 
-  <button class="pipeline-btn" onclick="openPipeline('hr')">
+  <button class="pipeline-btn" onclick="openPipeline('airbnb')">
     View Analytics Pipeline
   </button>
 
@@ -2943,77 +2979,6 @@ Power BI • Workforce Analytics • Attrition Analysis • Interactive Reports
 
   </div>
 </div>
-
-  <div class="project-card">
-  <img src="images/Screenshot 2026-06-03 191258.png" class="project-img clickable">
-
-  <div class="project-content">
-
-    <h2>Global AQI Analysis Dashboard</h2>
-
-    <p>Comprehensive Power BI dashboard analyzing air quality trends across countries and cities worldwide.</p>
-
-    <h3>Problem</h3>
-
-    <p>Air quality datasets contain large amounts of environmental data that are difficult to interpret without effective visualization.</p>
-
-    <h3>Solution</h3>
-
-    <p>Developed an interactive dashboard featuring AQI trends, pollutant analysis, geographical comparisons, and environmental insights for informed decision making.</p>
-    <p class="project-meta">
-Power BI • Data Visualization • AQI Trends • Interactive Dashboard
-</p>
-
-    <div class="project-buttons">
-
-  <a href="https://github.com/Deb124-source/Global-AQI-Analysis-Dashboard-Debdut-Nandy.git"
-     target="_blank"
-     class="proj-btn">
-    View Code
-  </a>
-
-  <button class="pipeline-btn" onclick="openPipeline('aqi')">
-    View Analytics Pipeline
-  </button>
-
-</div>
-
-  </div>
-</div>
-
-  <!-- Healthcare -->
-  <div class="project-card">
-    <img src="images/download (3).png" class="project-img clickable">
-
-    <div class="project-content">
-      <h2>Healthcare Dataset Analysis</h2>
-
-      <p>Exploratory Data Analysis of a Hospital's dataset to find trends and insights.</p>
-
-      <h3>Problem</h3>
-      <p>The Healthcare dataset had huge data but lacks clear and deep insight.</p>
-
-      <h3>Solution</h3>
-      <p>Performed data cleaning and visualization using Python, Pandas, Matplotlib, and Seaborn. Extracted significant insights.</p>
-      <p class="project-meta">
-Power BI • Healthcare Data Analysis • Interactive Reports • Data-Driven Insights
-</p>
-<div class="project-buttons">
-
-  <a href="https://github.com/Deb124-source/Healthcare_Data_Analysis.git"
-     target="_blank"
-     class="proj-btn">
-    View Code
-  </a>
-
-  <button class="pipeline-btn" onclick="openPipeline('data')">
-    View Analytics Pipeline
-  </button>
-
-</div>
-
-    </div>
-  </div>
 
   <!-- Netflix -->
   <div class="project-card">
@@ -4036,6 +4001,18 @@ if(project === "truth"){
   ];
 }
 
+if(project === "youtube"){
+  title.innerText = "YouTube Content Analysis Pipeline";
+
+  content = [
+    "YouTube Trending Dataset",
+    "Data Cleaning & Preprocessing",
+    "Exploratory Data Analysis",
+    "Interactive Visualizations",
+    "Content Performance Insights"
+  ];
+}
+
 if(project === "blinkit"){
   title.innerText = "Blinkit Sales Analysis Pipeline";
 
@@ -4050,35 +4027,18 @@ if(project === "blinkit"){
   ];
 }
 
-if(project === "hr"){
-  title.innerText = "HR Analytics Dashboard Pipeline";
+if(project === "airbnb"){
+  title.innerText = "Airbnb Price Analysis Pipeline";
 
   content = [
-    "HR Dataset",
-    "Data Cleaning & Preparation",
-    "Employee Attrition Analysis",
-    "Department-wise Analysis",
-    "Workforce Demographics Analysis",
-    "KPI & DAX Creation",
-    "Interactive Power BI Dashboard",
-    "HR Insights & Reporting"
+    "Airbnb Listings Dataset",
+    "Data Cleaning & Feature Engineering",
+    "Exploratory Data Analysis",
+    "Price Trend & Factor Analysis",
+    "Pricing Insights Dashboard"
   ];
 }
 
-if(project === "aqi"){
-  title.innerText = "Global AQI Analysis Pipeline";
-
-  content = [
-    "Global AQI Dataset",
-    "Data Cleaning & Standardization",
-    "Pollutant Analysis",
-    "Country & City Level Aggregation",
-    "AQI Classification",
-    "Trend & Comparative Analysis",
-    "Interactive Power BI Dashboard",
-    "Environmental Insights"
-  ];
-}
   
   flow.innerHTML = "";
 
