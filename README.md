@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm Debdut Nandy</h1>
 
-<h3 align="center">🚀 AI/ML Developer | 💡 Data-Driven Thinker | ⚡ Tech Enthusiast</h3>
+<h3 align="center">🚀 AI/ML Developer | 💡 Data-Driven Thinker </h3>
 
 ---
 
