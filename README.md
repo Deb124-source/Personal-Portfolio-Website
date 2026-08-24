@@ -61,14 +61,6 @@ The portfolio focuses on a clean, modern interface with responsive layouts and s
 
 ---
 
-## Preview
-
-<p align="center">
-  <img src="images/Preview_image.png" width="800" alt="Portfolio Website Preview" />
-</p>
-
----
-
 ## Getting Started
 
 ### Clone the Repository
