@@ -1,79 +1,120 @@
-<h1 align="center">Hi 👋, I'm Debdut Nandy</h1>
+# Hi, I'm Debdut Nandy
 
-<h3 align="center">🚀 AI/ML Developer | 💡 Data-Driven Thinker </h3>
+### AI/ML Developer | Data-Driven Thinker
 
 ---
 
-## 🌐 Live Portfolio  
+## Live Portfolio
+
 <p align="center">
   <a href="https://deb124-source.github.io/Personal-Portfolio-Website/">
-    <img src="https://img.shields.io/badge/Visit%20Portfolio-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Visit%20Portfolio-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white" />
   </a>
 </p>
 
 ---
 
-## 🧠 About This Project  
+## About the Project
 
-✨ Personal Portfolio Website to showcase:  
-💼 Projects | 🧠 Skills | 📄 Resume | 📬 Contact  
+This repository contains my personal portfolio website, designed to showcase my technical skills, projects, experience, and professional journey.
 
-⚡ Clean UI with smooth animations and responsive design.
+The website provides an overview of:
+
+* Projects and technical work
+* Technical skills and technologies
+* Resume and professional experience
+* Contact information and social profiles
+
+The portfolio focuses on a clean, modern interface with responsive layouts and smooth animations across different screen sizes.
 
 ---
 
-## ⚙️ Tech Stack  
+## Tech Stack
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/GSAP-Animation-88CE02?style=for-the-badge&logo=greensock&logoColor=black"/>
+  <img src="https://img.shields.io/badge/GSAP-Animation-88CE02?style=for-the-badge&logo=greensock&logoColor=black" />
 </p>
 
----
+### Technologies Used
 
-## ✨ Features  
-
-🚀 Smooth animations  
-📱 Responsive design  
-📂 Project showcase  
-📥 Resume download  
-🔗 Social links  
+* HTML5
+* CSS3
+* JavaScript
+* GSAP
+* Git & GitHub
 
 ---
 
-## 🎥 Preview  
+## Features
+
+* Responsive design for desktop, tablet, and mobile devices
+* Smooth animations and transitions using GSAP
+* Dedicated project showcase section
+* Resume download functionality
+* Social media and professional profile links
+* Clean and modern user interface
+* Optimized layout for accessibility and usability
+
+---
+
+## Preview
 
 <p align="center">
-  <img src="images/Preview_image.png" width="800"/>
+  <img src="images/Preview_image.png" width="800" alt="Portfolio Website Preview" />
 </p>
 
 ---
 
+## Getting Started
 
-## 📂 Project Structure
-
-<p align="center">
-  <img src="images/CHHOBI.png" alt="Project Structure" width="800">
-</p>
-
----
-## 🧩 Setup  
+### Clone the Repository
 
 ```bash
 git clone https://github.com/Deb124-source/Personal-Portfolio-Website.git
+```
+
+### Navigate to the Project
+
+```bash
 cd Personal-Portfolio-Website
 ```
----
 
-## 🚀 Deployment
-<p align="center"> <img src="https://skillicons.dev/icons?i=github,netlify" /> </p>
+### Run Locally
 
----
-
-## 🤝 Connect
-<p align="center"> <a href="https://www.linkedin.com/in/debdut-nandy-4b0a88321/"> <img src="https://skillicons.dev/icons?i=linkedin"/> </a> <a href="mailto:debdut937@gmail.com"> <img src="https://skillicons.dev/icons?i=gmail"/> </a> <a href="https://github.com/Deb124-source"> <img src="https://skillicons.dev/icons?i=github"/> </a> </p>
+Open `index.html` in your browser, or use a local development server such as the VS Code Live Server extension.
 
 ---
+
+## Deployment
+
+The portfolio is deployed using GitHub Pages and can be accessed through the live portfolio link above.
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=github,netlify" />
+</p>
+
+---
+
+## Connect With Me
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/debdut-nandy-4b0a88321/">
+    <img src="https://skillicons.dev/icons?i=linkedin" />
+  </a>
+  <a href="mailto:debdut937@gmail.com">
+    <img src="https://skillicons.dev/icons?i=gmail" />
+  </a>
+  <a href="https://github.com/Deb124-source">
+    <img src="https://skillicons.dev/icons?i=github" />
+  </a>
+</p>
+
+---
+
+<p align="center">
+  Designed and developed by <strong>Debdut Nandy</strong>
+</p>
