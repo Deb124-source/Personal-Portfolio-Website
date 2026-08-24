@@ -1,112 +1,143 @@
+<div align="center">
+
 # Hi, I'm Debdut Nandy
 
 ### AI/ML Developer | Data-Driven Thinker
 
----
-
-## Live Portfolio
-
-<p align="center">
+<p>
   <a href="https://deb124-source.github.io/Personal-Portfolio-Website/">
     <img src="https://img.shields.io/badge/Visit%20Portfolio-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white" />
   </a>
 </p>
 
----
+<br>
 
 ## About the Project
 
-This repository contains my personal portfolio website, designed to showcase my technical skills, projects, experience, and professional journey.
+<p>
+This repository contains my personal portfolio website, designed to showcase my
+technical skills, projects, experience, and professional journey.
+</p>
 
-The website provides an overview of:
+<p>
+The portfolio provides an overview of my projects, technical skills, resume,
+professional experience, and contact information.
+</p>
 
-* Projects and technical work
-* Technical skills and technologies
-* Resume and professional experience
-* Contact information and social profiles
+<p>
+Built with a clean and modern interface, the website focuses on responsive
+design, smooth animations, and an engaging user experience.
+</p>
 
-The portfolio focuses on a clean, modern interface with responsive layouts and smooth animations across different screen sizes.
-
----
+<br>
 
 ## Tech Stack
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js" />
-</p>
+<br>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/GSAP-Animation-88CE02?style=for-the-badge&logo=greensock&logoColor=black" />
-</p>
+<img src="https://skillicons.dev/icons?i=html,css,js" />
 
-### Technologies Used
+<br><br>
 
-* HTML5
-* CSS3
-* JavaScript
-* GSAP
-* Git & GitHub
+<img src="https://img.shields.io/badge/GSAP-Animation-88CE02?style=for-the-badge&logo=greensock&logoColor=black" />
 
----
+<br><br>
+
+<b>HTML5 • CSS3 • JavaScript • GSAP • Git • GitHub</b>
+
+<br><br>
 
 ## Features
 
-* Responsive design for desktop, tablet, and mobile devices
-* Smooth animations and transitions using GSAP
-* Dedicated project showcase section
-* Resume download functionality
-* Social media and professional profile links
-* Clean and modern user interface
-* Optimized layout for accessibility and usability
+<br>
 
----
+<table align="center">
+  <tr>
+    <th>Feature</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Responsive Design</td>
+    <td>Optimized for desktop, tablet, and mobile devices</td>
+  </tr>
+  <tr>
+    <td>Smooth Animations</td>
+    <td>Interactive animations powered by GSAP</td>
+  </tr>
+  <tr>
+    <td>Project Showcase</td>
+    <td>Dedicated section for featured projects</td>
+  </tr>
+  <tr>
+    <td>Resume</td>
+    <td>Resume download functionality</td>
+  </tr>
+  <tr>
+    <td>Social Links</td>
+    <td>Direct access to professional profiles</td>
+  </tr>
+  <tr>
+    <td>Modern UI</td>
+    <td>Clean and user-friendly interface</td>
+  </tr>
+</table>
+
+<br><br>
 
 ## Getting Started
+
+<br>
 
 ### Clone the Repository
 
 ```bash
 git clone https://github.com/Deb124-source/Personal-Portfolio-Website.git
-```
-
-### Navigate to the Project
-
-```bash
 cd Personal-Portfolio-Website
 ```
 
+<br>
+
 ### Run Locally
 
-Open `index.html` in your browser, or use a local development server such as the VS Code Live Server extension.
+<p>
+Open <code>index.html</code> in your browser, or use a local development
+server such as the VS Code Live Server extension.
+</p>
 
----
+<br>
 
 ## Deployment
 
-The portfolio is deployed using GitHub Pages and can be accessed through the live portfolio link above.
+<br>
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=github,netlify" />
+<p>
+The portfolio is deployed using <b>GitHub Pages</b>.
 </p>
 
----
+<br>
+
+<img src="https://skillicons.dev/icons?i=github,netlify" />
+
+<br><br>
 
 ## Connect With Me
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/debdut-nandy-4b0a88321/">
-    <img src="https://skillicons.dev/icons?i=linkedin" />
-  </a>
-  <a href="mailto:debdut937@gmail.com">
-    <img src="https://skillicons.dev/icons?i=gmail" />
-  </a>
-  <a href="https://github.com/Deb124-source">
-    <img src="https://skillicons.dev/icons?i=github" />
-  </a>
-</p>
+<br>
 
----
+<a href="https://www.linkedin.com/in/debdut-nandy-4b0a88321/">
+  <img src="https://skillicons.dev/icons?i=linkedin" />
+</a>
+&nbsp;&nbsp;
+<a href="mailto:debdut937@gmail.com">
+  <img src="https://skillicons.dev/icons?i=gmail" />
+</a>
+&nbsp;&nbsp;
+<a href="https://github.com/Deb124-source">
+  <img src="https://skillicons.dev/icons?i=github" />
+</a>
 
-<p align="center">
-  Designed and developed by <strong>Debdut Nandy</strong>
-</p>
+<br><br>
+
+<b>Designed and developed by Debdut Nandy</b>
+
+</div>
