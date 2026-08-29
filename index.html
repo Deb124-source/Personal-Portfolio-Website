@@ -2874,11 +2874,10 @@ nav,
    DEBDUT AI PORTFOLIO CHATBOT
    APPENDED CSS — EXISTING CSS UNTOUCHED
    ========================================================= */
-
 #debdutAIChatButton {
     position: fixed;
     right: 28px;
-    bottom: 28px;
+    bottom: 105px;
 
     width: 62px;
     height: 62px;
@@ -5638,28 +5637,20 @@ navItems.forEach(item => {
    EXISTING JAVASCRIPT IS NOT MODIFIED
    ========================================================= */
 
-(function () {
+  
+document.addEventListener("DOMContentLoaded", function () {
 
     "use strict";
-
 
     /*
      * =====================================================
      * BACKEND URL
      * =====================================================
-     *
-     * LOCAL DEVELOPMENT:
-     *
-     * http://127.0.0.1:8000
-     *
-     * AFTER DEPLOYMENT:
-     *
-     * https://your-backend-url.com
-     *
      */
 
-  const DEBDUT_AI_API =
-    "https://personal-portfolio-website-z44a.onrender.com";
+    const DEBDUT_AI_API =
+        "https://personal-portfolio-website-z44a.onrender.com";
+
 
     /*
      * =====================================================
@@ -5696,6 +5687,30 @@ navItems.forEach(item => {
         document.getElementById(
             "debdutAIChatSend"
         );
+
+
+    /*
+     * =====================================================
+     * SAFETY CHECK
+     * =====================================================
+     */
+
+    if (
+        !chatButton ||
+        !chatWindow ||
+        !chatClose ||
+        !chatMessages ||
+        !chatInput ||
+        !chatSend
+    ) {
+
+        console.error(
+            "Debdut AI Chatbot: Required HTML elements were not found."
+        );
+
+        return;
+
+    }
 
 
     /*
@@ -5755,7 +5770,7 @@ navItems.forEach(item => {
 
     /*
      * =====================================================
-     * BUTTON EVENTS
+     * CHAT BUTTON
      * =====================================================
      */
 
@@ -5780,6 +5795,12 @@ navItems.forEach(item => {
         }
     );
 
+
+    /*
+     * =====================================================
+     * CLOSE BUTTON
+     * =====================================================
+     */
 
     chatClose.addEventListener(
         "click",
@@ -6070,17 +6091,13 @@ navItems.forEach(item => {
 
                             history:
                                 debdutAIHistory
-                                    .slice(-12)
+                                    .slice(-20)
 
                         })
 
                     }
                 );
 
-
-            /*
-             * Parse JSON safely
-             */
 
             const data =
                 await response
@@ -6092,10 +6109,6 @@ navItems.forEach(item => {
                     });
 
 
-            /*
-             * HTTP error
-             */
-
             if (!response.ok) {
 
                 throw new Error(
@@ -6106,35 +6119,19 @@ navItems.forEach(item => {
             }
 
 
-            /*
-             * Remove typing
-             */
-
             hideDebdutAITyping();
 
-
-            /*
-             * Get reply
-             */
 
             const reply =
                 data.reply ||
                 "I couldn't generate a response.";
 
 
-            /*
-             * Show reply
-             */
-
             addDebdutAIMessage(
                 reply,
                 "bot"
             );
 
-
-            /*
-             * Save reply
-             */
 
             debdutAIHistory.push({
 
@@ -6166,10 +6163,6 @@ navItems.forEach(item => {
 
         }
 
-
-        /*
-         * Enable UI
-         */
 
         chatSend.disabled = false;
 
@@ -6223,7 +6216,7 @@ navItems.forEach(item => {
 
     /*
      * =====================================================
-     * AUTO-RESIZE TEXTAREA
+     * AUTO RESIZE
      * =====================================================
      */
 
@@ -6279,7 +6272,11 @@ navItems.forEach(item => {
     );
 
 
-})();
+    console.log(
+        "Debdut AI Portfolio Chatbot initialized successfully."
+    );
+
+});
 
 </script>
   
