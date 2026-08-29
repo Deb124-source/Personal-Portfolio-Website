@@ -2965,6 +2965,94 @@ nav,
 
 }
 
+/* =========================================================
+   AI CHATBOT LAUNCHER
+   ========================================================= */
+
+.debdut-ai-launcher {
+    position: fixed;
+    right: 28px;
+    bottom: 105px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 99998;
+}
+
+
+/* Keep the existing button positioning controlled by launcher */
+
+.debdut-ai-launcher #debdutAIChatButton {
+    position: relative;
+    right: auto;
+    bottom: auto;
+}
+
+
+/* Ask AI Assistant label */
+
+.debdut-ai-launcher-label {
+    margin-top: 7px;
+
+    padding: 5px 10px;
+
+    border-radius: 8px;
+
+    background: rgba(5, 20, 35, 0.95);
+
+    border: 1px solid rgba(0, 212, 255, 0.45);
+
+    color: #00d4ff;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 0 12px rgba(0, 212, 255, 0.15);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Small hover interaction */
+
+.debdut-ai-launcher:hover
+.debdut-ai-launcher-label {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 16px rgba(0, 212, 255, 0.25);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .debdut-ai-launcher {
+        right: 18px;
+        bottom: 88px;
+    }
+
+    .debdut-ai-launcher-label {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+}
 
 /* =========================================================
    CHAT WINDOW
@@ -6306,6 +6394,17 @@ document.addEventListener("DOMContentLoaded", function () {
     <span class="debdut-ai-pulse"></span>
 </button>
 
+<div class="debdut-ai-launcher">
+
+    <button id="debdutAIChatButton" aria-label="Open AI Assistant">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <span class="debdut-ai-launcher-label">
+        Ask AI Assistant
+    </span>
+
+</div>
 
 <div id="debdutAIChatWindow"
      class="debdut-ai-chat-window"
