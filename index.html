@@ -6168,30 +6168,25 @@ navItems.forEach(item => {
 
 /* =========================================================
    DEBDUT AI PORTFOLIO CHATBOT
-   APPENDED JAVASCRIPT
-   EXISTING JAVASCRIPT IS NOT MODIFIED
+   COMPLETE CHATBOT JAVASCRIPT
    ========================================================= */
 
-  
 document.addEventListener("DOMContentLoaded", function () {
 
     "use strict";
 
-    /*
-     * =====================================================
-     * BACKEND URL
-     * =====================================================
-     */
+
+    /* =====================================================
+       BACKEND URL
+       ===================================================== */
 
     const DEBDUT_AI_API =
         "https://personal-portfolio-website-z44a.onrender.com";
 
 
-    /*
-     * =====================================================
-     * ELEMENTS
-     * =====================================================
-     */
+    /* =====================================================
+       GET HTML ELEMENTS
+       ===================================================== */
 
     const chatButton =
         document.getElementById(
@@ -6224,11 +6219,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    /*
-     * =====================================================
-     * SAFETY CHECK
-     * =====================================================
-     */
+    /* =====================================================
+       SAFETY CHECK
+       ===================================================== */
 
     if (
         !chatButton ||
@@ -6244,24 +6237,26 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
         return;
-
     }
 
 
-    /*
-     * =====================================================
-     * CONVERSATION HISTORY
-     * =====================================================
-     */
+    /* =====================================================
+       CONVERSATION HISTORY
+       ===================================================== */
 
     let debdutAIHistory = [];
 
 
-    /*
-     * =====================================================
-     * OPEN CHAT
-     * =====================================================
-     */
+    /* =====================================================
+       CHAT STATE
+       ===================================================== */
+
+    let isSending = false;
+
+
+    /* =====================================================
+       OPEN CHAT
+       ===================================================== */
 
     function openDebdutAIChat() {
 
@@ -6274,26 +6269,68 @@ document.addEventListener("DOMContentLoaded", function () {
             "false"
         );
 
+
+        /*
+         * Give the browser a moment to
+         * make the input available.
+         */
+
         setTimeout(function () {
 
-            chatInput.focus();
+            if (!chatInput.disabled) {
 
-        }, 200);
+                chatInput.focus();
+
+            }
+
+        }, 150);
 
     }
 
 
-    /*
-     * =====================================================
-     * CLOSE CHAT
-     * =====================================================
-     */
+    /* =====================================================
+       CLOSE CHAT
+       ===================================================== */
 
     function closeDebdutAIChat() {
+
+        /*
+         * IMPORTANT:
+         *
+         * Move focus OUT of the chat window
+         * BEFORE setting aria-hidden="true".
+         *
+         * This fixes the DevTools warning:
+         *
+         * "aria-hidden on an element because its
+         * descendant retained focus"
+         */
+
+        if (
+            document.activeElement &&
+            chatWindow.contains(
+                document.activeElement
+            )
+        ) {
+
+            chatButton.focus();
+
+        }
+
+
+        /*
+         * Close the window
+         */
 
         chatWindow.classList.remove(
             "debdut-ai-open"
         );
+
+
+        /*
+         * Now it is safe to hide it
+         * from assistive technologies.
+         */
 
         chatWindow.setAttribute(
             "aria-hidden",
@@ -6303,21 +6340,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /*
-     * =====================================================
-     * CHAT BUTTON
-     * =====================================================
-     */
+    /* =====================================================
+       FLOATING CHAT BUTTON
+       ===================================================== */
 
     chatButton.addEventListener(
         "click",
         function () {
 
-            if (
+            const isOpen =
                 chatWindow.classList.contains(
                     "debdut-ai-open"
-                )
-            ) {
+                );
+
+
+            if (isOpen) {
 
                 closeDebdutAIChat();
 
@@ -6331,41 +6368,65 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /*
-     * =====================================================
-     * CLOSE BUTTON
-     * =====================================================
-     */
+    /* =====================================================
+       CLOSE BUTTON
+       ===================================================== */
 
     chatClose.addEventListener(
         "click",
-        closeDebdutAIChat
+        function () {
+
+            closeDebdutAIChat();
+
+        }
     );
 
 
-    /*
-     * =====================================================
-     * ESCAPE HTML
-     * =====================================================
-     */
+    /* =====================================================
+       ESCAPE KEY
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                chatWindow.classList.contains(
+                    "debdut-ai-open"
+                )
+            ) {
+
+                closeDebdutAIChat();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ESCAPE HTML
+       ===================================================== */
 
     function escapeHTML(text) {
 
         const element =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
-        element.textContent = text;
+        element.textContent =
+            String(text);
 
         return element.innerHTML;
 
     }
 
 
-    /*
-     * =====================================================
-     * ADD MESSAGE
-     * =====================================================
-     */
+    /* =====================================================
+       ADD MESSAGE
+       ===================================================== */
 
     function addDebdutAIMessage(
         text,
@@ -6373,8 +6434,14 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
 
         const wrapper =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
+
+        /* =================================================
+           USER MESSAGE
+           ================================================= */
 
         if (role === "user") {
 
@@ -6396,7 +6463,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             `;
 
-        } else {
+        }
+
+
+        /* =================================================
+           BOT MESSAGE
+           ================================================= */
+
+        else {
 
             wrapper.className =
                 "debdut-ai-message debdut-ai-bot";
@@ -6438,22 +6512,47 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        chatMessages.scrollTop =
-            chatMessages.scrollHeight;
+        /*
+         * Scroll to newest message
+         */
+
+        requestAnimationFrame(
+            function () {
+
+                chatMessages.scrollTop =
+                    chatMessages.scrollHeight;
+
+            }
+        );
 
     }
 
 
-    /*
-     * =====================================================
-     * TYPING INDICATOR
-     * =====================================================
-     */
+    /* =====================================================
+       TYPING INDICATOR
+       ===================================================== */
 
     function showDebdutAITyping() {
 
+        /*
+         * Prevent duplicate indicators
+         */
+
+        if (
+            document.getElementById(
+                "debdutAITypingIndicator"
+            )
+        ) {
+
+            return;
+
+        }
+
+
         const wrapper =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
 
         wrapper.id =
@@ -6498,11 +6597,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /*
-     * =====================================================
-     * REMOVE TYPING INDICATOR
-     * =====================================================
-     */
+    /* =====================================================
+       REMOVE TYPING INDICATOR
+       ===================================================== */
 
     function hideDebdutAITyping() {
 
@@ -6521,15 +6618,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /*
-     * =====================================================
-     * SEND MESSAGE
-     * =====================================================
-     */
+    /* =====================================================
+       SEND MESSAGE
+       ===================================================== */
 
     async function sendDebdutAIMessage(
         predefinedMessage = null
     ) {
+
+        /*
+         * Don't allow multiple requests
+         */
+
+        if (isSending) {
+
+            return;
+
+        }
+
+
+        /* =================================================
+           GET MESSAGE
+           ================================================= */
 
         const message =
             (
@@ -6539,10 +6649,11 @@ document.addEventListener("DOMContentLoaded", function () {
             ).trim();
 
 
-        if (
-            !message ||
-            chatSend.disabled
-        ) {
+        /*
+         * Empty message
+         */
+
+        if (!message) {
 
             return;
 
@@ -6550,8 +6661,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Clear input
+         * Maximum message length
          */
+
+        if (message.length > 1000) {
+
+            addDebdutAIMessage(
+                "Please keep your question under 1000 characters.",
+                "bot"
+            );
+
+            return;
+
+        }
+
+
+        /* =================================================
+           CLEAR INPUT
+           ================================================= */
 
         if (
             predefinedMessage === null
@@ -6565,9 +6692,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /*
-         * Show user message
-         */
+        /* =================================================
+           SHOW USER MESSAGE
+           ================================================= */
 
         addDebdutAIMessage(
             message,
@@ -6575,9 +6702,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /*
-         * Save user message
-         */
+        /* =================================================
+           SAVE USER MESSAGE
+           ================================================= */
 
         debdutAIHistory.push({
 
@@ -6589,20 +6716,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Disable UI
+         * Keep history limited
          */
+
+        debdutAIHistory =
+            debdutAIHistory.slice(-20);
+
+
+        /* =================================================
+           DISABLE UI
+           ================================================= */
+
+        isSending = true;
 
         chatSend.disabled = true;
 
         chatInput.disabled = true;
 
 
-        /*
-         * Show typing
-         */
+        /* =================================================
+           SHOW TYPING
+           ================================================= */
 
         showDebdutAITyping();
 
+
+        /* =================================================
+           CALL RENDER BACKEND
+           ================================================= */
 
         try {
 
@@ -6620,53 +6761,103 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         },
 
-                        body: JSON.stringify({
+                        body:
+                            JSON.stringify({
 
-                            message: message,
+                                message:
+                                    message,
 
-                            history:
-                                debdutAIHistory
-                                    .slice(-20)
+                                history:
+                                    debdutAIHistory
+                                        .slice(
+                                            -20
+                                        )
 
-                        })
+                            })
 
-                    }
+                        }
                 );
 
 
-            const data =
-                await response
-                    .json()
-                    .catch(function () {
+            /* =================================================
+               READ RESPONSE
+               ================================================= */
 
-                        return {};
+            const responseText =
+                await response.text();
 
-                    });
 
+            let data = {};
+
+
+            /*
+             * Try parsing JSON
+             */
+
+            if (responseText) {
+
+                try {
+
+                    data =
+                        JSON.parse(
+                            responseText
+                        );
+
+                } catch (parseError) {
+
+                    console.error(
+                        "Debdut AI: Invalid JSON response.",
+                        responseText
+                    );
+
+                }
+
+            }
+
+
+            /* =================================================
+               HANDLE HTTP ERRORS
+               ================================================= */
 
             if (!response.ok) {
 
                 throw new Error(
                     data.detail ||
-                    "AI server error"
+                    `AI server returned HTTP ${response.status}`
                 );
 
             }
 
 
-            hideDebdutAITyping();
-
+            /* =================================================
+               GET AI REPLY
+               ================================================= */
 
             const reply =
                 data.reply ||
                 "I couldn't generate a response.";
 
 
+            /* =================================================
+               REMOVE TYPING
+               ================================================= */
+
+            hideDebdutAITyping();
+
+
+            /* =================================================
+               DISPLAY AI REPLY
+               ================================================= */
+
             addDebdutAIMessage(
                 reply,
                 "bot"
             );
 
+
+            /* =================================================
+               SAVE AI REPLY
+               ================================================= */
 
             debdutAIHistory.push({
 
@@ -6677,7 +6868,21 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
 
-        } catch (error) {
+            /*
+             * Keep history limited
+             */
+
+            debdutAIHistory =
+                debdutAIHistory.slice(-20);
+
+        }
+
+
+        /* =================================================
+           ERROR HANDLING
+           ================================================= */
+
+        catch (error) {
 
             console.error(
                 "Debdut AI error:",
@@ -6688,31 +6893,68 @@ document.addEventListener("DOMContentLoaded", function () {
             hideDebdutAITyping();
 
 
+            /*
+             * Different message for
+             * network/server errors.
+             */
+
+            let errorMessage =
+                "Sorry, the AI assistant is currently unavailable. Please try again in a moment.";
+
+
+            if (
+                error &&
+                error.message
+            ) {
+
+                console.warn(
+                    "AI request failed:",
+                    error.message
+                );
+
+            }
+
+
             addDebdutAIMessage(
-
-                "Sorry, the AI assistant is currently unavailable. Please try again in a moment.",
-
+                errorMessage,
                 "bot"
-
             );
 
         }
 
 
+        /* =================================================
+           RESTORE UI
+           ================================================= */
+
+        isSending = false;
+
         chatSend.disabled = false;
 
         chatInput.disabled = false;
 
-        chatInput.focus();
+
+        /*
+         * Return focus to input
+         * only if chat is still open.
+         */
+
+        if (
+            chatWindow.classList.contains(
+                "debdut-ai-open"
+            )
+        ) {
+
+            chatInput.focus();
+
+        }
 
     }
 
 
-    /*
-     * =====================================================
-     * SEND BUTTON
-     * =====================================================
-     */
+    /* =====================================================
+       SEND BUTTON
+       ===================================================== */
 
     chatSend.addEventListener(
         "click",
@@ -6724,15 +6966,19 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /*
-     * =====================================================
-     * ENTER TO SEND
-     * =====================================================
-     */
+    /* =====================================================
+       ENTER TO SEND
+       ===================================================== */
 
     chatInput.addEventListener(
         "keydown",
         function (event) {
+
+            /*
+             * Enter = send
+             *
+             * Shift + Enter = new line
+             */
 
             if (
                 event.key === "Enter" &&
@@ -6749,11 +6995,9 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /*
-     * =====================================================
-     * AUTO RESIZE
-     * =====================================================
-     */
+    /* =====================================================
+       AUTO RESIZE TEXTAREA
+       ===================================================== */
 
     chatInput.addEventListener(
         "input",
@@ -6773,11 +7017,9 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    /*
-     * =====================================================
-     * QUICK QUESTIONS
-     * =====================================================
-     */
+    /* =====================================================
+       QUICK QUESTIONS
+       ===================================================== */
 
     const suggestionButtons =
         document.querySelectorAll(
@@ -6796,6 +7038,32 @@ document.addEventListener("DOMContentLoaded", function () {
                         button.dataset.question;
 
 
+                    if (!question) {
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * Make sure chat is open
+                     */
+
+                    if (
+                        !chatWindow.classList.contains(
+                            "debdut-ai-open"
+                        )
+                    ) {
+
+                        openDebdutAIChat();
+
+                    }
+
+
+                    /*
+                     * Send question
+                     */
+
                     sendDebdutAIMessage(
                         question
                     );
@@ -6807,11 +7075,33 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+    /* =====================================================
+       INITIAL ARIA STATE
+       ===================================================== */
+
+    if (
+        !chatWindow.classList.contains(
+            "debdut-ai-open"
+        )
+    ) {
+
+        chatWindow.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    /* =====================================================
+       INITIAL CONSOLE MESSAGE
+       ===================================================== */
+
     console.log(
         "Debdut AI Portfolio Chatbot initialized successfully."
     );
 
-});
+});;
 
 </script>
   
