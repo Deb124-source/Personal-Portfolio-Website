@@ -2872,15 +2872,24 @@ nav,
 
 /* =========================================================
    DEBDUT AI PORTFOLIO CHATBOT
-   APPENDED CSS — EXISTING CSS UNTOUCHED
+   COMPLETE CSS
    ========================================================= */
+
+
+/* =========================================================
+   FLOATING AI BUTTON
+   ========================================================= */
+
 #debdutAIChatButton {
     position: fixed;
+
     right: 28px;
     bottom: 105px;
 
     width: 62px;
     height: 62px;
+
+    padding: 0;
 
     border-radius: 50%;
 
@@ -2915,6 +2924,10 @@ nav,
 }
 
 
+/* =========================================================
+   AI BUTTON HOVER
+   ========================================================= */
+
 #debdutAIChatButton:hover {
 
     transform:
@@ -2927,132 +2940,102 @@ nav,
 }
 
 
-/* PULSE */
+/* =========================================================
+   AI BUTTON PULSE
+   ========================================================= */
 
 .debdut-ai-pulse {
 
     position: absolute;
 
-    width: 100%;
-    height: 100%;
+    inset: -5px;
 
     border-radius: 50%;
 
     border: 1px solid rgba(0, 212, 255, 0.35);
 
     animation:
-        debdutAIChatPulse 2s infinite;
+        debdutAIPulse 2.2s infinite;
 
+    pointer-events: none;
 }
 
 
-@keyframes debdutAIChatPulse {
+@keyframes debdutAIPulse {
 
     0% {
-        transform: scale(0.9);
+
+        transform: scale(0.95);
+
         opacity: 0.8;
+
     }
 
     70% {
+
         transform: scale(1.18);
+
         opacity: 0;
+
     }
 
     100% {
+
         transform: scale(1.18);
+
         opacity: 0;
+
     }
 
 }
 
+
 /* =========================================================
-   AI CHATBOT LAUNCHER
+   ASK AI ASSISTANT LABEL
    ========================================================= */
 
-.debdut-ai-launcher {
-    position: fixed;
-    right: 28px;
-    bottom: 105px;
+#debdutAIChatButton .debdut-ai-label {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: absolute;
 
-    z-index: 99998;
-}
+    top: 68px;
 
+    left: 50%;
 
-/* Keep the existing button positioning controlled by launcher */
-
-.debdut-ai-launcher #debdutAIChatButton {
-    position: relative;
-    right: auto;
-    bottom: auto;
-}
-
-
-/* Ask AI Assistant label */
-
-.debdut-ai-launcher-label {
-    margin-top: 7px;
+    transform: translateX(-50%);
 
     padding: 5px 10px;
 
     border-radius: 8px;
 
-    background: rgba(5, 20, 35, 0.95);
+    background:
+        rgba(5, 20, 35, 0.96);
 
-    border: 1px solid rgba(0, 212, 255, 0.45);
+    border:
+        1px solid rgba(0, 212, 255, 0.55);
 
     color: #00d4ff;
 
     font-size: 11px;
+
     font-weight: 600;
 
     letter-spacing: 0.3px;
 
-    white-space: nowrap;
+    line-height: 1.2;
 
-    box-shadow:
-        0 0 12px rgba(0, 212, 255, 0.15);
+    white-space: nowrap;
 
     pointer-events: none;
 
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-/* Small hover interaction */
-
-.debdut-ai-launcher:hover
-.debdut-ai-launcher-label {
-
-    transform: translateY(-2px);
-
     box-shadow:
-        0 0 16px rgba(0, 212, 255, 0.25);
+        0 0 12px rgba(0, 212, 255, 0.18);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
 }
 
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .debdut-ai-launcher {
-        right: 18px;
-        bottom: 88px;
-    }
-
-    .debdut-ai-launcher-label {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-
-}
 
 /* =========================================================
    CHAT WINDOW
@@ -3063,76 +3046,94 @@ nav,
     position: fixed;
 
     right: 28px;
-    bottom: 105px;
 
-    width: 390px;
+    bottom: 185px;
+
+    width: 380px;
+
     max-width: calc(100vw - 32px);
 
-    height: 600px;
-    max-height: calc(100vh - 135px);
+    height: 560px;
+
+    max-height: calc(100vh - 210px);
 
     display: flex;
+
     flex-direction: column;
 
     overflow: hidden;
 
     background:
-        rgba(6, 12, 27, 0.97);
+        linear-gradient(
+            145deg,
+            rgba(5, 15, 28, 0.98),
+            rgba(13, 8, 28, 0.98)
+        );
 
     border:
         1px solid rgba(0, 212, 255, 0.35);
 
-    border-radius: 20px;
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 30px rgba(0, 212, 255, 0.16),
+        0 0 70px rgba(180, 79, 255, 0.12),
+        0 20px 60px rgba(0, 0, 0, 0.55);
 
     backdrop-filter: blur(18px);
 
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.55),
-        0 0 35px rgba(0, 212, 255, 0.12);
-
-    z-index: 99999;
+    z-index: 99997;
 
     opacity: 0;
+
     visibility: hidden;
 
     transform:
-        translateY(20px)
+        translateY(18px)
         scale(0.96);
 
-    transform-origin: bottom right;
+    transform-origin:
+        bottom right;
 
     transition:
         opacity 0.25s ease,
-        visibility 0.25s ease,
-        transform 0.25s ease;
-
+        transform 0.25s ease,
+        visibility 0.25s ease;
 }
 
+
+/* =========================================================
+   OPEN CHAT WINDOW
+   ========================================================= */
 
 .debdut-ai-chat-window.debdut-ai-open {
 
     opacity: 1;
+
     visibility: visible;
 
     transform:
         translateY(0)
         scale(1);
-
 }
 
 
 /* =========================================================
-   HEADER
+   CHAT HEADER
    ========================================================= */
 
-.debdut-ai-header {
+.debdut-ai-chat-header {
+
+    min-height: 68px;
+
+    padding:
+        12px 14px;
 
     display: flex;
 
     align-items: center;
-    justify-content: space-between;
 
-    padding: 15px 16px;
+    justify-content: space-between;
 
     background:
         linear-gradient(
@@ -3142,12 +3143,17 @@ nav,
         );
 
     border-bottom:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid rgba(0, 212, 255, 0.16);
 
+    flex-shrink: 0;
 }
 
 
-.debdut-ai-header-left {
+/* =========================================================
+   HEADER LEFT
+   ========================================================= */
+
+.debdut-ai-chat-header-info {
 
     display: flex;
 
@@ -3155,32 +3161,54 @@ nav,
 
     gap: 11px;
 
+    min-width: 0;
 }
 
 
-.debdut-ai-avatar {
+/* =========================================================
+   HEADER AVATAR
+   ========================================================= */
 
-    width: 39px;
-    height: 39px;
+.debdut-ai-chat-avatar {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
 
     border-radius: 50%;
 
-    color: #00d4ff;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     background:
-        rgba(0, 212, 255, 0.10);
+        linear-gradient(
+            135deg,
+            rgba(0, 212, 255, 0.18),
+            rgba(180, 79, 255, 0.20)
+        );
 
     border:
-        1px solid rgba(0, 212, 255, 0.35);
+        1px solid rgba(0, 212, 255, 0.45);
 
+    color: #00d4ff;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 0 15px rgba(0, 212, 255, 0.15);
 }
 
 
-.debdut-ai-title {
+/* =========================================================
+   HEADER TEXT
+   ========================================================= */
+
+.debdut-ai-chat-title {
 
     color: #ffffff;
 
@@ -3188,351 +3216,264 @@ nav,
 
     font-weight: 700;
 
+    line-height: 1.3;
 }
 
 
-.debdut-ai-status {
+.debdut-ai-chat-status {
 
-    margin-top: 3px;
+    margin-top: 2px;
 
-    color: #9ba9c5;
+    color: rgba(255, 255, 255, 0.58);
 
-    font-size: 11px;
+    font-size: 10px;
 
-}
-
-
-.debdut-ai-status span {
-
-    display: inline-block;
-
-    width: 7px;
-    height: 7px;
-
-    margin-right: 4px;
-
-    border-radius: 50%;
-
-    background: #00e676;
-
-    box-shadow:
-        0 0 8px #00e676;
-
-}
-
-
-.debdut-ai-close {
-
-    border: none;
-
-    background: transparent;
-
-    color: #9ba9c5;
-
-    font-size: 17px;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-
-}
-
-
-.debdut-ai-close:hover {
-
-    color: #ffffff;
-
-    transform: rotate(90deg);
-
+    line-height: 1.3;
 }
 
 
 /* =========================================================
-   MESSAGES
+   CLOSE BUTTON
    ========================================================= */
 
-.debdut-ai-messages {
+#debdutAIChatClose {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+#debdutAIChatClose:hover {
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MESSAGES CONTAINER
+   ========================================================= */
+
+#debdutAIChatMessages {
 
     flex: 1;
 
     overflow-y: auto;
 
-    padding: 17px;
+    padding:
+        16px 14px;
 
-    scroll-behavior: smooth;
+    display: flex;
 
+    flex-direction: column;
+
+    gap: 12px;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(0, 212, 255, 0.35)
+        transparent;
 }
 
+
+/* =========================================================
+   WEBKIT SCROLLBAR
+   ========================================================= */
+
+#debdutAIChatMessages::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+
+#debdutAIChatMessages::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+
+#debdutAIChatMessages::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(0, 212, 255, 0.35);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
 
 .debdut-ai-message {
 
     display: flex;
 
-    gap: 9px;
+    align-items: flex-start;
 
-    margin-bottom: 15px;
+    gap: 8px;
 
+    width: 100%;
 }
 
+
+/* =========================================================
+   BOT MESSAGE
+   ========================================================= */
+
+.debdut-ai-bot {
+
+    justify-content: flex-start;
+}
+
+
+/* =========================================================
+   USER MESSAGE
+   ========================================================= */
 
 .debdut-ai-user {
 
     justify-content: flex-end;
-
 }
 
 
+/* =========================================================
+   BOT AVATAR
+   ========================================================= */
+
 .debdut-ai-message-avatar {
 
-    width: 29px;
-    height: 29px;
+    width: 28px;
 
-    flex-shrink: 0;
+    height: 28px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-width: 28px;
 
     border-radius: 50%;
 
-    color: #00d4ff;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     background:
         rgba(0, 212, 255, 0.10);
 
     border:
-        1px solid rgba(0, 212, 255, 0.35);
+        1px solid rgba(0, 212, 255, 0.30);
 
-    font-size: 11px;
+    color:
+        #00d4ff;
 
+    font-size: 12px;
 }
 
+
+/* =========================================================
+   MESSAGE CONTENT
+   ========================================================= */
 
 .debdut-ai-message-content {
 
-    max-width: 83%;
-
+    max-width: 82%;
 }
 
 
+/* =========================================================
+   MESSAGE BUBBLE
+   ========================================================= */
+
 .debdut-ai-bubble {
 
-    padding: 10px 12px;
+    padding:
+        10px 12px;
 
     border-radius: 13px;
 
-    color: #e8f0ff;
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    word-wrap: break-word;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   BOT BUBBLE
+   ========================================================= */
+
+.debdut-ai-bot
+.debdut-ai-bubble {
 
     background:
         rgba(255, 255, 255, 0.055);
 
     border:
-        1px solid rgba(255, 255, 255, 0.07);
+        1px solid rgba(255, 255, 255, 0.08);
 
-    font-size: 13px;
+    color:
+        rgba(255, 255, 255, 0.88);
 
-    line-height: 1.55;
-
-    overflow-wrap: anywhere;
-
-}
-
-
-.debdut-ai-user .debdut-ai-bubble {
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0, 212, 255, 0.17),
-            rgba(180, 79, 255, 0.16)
-        );
-
-    border-color:
-        rgba(0, 212, 255, 0.22);
-
+    border-top-left-radius: 4px;
 }
 
 
 /* =========================================================
-   SUGGESTIONS
+   USER BUBBLE
    ========================================================= */
 
-.debdut-ai-suggestions {
+.debdut-ai-user
+.debdut-ai-bubble {
 
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 6px;
-
-    margin-top: 9px;
-
-}
-
-
-.debdut-ai-suggestions button {
-
-    padding: 7px 9px;
-
-    border-radius: 9px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 212, 255, 0.16),
+            rgba(180, 79, 255, 0.16)
+        );
 
     border:
         1px solid rgba(0, 212, 255, 0.22);
 
-    background:
-        rgba(0, 212, 255, 0.055);
+    color:
+        #ffffff;
 
-    color: #b9eefe;
-
-    font: inherit;
-
-    font-size: 11px;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-
-}
-
-
-.debdut-ai-suggestions button:hover {
-
-    background:
-        rgba(0, 212, 255, 0.12);
-
-    transform: translateY(-1px);
-
-}
-
-
-/* =========================================================
-   INPUT
-   ========================================================= */
-
-.debdut-ai-input-area {
-
-    display: flex;
-
-    gap: 8px;
-
-    padding: 11px;
-
-    border-top:
-        1px solid rgba(255, 255, 255, 0.07);
-
-}
-
-
-#debdutAIChatInput {
-
-    flex: 1;
-
-    min-width: 0;
-
-    max-height: 100px;
-
-    resize: none;
-
-    padding: 10px 11px;
-
-    border:
-        1px solid rgba(255, 255, 255, 0.10);
-
-    border-radius: 11px;
-
-    outline: none;
-
-    background:
-        rgba(255, 255, 255, 0.045);
-
-    color: #ffffff;
-
-    font: inherit;
-
-    font-size: 13px;
-
-}
-
-
-#debdutAIChatInput::placeholder {
-
-    color: #73819d;
-
-}
-
-
-#debdutAIChatInput:focus {
-
-    border-color:
-        rgba(0, 212, 255, 0.45);
-
-    box-shadow:
-        0 0 12px rgba(0, 212, 255, 0.08);
-
-}
-
-
-#debdutAIChatSend {
-
-    width: 42px;
-    height: 42px;
-
-    flex-shrink: 0;
-
-    align-self: flex-end;
-
-    border: none;
-
-    border-radius: 11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00d4ff,
-            #8f5cff
-        );
-
-    color: #04111c;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-
-}
-
-
-#debdutAIChatSend:hover {
-
-    transform: translateY(-2px);
-
-}
-
-
-#debdutAIChatSend:disabled {
-
-    opacity: 0.5;
-
-    cursor: not-allowed;
-
-    transform: none;
-
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.debdut-ai-footer {
-
-    padding: 6px 12px 9px;
-
-    text-align: center;
-
-    color: #65728c;
-
-    font-size: 9px;
-
+    border-top-right-radius: 4px;
 }
 
 
@@ -3542,43 +3483,43 @@ nav,
 
 .debdut-ai-typing {
 
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
 
     gap: 4px;
 
-    padding: 12px 14px;
+    min-width: 48px;
 
+    min-height: 35px;
 }
 
 
 .debdut-ai-typing span {
 
     width: 5px;
+
     height: 5px;
 
     border-radius: 50%;
 
-    background: #00d4ff;
+    background:
+        #00d4ff;
 
     animation:
-        debdutAITyping 1s infinite;
-
+        debdutAITyping 1.2s infinite ease-in-out;
 }
 
 
 .debdut-ai-typing span:nth-child(2) {
 
     animation-delay: 0.15s;
-
 }
 
 
 .debdut-ai-typing span:nth-child(3) {
 
     animation-delay: 0.30s;
-
 }
 
 
@@ -3589,22 +3530,256 @@ nav,
     100% {
 
         transform: translateY(0);
-        opacity: 0.45;
 
+        opacity: 0.35;
     }
 
     30% {
 
         transform: translateY(-4px);
-        opacity: 1;
 
+        opacity: 1;
     }
 
 }
 
 
 /* =========================================================
-   MOBILE
+   SUGGESTED QUESTIONS
+   ========================================================= */
+
+.debdut-ai-suggestions {
+
+    padding:
+        0 14px 10px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    flex-shrink: 0;
+}
+
+
+.debdut-ai-suggestions button {
+
+    padding:
+        6px 9px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(0, 212, 255, 0.22);
+
+    background:
+        rgba(0, 212, 255, 0.055);
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.debdut-ai-suggestions button:hover {
+
+    background:
+        rgba(0, 212, 255, 0.12);
+
+    border-color:
+        rgba(0, 212, 255, 0.45);
+
+    color:
+        #00d4ff;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================================
+   INPUT AREA
+   ========================================================= */
+
+.debdut-ai-chat-input-area {
+
+    padding:
+        10px 12px 12px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 8px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    background:
+        rgba(0, 0, 0, 0.12);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TEXT INPUT
+   ========================================================= */
+
+#debdutAIChatInput {
+
+    flex: 1;
+
+    min-width: 0;
+
+    min-height: 40px;
+
+    max-height: 100px;
+
+    padding:
+        10px 12px;
+
+    resize: none;
+
+    outline: none;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    color:
+        #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#debdutAIChatInput::placeholder {
+
+    color:
+        rgba(255, 255, 255, 0.40);
+}
+
+
+#debdutAIChatInput:focus {
+
+    border-color:
+        rgba(0, 212, 255, 0.45);
+
+    box-shadow:
+        0 0 12px rgba(0, 212, 255, 0.10);
+}
+
+
+/* =========================================================
+   SEND BUTTON
+   ========================================================= */
+
+#debdutAIChatSend {
+
+    width: 40px;
+
+    height: 40px;
+
+    min-width: 40px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(0, 212, 255, 0.40);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 212, 255, 0.15),
+            rgba(180, 79, 255, 0.15)
+        );
+
+    color:
+        #00d4ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+#debdutAIChatSend:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 212, 255, 0.24),
+            rgba(180, 79, 255, 0.24)
+        );
+
+    box-shadow:
+        0 0 15px rgba(0, 212, 255, 0.18);
+}
+
+
+#debdutAIChatSend:disabled {
+
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   INPUT DISABLED
+   ========================================================= */
+
+#debdutAIChatInput:disabled {
+
+    opacity: 0.60;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   MOBILE CHATBOT
    ========================================================= */
 
 @media (max-width: 600px) {
@@ -3612,32 +3787,132 @@ nav,
     #debdutAIChatButton {
 
         right: 18px;
-        bottom: 18px;
 
-        width: 56px;
-        height: 56px;
+        bottom: 88px;
 
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 21px;
+    }
+
+
+    #debdutAIChatButton .debdut-ai-label {
+
+        top: 63px;
+
+        font-size: 10px;
+
+        padding:
+            5px 8px;
     }
 
 
     .debdut-ai-chat-window {
 
-        right: 12px;
-        bottom: 86px;
+        right: 10px;
 
-        width: calc(100vw - 24px);
+        bottom: 165px;
 
-        height: min(
-            610px,
-            calc(100vh - 105px)
-        );
+        width:
+            calc(100vw - 20px);
 
-        border-radius: 17px;
+        max-width:
+            calc(100vw - 20px);
 
+        height:
+            min(560px, calc(100vh - 185px));
+
+        max-height:
+            calc(100vh - 185px);
+
+        border-radius: 16px;
+    }
+
+
+    .debdut-ai-chat-header {
+
+        min-height: 62px;
+
+        padding:
+            10px 12px;
+    }
+
+
+    #debdutAIChatMessages {
+
+        padding:
+            13px 10px;
+    }
+
+
+    .debdut-ai-message-content {
+
+        max-width: 86%;
+    }
+
+
+    .debdut-ai-bubble {
+
+        font-size: 11px;
+
+        padding:
+            9px 10px;
+    }
+
+
+    .debdut-ai-suggestions {
+
+        padding:
+            0 10px 8px;
+    }
+
+
+    .debdut-ai-chat-input-area {
+
+        padding:
+            8px 9px 10px;
     }
 
 }
-  
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    #debdutAIChatButton {
+
+        right: 14px;
+
+        bottom: 84px;
+    }
+
+
+    .debdut-ai-chat-window {
+
+        right: 6px;
+
+        width:
+            calc(100vw - 12px);
+
+        max-width:
+            calc(100vw - 12px);
+    }
+
+
+    .debdut-ai-suggestions button {
+
+        font-size: 9px;
+
+        padding:
+            5px 7px;
+    }
+
+}
 </style>
 </head>
 
