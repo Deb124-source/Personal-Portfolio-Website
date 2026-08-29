@@ -575,19 +575,18 @@ section + section{
 /* SKILLS */
 
 /* =========================================
-   SKILLS SECTION
+   SKILLS SECTION — BLACK + BLUE THEME
 ========================================= */
 
 .skills-section {
     position: relative;
     padding: 100px 20px;
-    background: #050607;
+    background: #030507;
     color: #ffffff;
     overflow: hidden;
 }
 
-/* Background grid */
-
+/* Subtle background grid */
 .skills-section::before {
     content: "";
     position: absolute;
@@ -595,22 +594,23 @@ section + section{
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,0.035) 1px,
+            rgba(0, 140, 255, 0.035) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,0.035) 1px,
+            rgba(0, 140, 255, 0.035) 1px,
             transparent 1px
         );
 
-    background-size: 80px 80px;
-
+    background-size: 60px 60px;
     pointer-events: none;
 }
 
 
-/* Container */
+/* =========================================
+   CONTAINER
+========================================= */
 
 .skills-container {
     position: relative;
@@ -627,8 +627,7 @@ section + section{
 
 .skills-header {
     text-align: center;
-    max-width: 700px;
-
+    max-width: 750px;
     margin: 0 auto 45px;
 }
 
@@ -637,27 +636,36 @@ section + section{
 
     margin-bottom: 12px;
 
+    color: #00aaff;
+
     font-size: 13px;
     font-weight: 700;
 
     letter-spacing: 3px;
 
-    color: #d9a441;
+    text-shadow:
+        0 0 10px rgba(0, 170, 255, 0.5);
 }
 
 .skills-header .section-title {
     margin: 0;
 
+    color: #00c8ff;
+
     font-size: clamp(32px, 5vw, 52px);
     font-weight: 700;
+
+    text-shadow:
+        0 0 8px rgba(0, 200, 255, 0.65),
+        0 0 25px rgba(0, 140, 255, 0.35);
 }
 
 .skills-header p {
     margin-top: 16px;
 
-    color: #858585;
+    color: #8b9aaa;
 
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7;
 }
 
@@ -673,23 +681,23 @@ section + section{
 
     flex-wrap: wrap;
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 }
 
 .filter-btn {
-    padding: 12px 23px;
+    padding: 10px 22px;
 
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
 
-    background: rgba(255,255,255,0.025);
+    background: rgba(255, 255, 255, 0.025);
 
-    color: #999999;
+    color: #8d98a5;
 
     font-family: inherit;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
 
     cursor: pointer;
@@ -698,19 +706,28 @@ section + section{
 }
 
 .filter-btn:hover {
-    color: #ffffff;
+    color: #00baff;
 
-    border-color: rgba(217,164,65,0.4);
+    border-color: rgba(0, 174, 255, 0.45);
+
+    background: rgba(0, 150, 255, 0.04);
+
+    box-shadow:
+        0 0 15px rgba(0, 150, 255, 0.08);
 
     transform: translateY(-2px);
 }
 
 .filter-btn.active {
-    color: #e1b45b;
+    color: #00baff;
 
-    background: rgba(217,164,65,0.08);
+    border-color: #008cff;
 
-    border-color: rgba(217,164,65,0.55);
+    background: rgba(0, 140, 255, 0.07);
+
+    box-shadow:
+        0 0 12px rgba(0, 140, 255, 0.15),
+        inset 0 0 12px rgba(0, 140, 255, 0.04);
 }
 
 
@@ -724,7 +741,7 @@ section + section{
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
-    gap: 18px;
+    gap: 13px;
 }
 
 
@@ -733,47 +750,82 @@ section + section{
 ========================================= */
 
 .skill-card {
+    position: relative;
+
     display: flex;
     align-items: center;
 
-    gap: 16px;
+    gap: 15px;
 
-    min-height: 76px;
+    min-height: 72px;
 
-    padding: 17px 20px;
+    padding: 14px 16px;
 
-    border-radius: 15px;
-
-    border: 1px solid rgba(255,255,255,0.075);
+    border-radius: 11px;
 
     background:
         linear-gradient(
-            145deg,
-            rgba(255,255,255,0.045),
+            135deg,
+            rgba(255,255,255,0.035),
             rgba(255,255,255,0.012)
         );
 
+    border: 1px solid rgba(255,255,255,0.08);
+
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.skill-card:hover {
-    transform: translateY(-5px);
 
-    border-color: rgba(217,164,65,0.45);
+/* Blue glow line */
+
+.skill-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 2px;
+    height: 0;
+
+    background: #00aaff;
+
+    border-radius: 10px;
+
+    transform: translateY(-50%);
+
+    box-shadow:
+        0 0 10px #00aaff;
+
+    transition: height 0.25s ease;
+}
+
+
+/* Hover */
+
+.skill-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(0, 170, 255, 0.4);
 
     background:
         linear-gradient(
-            145deg,
-            rgba(217,164,65,0.09),
-            rgba(255,255,255,0.02)
+            135deg,
+            rgba(0, 120, 255, 0.055),
+            rgba(255,255,255,0.015)
         );
 
     box-shadow:
-        0 12px 35px rgba(0,0,0,0.35);
+        0 8px 25px rgba(0, 100, 255, 0.08);
+}
+
+.skill-card:hover::before {
+    height: 60%;
 }
 
 
@@ -782,47 +834,62 @@ section + section{
 ========================================= */
 
 .skill-icon {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
 
-    min-width: 42px;
+    min-width: 38px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
-    background: rgba(255,255,255,0.045);
+    background: rgba(255,255,255,0.035);
 
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: all 0.25s ease;
 }
 
 .skill-icon i {
-    font-size: 25px;
+    font-size: 23px;
+
+    color: #00aaff;
+
+    transition: all 0.25s ease;
 }
 
 
-/* Text fallback icons */
+/* Icon hover */
 
-.text-icon {
-    font-size: 20px;
-    font-weight: 800;
+.skill-card:hover .skill-icon {
+    border-color: rgba(0, 170, 255, 0.35);
 
-    color: #ffffff;
+    background: rgba(0, 140, 255, 0.06);
+
+    box-shadow:
+        0 0 15px rgba(0, 150, 255, 0.1);
+}
+
+.skill-card:hover .skill-icon i {
+    color: #00c8ff;
+
+    text-shadow:
+        0 0 10px rgba(0, 190, 255, 0.6);
 }
 
 
 /* =========================================
-   SKILL INFORMATION
+   SKILL TEXT
 ========================================= */
 
 .skill-info h3 {
     margin: 0;
 
-    color: #eeeeee;
+    color: #e8edf2;
 
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -831,14 +898,29 @@ section + section{
 
     margin-top: 4px;
 
-    color: #777777;
+    color: #647384;
 
-    font-size: 12px;
+    font-size: 10px;
 }
 
 
 /* =========================================
-   HIDDEN CARDS
+   TEXT ICONS
+========================================= */
+
+.text-icon {
+    color: #00aaff;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    text-shadow:
+        0 0 8px rgba(0, 170, 255, 0.5);
+}
+
+
+/* =========================================
+   HIDDEN
 ========================================= */
 
 .skill-card.hidden {
@@ -851,14 +933,14 @@ section + section{
 ========================================= */
 
 .skill-card:not(.hidden) {
-    animation: skillFade 0.35s ease;
+    animation: skillFade 0.3s ease;
 }
 
 @keyframes skillFade {
 
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(8px);
     }
 
     to {
@@ -870,7 +952,7 @@ section + section{
 
 
 /* =========================================
-   TABLET
+   RESPONSIVE
 ========================================= */
 
 @media (max-width: 900px) {
@@ -883,10 +965,6 @@ section + section{
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
-
 @media (max-width: 600px) {
 
     .skills-section {
@@ -895,23 +973,20 @@ section + section{
 
     .skills-grid {
         grid-template-columns: 1fr;
-
-        gap: 13px;
     }
 
     .skill-filters {
-        gap: 8px;
+        gap: 7px;
     }
 
     .filter-btn {
-        padding: 10px 16px;
-        font-size: 13px;
+        padding: 9px 14px;
+
+        font-size: 12px;
     }
 
-    .skill-card {
-        min-height: 70px;
-
-        padding: 14px 16px;
+    .skills-header .section-title {
+        font-size: 34px;
     }
 
 }
