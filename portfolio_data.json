@@ -1,0 +1,215 @@
+{
+  "identity": {
+    "name": "Debdut Nandy",
+    "role": "AI/ML Developer",
+    "portfolio_focus": "AI, Machine Learning, Data Analytics, Web Development and Problem Solving",
+    "github": "https://github.com/Deb124-source",
+    "linkedin": "https://www.linkedin.com/in/debdut-nandy-4b0a88321/",
+    "leetcode": "https://leetcode.com/u/Debdut_23/"
+  },
+  "statistics": {
+    "projects_built": "30+",
+    "github_contributions": "1000+",
+    "best_ml_model_accuracy": "98%",
+    "cgpa": "9.37",
+    "top_skill": "Python"
+  },
+  "skills": {
+    "programming": [
+      "C",
+      "Python",
+      "Java"
+    ],
+    "categories": [
+      "Programming",
+      "AI / ML",
+      "Web",
+      "Data",
+      "Databases",
+      "Tools"
+    ],
+    "description": "Technologies and tools used to build machine learning solutions, data-driven applications, and modern web projects."
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Technology",
+      "specialization": "CSE (AI + ML)",
+      "period": "2024 - 2028",
+      "focus": [
+        "AI",
+        "Machine Learning",
+        "Web Development",
+        "Problem Solving"
+      ],
+      "skills_learned": [
+        "DSA",
+        "Python",
+        "Java",
+        "Machine Learning",
+        "Problem Solving"
+      ]
+    },
+    {
+      "degree": "Higher Secondary",
+      "stream": "Science",
+      "period": "2016 - 2024",
+      "skills_learned": [
+        "Mathematics Fundamentals",
+        "Physics & Logical Thinking",
+        "Analytical Problem Solving",
+        "Communication Skills",
+        "Leadership & Teamwork"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Object Detection Intern",
+      "description": "Completed a hands-on project on Object Detection and practiced Machine Learning skills."
+    },
+    {
+      "role": "Conversational Data Analyst Intern",
+      "description": "Performed EDA on the Netflix Dataset and practiced Data Cleaning and Data Visualization."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Promail AI",
+      "category": "Machine Learning & AI",
+      "description": "AI-powered email generation platform that creates professional, context-aware emails from user prompts.",
+      "problem": "Writing clear, professional and personalized emails can be time-consuming.",
+      "solution": "Built an AI-powered email assistant that generates professional emails instantly from user prompts.",
+      "technologies": [
+        "Streamlit",
+        "Gemini AI",
+        "Prompt Engineering"
+      ],
+      "github": "https://github.com/Deb124-source/ProMail-AI-Debdut-Nandy",
+      "demo": "https://promail-ai-debdut-nandy.streamlit.app/"
+    },
+    {
+      "name": "Truthenix",
+      "category": "Machine Learning & AI",
+      "description": "AI-based system to detect fake and real news.",
+      "solution": "Uses machine learning techniques to classify news with approximately 93% accuracy.",
+      "technologies": [
+        "NLP",
+        "TF-IDF",
+        "Machine Learning"
+      ],
+      "github": "https://github.com/Deb124-source/Truthenix-AI-Debdut-Nandy.git",
+      "demo": "https://truthenix-ai-debdut-nandy.streamlit.app/"
+    },
+    {
+      "name": "House Price Prediction System",
+      "category": "Machine Learning & AI",
+      "description": "Machine learning web application that predicts Bengaluru house prices from user inputs.",
+      "technologies": [
+        "Linear Regression",
+        "Flask",
+        "Bengaluru Dataset"
+      ],
+      "github": "https://github.com/Deb124-source/House-Price-Prediction-System-Debdut-Nandy"
+    },
+    {
+      "name": "Blinkit Sales Analysis Dashboard",
+      "category": "Data Analytics",
+      "description": "Interactive Power BI dashboard analyzing Blinkit's sales performance, customer preferences and outlet trends.",
+      "solution": "Built KPI cards, sales trend analysis, outlet segmentation and product category insights for data-driven decision making.",
+      "technologies": [
+        "Power BI",
+        "Sales Analytics",
+        "KPI Tracking",
+        "Business Intelligence"
+      ],
+      "github": "https://github.com/Deb124-source/Blinkit-Data-Analysis-Dashboard-Debdut-Nandy.git"
+    },
+    {
+      "name": "Airbnb Hotel Booking Price Analysis",
+      "category": "Data Analytics",
+      "description": "Power BI dashboard and analysis focused on Airbnb pricing trends.",
+      "solution": "Performed exploratory data analysis to identify pricing factors, market trends and actionable pricing insights.",
+      "technologies": [
+        "Power BI",
+        "Pricing Analysis",
+        "Interactive Reports"
+      ],
+      "github": "https://github.com/Deb124-source/Airbnb-Hotel-Booking-Analysis-Debdut-Nandy.git"
+    },
+    {
+      "name": "Netflix Dataset Analysis",
+      "category": "Data Analytics",
+      "description": "Exploratory data analysis of Netflix content to identify trends and insights.",
+      "solution": "Performed data cleaning and visualization using Python, Pandas, Matplotlib and Seaborn.",
+      "technologies": [
+        "Python",
+        "Pandas",
+        "Matplotlib",
+        "Seaborn",
+        "Data Visualization"
+      ],
+      "github": "https://github.com/Deb124-source/VOIS_AICTE_Oct2025_MajorProject_DebdutNandy"
+    },
+    {
+      "name": "YOLOv8 Helmet Detection System",
+      "category": "Machine Learning & AI",
+      "description": "Real-time AI-powered bike helmet detection system using YOLOv8."
+    }
+  ],
+  "certifications": [
+    "Oracle Agentic AI Foundations Associate",
+    "Oracle Cloud Infrastructure 2025 AI Foundations Associate",
+    "Introduction to Large Language Models - Google",
+    "Data Analytics Job Simulation - Deloitte Australia",
+    "Gen AI Powered Data Analytics Simulation - TATA"
+  ],
+  "events": [
+    {
+      "name": "GDG Build with AI BootCamp 2026",
+      "type": "Event",
+      "description": "Hands-on experiments with AI tools such as Stitch AI and Antigravity."
+    },
+    {
+      "name": "Google I/O Extended Kolkata 2026",
+      "type": "Event",
+      "description": "Explored Google AI, developer technologies and innovative tools while connecting with the developer community."
+    },
+    {
+      "name": "GDG Build with AI 2026",
+      "type": "Event",
+      "description": "Gained insights into AI agents, real-time voice systems, Firebase and scalable architectures."
+    },
+    {
+      "name": "Xibit Hackathon 2026",
+      "type": "Hackathon",
+      "description": "Participated in a competitive hackathon and gained experience in teamwork, time management and rapid prototyping."
+    },
+    {
+      "name": "SIH Internal Hackathon 2025",
+      "type": "Hackathon",
+      "description": "Participated in the internal selection round of Smart India Hackathon, working on problem analysis, brainstorming and rapid solution ideation."
+    },
+    {
+      "name": "Nexathon 2025",
+      "type": "Hackathon",
+      "description": "Participated in a university-level hackathon focused on innovative problem solving and real-world solution development."
+    },
+    {
+      "name": "IBM Technovate 2025",
+      "type": "Event",
+      "description": "Learned about machine learning algorithms, hands-on machine learning projects and data analysis."
+    }
+  ],
+  "blogs": [
+    {
+      "title": "YOLOv8 Helmet Detection System",
+      "description": "From theory to deployment — built a real-time AI-powered helmet detection system using YOLOv8.",
+      "url": "https://debdut-techhashnodedev.hashnode.dev/from-theory-to-deployment-built-a-real-time-bike-helmet-detection-system-using-yolov8"
+    },
+    {
+      "title": "Deadlock Prevention, Avoidance and Recovery Techniques",
+      "description": "Understanding Deadlock in Operating Systems: Prevention, Avoidance and Recovery.",
+      "url": "https://debdut-aihashnodedev.hashnode.dev/understanding-deadlock-in-operating-systems-prevention-avoidance-and-recovery"
+    }
+  ]
+}
