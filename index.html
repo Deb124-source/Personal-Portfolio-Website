@@ -2869,6 +2869,688 @@ nav,
     box-shadow: 0 0 0 0 rgba(0, 255, 127, 0);
   }
 }
+
+/* =========================================================
+   DEBDUT AI PORTFOLIO CHATBOT
+   APPENDED CSS — EXISTING CSS UNTOUCHED
+   ========================================================= */
+
+#debdutAIChatButton {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 212, 255, 0.75);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(5, 20, 35, 0.98),
+            rgba(15, 10, 35, 0.98)
+        );
+
+    color: #00d4ff;
+
+    font-size: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 99998;
+
+    box-shadow:
+        0 0 15px rgba(0, 212, 255, 0.35),
+        0 0 35px rgba(180, 79, 255, 0.20);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#debdutAIChatButton:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 22px rgba(0, 212, 255, 0.55),
+        0 0 50px rgba(180, 79, 255, 0.30);
+}
+
+
+/* PULSE */
+
+.debdut-ai-pulse {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(0, 212, 255, 0.35);
+
+    animation:
+        debdutAIChatPulse 2s infinite;
+
+}
+
+
+@keyframes debdutAIChatPulse {
+
+    0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(1.18);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.18);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================================
+   CHAT WINDOW
+   ========================================================= */
+
+.debdut-ai-chat-window {
+
+    position: fixed;
+
+    right: 28px;
+    bottom: 105px;
+
+    width: 390px;
+    max-width: calc(100vw - 32px);
+
+    height: 600px;
+    max-height: calc(100vh - 135px);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background:
+        rgba(6, 12, 27, 0.97);
+
+    border:
+        1px solid rgba(0, 212, 255, 0.35);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.55),
+        0 0 35px rgba(0, 212, 255, 0.12);
+
+    z-index: 99999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translateY(20px)
+        scale(0.96);
+
+    transform-origin: bottom right;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.debdut-ai-chat-window.debdut-ai-open {
+
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.debdut-ai-header {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 212, 255, 0.10),
+            rgba(180, 79, 255, 0.10)
+        );
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+.debdut-ai-header-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+}
+
+
+.debdut-ai-avatar {
+
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #00d4ff;
+
+    background:
+        rgba(0, 212, 255, 0.10);
+
+    border:
+        1px solid rgba(0, 212, 255, 0.35);
+
+}
+
+
+.debdut-ai-title {
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.debdut-ai-status {
+
+    margin-top: 3px;
+
+    color: #9ba9c5;
+
+    font-size: 11px;
+
+}
+
+
+.debdut-ai-status span {
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 4px;
+
+    border-radius: 50%;
+
+    background: #00e676;
+
+    box-shadow:
+        0 0 8px #00e676;
+
+}
+
+
+.debdut-ai-close {
+
+    border: none;
+
+    background: transparent;
+
+    color: #9ba9c5;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.debdut-ai-close:hover {
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.debdut-ai-messages {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 17px;
+
+    scroll-behavior: smooth;
+
+}
+
+
+.debdut-ai-message {
+
+    display: flex;
+
+    gap: 9px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.debdut-ai-user {
+
+    justify-content: flex-end;
+
+}
+
+
+.debdut-ai-message-avatar {
+
+    width: 29px;
+    height: 29px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #00d4ff;
+
+    background:
+        rgba(0, 212, 255, 0.10);
+
+    border:
+        1px solid rgba(0, 212, 255, 0.35);
+
+    font-size: 11px;
+
+}
+
+
+.debdut-ai-message-content {
+
+    max-width: 83%;
+
+}
+
+
+.debdut-ai-bubble {
+
+    padding: 10px 12px;
+
+    border-radius: 13px;
+
+    color: #e8f0ff;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+.debdut-ai-user .debdut-ai-bubble {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 212, 255, 0.17),
+            rgba(180, 79, 255, 0.16)
+        );
+
+    border-color:
+        rgba(0, 212, 255, 0.22);
+
+}
+
+
+/* =========================================================
+   SUGGESTIONS
+   ========================================================= */
+
+.debdut-ai-suggestions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 9px;
+
+}
+
+
+.debdut-ai-suggestions button {
+
+    padding: 7px 9px;
+
+    border-radius: 9px;
+
+    border:
+        1px solid rgba(0, 212, 255, 0.22);
+
+    background:
+        rgba(0, 212, 255, 0.055);
+
+    color: #b9eefe;
+
+    font: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.debdut-ai-suggestions button:hover {
+
+    background:
+        rgba(0, 212, 255, 0.12);
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.debdut-ai-input-area {
+
+    display: flex;
+
+    gap: 8px;
+
+    padding: 11px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.07);
+
+}
+
+
+#debdutAIChatInput {
+
+    flex: 1;
+
+    min-width: 0;
+
+    max-height: 100px;
+
+    resize: none;
+
+    padding: 10px 11px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    color: #ffffff;
+
+    font: inherit;
+
+    font-size: 13px;
+
+}
+
+
+#debdutAIChatInput::placeholder {
+
+    color: #73819d;
+
+}
+
+
+#debdutAIChatInput:focus {
+
+    border-color:
+        rgba(0, 212, 255, 0.45);
+
+    box-shadow:
+        0 0 12px rgba(0, 212, 255, 0.08);
+
+}
+
+
+#debdutAIChatSend {
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    align-self: flex-end;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d4ff,
+            #8f5cff
+        );
+
+    color: #04111c;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+#debdutAIChatSend:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+#debdutAIChatSend:disabled {
+
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.debdut-ai-footer {
+
+    padding: 6px 12px 9px;
+
+    text-align: center;
+
+    color: #65728c;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   TYPING INDICATOR
+   ========================================================= */
+
+.debdut-ai-typing {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 12px 14px;
+
+}
+
+
+.debdut-ai-typing span {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #00d4ff;
+
+    animation:
+        debdutAITyping 1s infinite;
+
+}
+
+
+.debdut-ai-typing span:nth-child(2) {
+
+    animation-delay: 0.15s;
+
+}
+
+
+.debdut-ai-typing span:nth-child(3) {
+
+    animation-delay: 0.30s;
+
+}
+
+
+@keyframes debdutAITyping {
+
+    0%,
+    60%,
+    100% {
+
+        transform: translateY(0);
+        opacity: 0.45;
+
+    }
+
+    30% {
+
+        transform: translateY(-4px);
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    #debdutAIChatButton {
+
+        right: 18px;
+        bottom: 18px;
+
+        width: 56px;
+        height: 56px;
+
+    }
+
+
+    .debdut-ai-chat-window {
+
+        right: 12px;
+        bottom: 86px;
+
+        width: calc(100vw - 24px);
+
+        height: min(
+            610px,
+            calc(100vh - 105px)
+        );
+
+        border-radius: 17px;
+
+    }
+
+}
+  
 </style>
 </head>
 
@@ -4950,6 +5632,656 @@ navItems.forEach(item => {
 
 });
 
+/* =========================================================
+   DEBDUT AI PORTFOLIO CHATBOT
+   APPENDED JAVASCRIPT
+   EXISTING JAVASCRIPT IS NOT MODIFIED
+   ========================================================= */
+
+(function () {
+
+    "use strict";
+
+
+    /*
+     * =====================================================
+     * BACKEND URL
+     * =====================================================
+     *
+     * LOCAL DEVELOPMENT:
+     *
+     * http://127.0.0.1:8000
+     *
+     * AFTER DEPLOYMENT:
+     *
+     * https://your-backend-url.com
+     *
+     */
+
+    const DEBDUT_AI_API =
+        "http://127.0.0.1:8000";
+
+
+    /*
+     * =====================================================
+     * ELEMENTS
+     * =====================================================
+     */
+
+    const chatButton =
+        document.getElementById(
+            "debdutAIChatButton"
+        );
+
+    const chatWindow =
+        document.getElementById(
+            "debdutAIChatWindow"
+        );
+
+    const chatClose =
+        document.getElementById(
+            "debdutAIChatClose"
+        );
+
+    const chatMessages =
+        document.getElementById(
+            "debdutAIChatMessages"
+        );
+
+    const chatInput =
+        document.getElementById(
+            "debdutAIChatInput"
+        );
+
+    const chatSend =
+        document.getElementById(
+            "debdutAIChatSend"
+        );
+
+
+    /*
+     * =====================================================
+     * CONVERSATION HISTORY
+     * =====================================================
+     */
+
+    let debdutAIHistory = [];
+
+
+    /*
+     * =====================================================
+     * OPEN CHAT
+     * =====================================================
+     */
+
+    function openDebdutAIChat() {
+
+        chatWindow.classList.add(
+            "debdut-ai-open"
+        );
+
+        chatWindow.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        setTimeout(function () {
+
+            chatInput.focus();
+
+        }, 200);
+
+    }
+
+
+    /*
+     * =====================================================
+     * CLOSE CHAT
+     * =====================================================
+     */
+
+    function closeDebdutAIChat() {
+
+        chatWindow.classList.remove(
+            "debdut-ai-open"
+        );
+
+        chatWindow.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    /*
+     * =====================================================
+     * BUTTON EVENTS
+     * =====================================================
+     */
+
+    chatButton.addEventListener(
+        "click",
+        function () {
+
+            if (
+                chatWindow.classList.contains(
+                    "debdut-ai-open"
+                )
+            ) {
+
+                closeDebdutAIChat();
+
+            } else {
+
+                openDebdutAIChat();
+
+            }
+
+        }
+    );
+
+
+    chatClose.addEventListener(
+        "click",
+        closeDebdutAIChat
+    );
+
+
+    /*
+     * =====================================================
+     * ESCAPE HTML
+     * =====================================================
+     */
+
+    function escapeHTML(text) {
+
+        const element =
+            document.createElement("div");
+
+        element.textContent = text;
+
+        return element.innerHTML;
+
+    }
+
+
+    /*
+     * =====================================================
+     * ADD MESSAGE
+     * =====================================================
+     */
+
+    function addDebdutAIMessage(
+        text,
+        role
+    ) {
+
+        const wrapper =
+            document.createElement("div");
+
+
+        if (role === "user") {
+
+            wrapper.className =
+                "debdut-ai-message debdut-ai-user";
+
+
+            wrapper.innerHTML = `
+
+                <div class="debdut-ai-message-content">
+
+                    <div class="debdut-ai-bubble">
+
+                        ${escapeHTML(text)}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        } else {
+
+            wrapper.className =
+                "debdut-ai-message debdut-ai-bot";
+
+
+            const safeText =
+                escapeHTML(text)
+                    .replace(
+                        /\n/g,
+                        "<br>"
+                    );
+
+
+            wrapper.innerHTML = `
+
+                <div class="debdut-ai-message-avatar">
+
+                    <i class="fas fa-robot"></i>
+
+                </div>
+
+                <div class="debdut-ai-message-content">
+
+                    <div class="debdut-ai-bubble">
+
+                        ${safeText}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        chatMessages.appendChild(
+            wrapper
+        );
+
+
+        chatMessages.scrollTop =
+            chatMessages.scrollHeight;
+
+    }
+
+
+    /*
+     * =====================================================
+     * TYPING INDICATOR
+     * =====================================================
+     */
+
+    function showDebdutAITyping() {
+
+        const wrapper =
+            document.createElement("div");
+
+
+        wrapper.id =
+            "debdutAITypingIndicator";
+
+
+        wrapper.className =
+            "debdut-ai-message debdut-ai-bot";
+
+
+        wrapper.innerHTML = `
+
+            <div class="debdut-ai-message-avatar">
+
+                <i class="fas fa-robot"></i>
+
+            </div>
+
+            <div class="debdut-ai-message-content">
+
+                <div class="debdut-ai-bubble debdut-ai-typing">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        chatMessages.appendChild(
+            wrapper
+        );
+
+
+        chatMessages.scrollTop =
+            chatMessages.scrollHeight;
+
+    }
+
+
+    /*
+     * =====================================================
+     * REMOVE TYPING INDICATOR
+     * =====================================================
+     */
+
+    function hideDebdutAITyping() {
+
+        const typing =
+            document.getElementById(
+                "debdutAITypingIndicator"
+            );
+
+
+        if (typing) {
+
+            typing.remove();
+
+        }
+
+    }
+
+
+    /*
+     * =====================================================
+     * SEND MESSAGE
+     * =====================================================
+     */
+
+    async function sendDebdutAIMessage(
+        predefinedMessage = null
+    ) {
+
+        const message =
+            (
+                predefinedMessage !== null
+                    ? predefinedMessage
+                    : chatInput.value
+            ).trim();
+
+
+        if (
+            !message ||
+            chatSend.disabled
+        ) {
+
+            return;
+
+        }
+
+
+        /*
+         * Clear input
+         */
+
+        if (
+            predefinedMessage === null
+        ) {
+
+            chatInput.value = "";
+
+            chatInput.style.height =
+                "auto";
+
+        }
+
+
+        /*
+         * Show user message
+         */
+
+        addDebdutAIMessage(
+            message,
+            "user"
+        );
+
+
+        /*
+         * Save user message
+         */
+
+        debdutAIHistory.push({
+
+            role: "user",
+
+            text: message
+
+        });
+
+
+        /*
+         * Disable UI
+         */
+
+        chatSend.disabled = true;
+
+        chatInput.disabled = true;
+
+
+        /*
+         * Show typing
+         */
+
+        showDebdutAITyping();
+
+
+        try {
+
+            const response =
+                await fetch(
+                    `${DEBDUT_AI_API}/chat`,
+                    {
+
+                        method: "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body: JSON.stringify({
+
+                            message: message,
+
+                            history:
+                                debdutAIHistory
+                                    .slice(-12)
+
+                        })
+
+                    }
+                );
+
+
+            /*
+             * Parse JSON safely
+             */
+
+            const data =
+                await response
+                    .json()
+                    .catch(function () {
+
+                        return {};
+
+                    });
+
+
+            /*
+             * HTTP error
+             */
+
+            if (!response.ok) {
+
+                throw new Error(
+                    data.detail ||
+                    "AI server error"
+                );
+
+            }
+
+
+            /*
+             * Remove typing
+             */
+
+            hideDebdutAITyping();
+
+
+            /*
+             * Get reply
+             */
+
+            const reply =
+                data.reply ||
+                "I couldn't generate a response.";
+
+
+            /*
+             * Show reply
+             */
+
+            addDebdutAIMessage(
+                reply,
+                "bot"
+            );
+
+
+            /*
+             * Save reply
+             */
+
+            debdutAIHistory.push({
+
+                role: "model",
+
+                text: reply
+
+            });
+
+
+        } catch (error) {
+
+            console.error(
+                "Debdut AI error:",
+                error
+            );
+
+
+            hideDebdutAITyping();
+
+
+            addDebdutAIMessage(
+
+                "Sorry, the AI assistant is currently unavailable. Please try again in a moment.",
+
+                "bot"
+
+            );
+
+        }
+
+
+        /*
+         * Enable UI
+         */
+
+        chatSend.disabled = false;
+
+        chatInput.disabled = false;
+
+        chatInput.focus();
+
+    }
+
+
+    /*
+     * =====================================================
+     * SEND BUTTON
+     * =====================================================
+     */
+
+    chatSend.addEventListener(
+        "click",
+        function () {
+
+            sendDebdutAIMessage();
+
+        }
+    );
+
+
+    /*
+     * =====================================================
+     * ENTER TO SEND
+     * =====================================================
+     */
+
+    chatInput.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Enter" &&
+                !event.shiftKey
+            ) {
+
+                event.preventDefault();
+
+                sendDebdutAIMessage();
+
+            }
+
+        }
+    );
+
+
+    /*
+     * =====================================================
+     * AUTO-RESIZE TEXTAREA
+     * =====================================================
+     */
+
+    chatInput.addEventListener(
+        "input",
+        function () {
+
+            chatInput.style.height =
+                "auto";
+
+
+            chatInput.style.height =
+                Math.min(
+                    chatInput.scrollHeight,
+                    100
+                ) + "px";
+
+        }
+    );
+
+
+    /*
+     * =====================================================
+     * QUICK QUESTIONS
+     * =====================================================
+     */
+
+    const suggestionButtons =
+        document.querySelectorAll(
+            ".debdut-ai-suggestions button"
+        );
+
+
+    suggestionButtons.forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const question =
+                        button.dataset.question;
+
+
+                    sendDebdutAIMessage(
+                        question
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+})();
+
 </script>
   
 
@@ -4963,6 +6295,136 @@ navItems.forEach(item => {
     <div id="pipeline-flow" class="pipeline-flow"></div>
 
   </div>
+
+</div>
+
+<!-- =========================================================
+     DEBDUT AI PORTFOLIO CHATBOT
+     DO NOT REMOVE OR MODIFY YOUR EXISTING CODE
+     ========================================================= -->
+
+<button id="debdutAIChatButton"
+        type="button"
+        aria-label="Open Debdut AI Assistant">
+    <i class="fas fa-robot"></i>
+    <span class="debdut-ai-pulse"></span>
+</button>
+
+
+<div id="debdutAIChatWindow"
+     class="debdut-ai-chat-window"
+     aria-hidden="true">
+
+    <!-- HEADER -->
+    <div class="debdut-ai-header">
+
+        <div class="debdut-ai-header-left">
+
+            <div class="debdut-ai-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+
+            <div>
+                <div class="debdut-ai-title">
+                    Debdut's AI Assistant
+                </div>
+
+                <div class="debdut-ai-status">
+                    <span></span>
+                    Portfolio Assistant
+                </div>
+            </div>
+
+        </div>
+
+        <button id="debdutAIChatClose"
+                type="button"
+                class="debdut-ai-close"
+                aria-label="Close chatbot">
+            <i class="fas fa-times"></i>
+        </button>
+
+    </div>
+
+
+    <!-- MESSAGES -->
+    <div id="debdutAIChatMessages"
+         class="debdut-ai-messages">
+
+        <div class="debdut-ai-message debdut-ai-bot">
+
+            <div class="debdut-ai-message-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+
+            <div class="debdut-ai-message-content">
+
+                <div class="debdut-ai-bubble">
+
+                    Hi! I'm Debdut's AI Portfolio Assistant.
+
+                    <br><br>
+
+                    Ask me anything about his
+                    <strong>projects, skills, education,
+                    experience, certifications</strong>
+                    and more.
+
+                </div>
+
+                <div class="debdut-ai-suggestions">
+
+                    <button type="button"
+                            data-question="Tell me about Debdut's projects">
+                         Projects
+                    </button>
+
+                    <button type="button"
+                            data-question="What skills does Debdut have?">
+                         Skills
+                    </button>
+
+                    <button type="button"
+                            data-question="Tell me about Debdut's experience">
+                        Experience
+                    </button>
+
+                    <button type="button"
+                            data-question="What is Debdut's education?">
+                        Education
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INPUT -->
+    <div class="debdut-ai-input-area">
+
+        <textarea id="debdutAIChatInput"
+                  placeholder="Ask about Debdut..."
+                  rows="1"
+                  maxlength="1000"></textarea>
+
+        <button id="debdutAIChatSend"
+                type="button"
+                aria-label="Send message">
+
+            <i class="fas fa-paper-plane"></i>
+
+        </button>
+
+    </div>
+
+
+    <div class="debdut-ai-footer">
+        Powered by Gemini 2.5 Flash
+    </div>
 
 </div>
   
