@@ -4174,7 +4174,7 @@ View All Projects
 <footer class="footer">
   <p>© 2026 Debdut Nandy | AI & ML Portfolio</p>
 </footer>
-  
+
 <script>
 // ============================
 // GSAP ANIMATIONS
@@ -4275,6 +4275,9 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
 
+  // ============================
+  // CONTACT FORM
+  // ============================
   const form = document.getElementById("contact-form");
   const successMsg = document.getElementById("success-msg");
 
@@ -4304,13 +4307,112 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }
 
+
+  // ============================
+  // SKILLS FILTER
+  // ============================
+
+  const skillButtons =
+    document.querySelectorAll("#skills .filter-btn");
+
+  const skillCards =
+    document.querySelectorAll("#skills .skill-card");
+
+
+  if (skillButtons.length > 0 && skillCards.length > 0) {
+
+    skillButtons.forEach(button => {
+
+      button.addEventListener("click", function() {
+
+        // Get selected category
+        const selectedFilter =
+          this.getAttribute("data-filter");
+
+
+        // ----------------------------
+        // Remove active from all buttons
+        // ----------------------------
+
+        skillButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+
+        // ----------------------------
+        // Add active to clicked button
+        // ----------------------------
+
+        this.classList.add("active");
+
+
+        // ----------------------------
+        // Filter skill cards
+        // ----------------------------
+
+        skillCards.forEach(card => {
+
+          const category =
+            card.getAttribute("data-category");
+
+
+          if (
+            selectedFilter === "all" ||
+            category === selectedFilter
+          ) {
+
+            card.classList.remove("hidden");
+
+          } else {
+
+            card.classList.add("hidden");
+
+          }
+
+        });
+
+      });
+
+    });
+
+
+    // ----------------------------
+    // Default state = ALL
+    // ----------------------------
+
+    skillCards.forEach(card => {
+      card.classList.remove("hidden");
+    });
+
+
+    skillButtons.forEach(button => {
+
+      if (
+        button.getAttribute("data-filter") === "all"
+      ) {
+        button.classList.add("active");
+      }
+
+    });
+
+  }
+
 });
 </script>
 
+
 <script>
 
+// ============================
+// ROBOT TYPING EFFECT
+// ============================
+
 function robotType(element, text) {
-  if (element.dataset.typed === "true") return; // prevents repeat bugs
+
+  if (element.dataset.typed === "true") {
+    return;
+  }
+
   element.dataset.typed = "true";
 
   element.textContent = "";
@@ -4318,6 +4420,7 @@ function robotType(element, text) {
   let i = 0;
 
   function typeNext() {
+
     if (i < text.length) {
 
       const delay = Math.random() < 0.12
@@ -4325,90 +4428,128 @@ function robotType(element, text) {
         : 55;
 
       element.textContent += text.charAt(i);
+
       i++;
 
       setTimeout(typeNext, delay);
     }
+
   }
 
   typeNext();
 }
+
+
+// ============================
+// MOBILE MENU
+// ============================
+
 function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("show");
+
+  document
+    .getElementById("navLinks")
+    .classList.toggle("show");
+
 }
 
+
+// ============================
+// DROPDOWN
+// ============================
+
 function toggleDropdown(event) {
+
   event.preventDefault();
 
   document
     .getElementById("dropdownMenu")
     .classList.toggle("show");
+
 }
+
+
+// ============================
+// CLOSE DROPDOWN WHEN CLICKING OUTSIDE
+// ============================
 
 document.addEventListener("click", function(event) {
 
-  const dropdown = document.querySelector(".dropdown");
+  const dropdown =
+    document.querySelector(".dropdown");
 
-  const menu = document.getElementById("dropdownMenu");
+  const menu =
+    document.getElementById("dropdownMenu");
 
-  if (!dropdown.contains(event.target)) {
+
+  if (
+    dropdown &&
+    menu &&
+    !dropdown.contains(event.target)
+  ) {
+
     menu.classList.remove("show");
+
   }
+
 });
 
-document.querySelectorAll(".dropdown-content a").forEach(link => {
 
-  link.addEventListener("click", () => {
+// ============================
+// DROPDOWN LINKS
+// ============================
 
-    document
-      .getElementById("dropdownMenu")
-      .classList.remove("show");
+document
+  .querySelectorAll(".dropdown-content a")
+  .forEach(link => {
 
-    document
-      .getElementById("navLinks")
-      .classList.remove("show");
+    link.addEventListener("click", () => {
+
+      document
+        .getElementById("dropdownMenu")
+        .classList.remove("show");
+
+      document
+        .getElementById("navLinks")
+        .classList.remove("show");
+
+    });
 
   });
 
-});
-
-const skillBars = document.querySelectorAll(".skill-fill");
-
-const skillObserver = new IntersectionObserver(entries => {
-
-  entries.forEach(entry => {
-
-    if(entry.isIntersecting){
-
-      const width = entry.target.getAttribute("data-width");
-
-      entry.target.style.width = width;
-
-    }
-
-  });
-
-},{ threshold:0.4 });
-
-skillBars.forEach(bar => {
-  skillObserver.observe(bar);
-});
 </script>
 
 
 <script>
+
+// ============================
+// ML PIPELINE MODAL
+// ============================
+
 function openPipeline(project){
 
-  const modal = document.getElementById("mlModal");
-  const title = document.getElementById("ml-title");
-  const flow = document.getElementById("pipeline-flow");
+  const modal =
+    document.getElementById("mlModal");
+
+  const title =
+    document.getElementById("ml-title");
+
+  const flow =
+    document.getElementById("pipeline-flow");
+
 
   modal.style.display = "flex";
 
   let content = [];
 
+
+  // ----------------------------
+  // Helmet Detection
+  // ----------------------------
+
   if(project === "helmet"){
-    title.innerText = "Helmet Detection ML Pipeline";
+
+    title.innerText =
+      "Helmet Detection ML Pipeline";
 
     content = [
       "Input Image (Traffic Camera)",
@@ -4417,10 +4558,18 @@ function openPipeline(project){
       "Bounding Box Extraction",
       "Alert System / Violation Log"
     ];
+
   }
 
+
+  // ----------------------------
+  // House Price
+  // ----------------------------
+
   if(project === "house"){
-    title.innerText = "House Price Prediction Pipeline";
+
+    title.innerText =
+      "House Price Prediction Pipeline";
 
     content = [
       "Input Features (Area, Location, Rooms)",
@@ -4429,22 +4578,38 @@ function openPipeline(project){
       "Training & Validation",
       "Price Prediction Output"
     ];
+
   }
 
-  if(project === "promail"){
-  title.innerText = "ProMail AI Workflow";
 
-  content = [
-    "User Prompt (Email Purpose & Context)",
-    "Prompt Processing",
-    "Gemini AI Email Generation",
-    "Tone & Content Optimization",
-    "Professional Email Output"
-  ];
-}
+  // ----------------------------
+  // ProMail AI
+  // ----------------------------
+
+  if(project === "promail"){
+
+    title.innerText =
+      "ProMail AI Workflow";
+
+    content = [
+      "User Prompt (Email Purpose & Context)",
+      "Prompt Processing",
+      "Gemini AI Email Generation",
+      "Tone & Content Optimization",
+      "Professional Email Output"
+    ];
+
+  }
+
+
+  // ----------------------------
+  // Bank Loan
+  // ----------------------------
 
   if(project === "loan"){
-    title.innerText = "Bank Loan Eligibility Pipeline";
+
+    title.innerText =
+      "Bank Loan Eligibility Pipeline";
 
     content = [
       "User data",
@@ -4453,10 +4618,18 @@ function openPipeline(project){
       "Training & Validation",
       "Eligibility (Yes/No) Output"
     ];
+
   }
 
+
+  // ----------------------------
+  // Spam Email
+  // ----------------------------
+
   if(project === "email"){
-    title.innerText = "Spam Email Classifier Pipeline";
+
+    title.innerText =
+      "Spam Email Classifier Pipeline";
 
     content = [
       "Email Text",
@@ -4464,11 +4637,19 @@ function openPipeline(project){
       "Count Vectorization",
       "Multinomial Naive Bayes",
       "Spam Prediction"
-      ];
+    ];
+
   }
 
+
+  // ----------------------------
+  // Dataset Analytics
+  // ----------------------------
+
   if(project === "data"){
-    title.innerText = "Dataset Analytics Pipeline";
+
+    title.innerText =
+      "Dataset Analytics Pipeline";
 
     content = [
       "Dataset",
@@ -4477,113 +4658,224 @@ function openPipeline(project){
       "Visualizations",
       "Insight Extraction"
     ];
+
   }
 
-if(project === "truth"){
-  title.innerText = "Truthenix Model Pipeline";
 
-  content = [
-    "News Text",
-    "Text Preprocessing",
-    "CountVectorization",
-    "PassiveAggressiveClassifier",
-    "Fake/Real News Prediction"
-  ];
-}
+  // ----------------------------
+  // Truthenix
+  // ----------------------------
 
-if(project === "youtube"){
-  title.innerText = "YouTube Content Analysis Pipeline";
+  if(project === "truth"){
 
-  content = [
-    "YouTube Trending Dataset",
-    "Data Cleaning & Preprocessing",
-    "Exploratory Data Analysis",
-    "Interactive Visualizations",
-    "Content Performance Insights"
-  ];
-}
+    title.innerText =
+      "Truthenix Model Pipeline";
 
-if(project === "blinkit"){
-  title.innerText = "Blinkit Sales Analysis Pipeline";
+    content = [
+      "News Text",
+      "Text Preprocessing",
+      "CountVectorization",
+      "PassiveAggressiveClassifier",
+      "Fake/Real News Prediction"
+    ];
 
-  content = [
-    "Blinkit Sales Dataset",
-    "Data Cleaning & Transformation",
-    "Data Modeling",
-    "DAX Measures & KPIs",
-    "Sales & Outlet Analysis",
-    "Interactive Power BI Dashboard",
-    "Business Insights"
-  ];
-}
+  }
 
-if(project === "airbnb"){
-  title.innerText = "Airbnb Price Analysis Pipeline";
 
-  content = [
-    "Airbnb Listings Dataset",
-    "Data Cleaning & Feature Engineering",
-    "Exploratory Data Analysis",
-    "Price Trend & Factor Analysis",
-    "Pricing Insights Dashboard"
-  ];
-}
+  // ----------------------------
+  // YouTube
+  // ----------------------------
 
-  
+  if(project === "youtube"){
+
+    title.innerText =
+      "YouTube Content Analysis Pipeline";
+
+    content = [
+      "YouTube Trending Dataset",
+      "Data Cleaning & Preprocessing",
+      "Exploratory Data Analysis",
+      "Interactive Visualizations",
+      "Content Performance Insights"
+    ];
+
+  }
+
+
+  // ----------------------------
+  // Blinkit
+  // ----------------------------
+
+  if(project === "blinkit"){
+
+    title.innerText =
+      "Blinkit Sales Analysis Pipeline";
+
+    content = [
+      "Blinkit Sales Dataset",
+      "Data Cleaning & Transformation",
+      "Data Modeling",
+      "DAX Measures & KPIs",
+      "Sales & Outlet Analysis",
+      "Interactive Power BI Dashboard",
+      "Business Insights"
+    ];
+
+  }
+
+
+  // ----------------------------
+  // Airbnb
+  // ----------------------------
+
+  if(project === "airbnb"){
+
+    title.innerText =
+      "Airbnb Price Analysis Pipeline";
+
+    content = [
+      "Airbnb Listings Dataset",
+      "Data Cleaning & Feature Engineering",
+      "Exploratory Data Analysis",
+      "Price Trend & Factor Analysis",
+      "Pricing Insights Dashboard"
+    ];
+
+  }
+
+
+  // ----------------------------
+  // Generate Pipeline
+  // ----------------------------
+
   flow.innerHTML = "";
 
   content.forEach((step, i) => {
-    flow.innerHTML += `<div class="step">${step}</div>`;
+
+    flow.innerHTML +=
+      `<div class="step">${step}</div>`;
+
     if(i !== content.length - 1){
-      flow.innerHTML += `<div class="arrow">↓</div>`;
+
+      flow.innerHTML +=
+        `<div class="arrow">↓</div>`;
+
     }
+
   });
 
 }
+
+
+// ============================
+// CLOSE PIPELINE
+// ============================
 
 function closePipeline(){
-  document.getElementById("mlModal").style.display = "none";
+
+  document
+    .getElementById("mlModal")
+    .style.display = "none";
+
 }
+
+
+// ============================
+// CLOSE PIPELINE WHEN CLICKING OUTSIDE
+// ============================
 
 window.onclick = function(event) {
-  const modal = document.getElementById("mlModal");
+
+  const modal =
+    document.getElementById("mlModal");
 
   if (event.target === modal) {
+
     modal.style.display = "none";
+
   }
-}
+
+};
+
 </script>
+
 
 <script>
-document.querySelectorAll('.education-card').forEach(card => {
-  card.addEventListener('click', () => {
-    document.querySelectorAll('.education-card').forEach(c => {
-      if (c !== card) c.classList.remove('flipped');
+
+// ============================
+// EDUCATION CARD
+// ============================
+
+document
+  .querySelectorAll(".education-card")
+  .forEach(card => {
+
+    card.addEventListener("click", () => {
+
+      document
+        .querySelectorAll(".education-card")
+        .forEach(c => {
+
+          if (c !== card) {
+            c.classList.remove("flipped");
+          }
+
+        });
+
     });
+
   });
-});
+
 </script>
 
-  <script>
-const hamburger = document.querySelector(".hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  const navItems = document.querySelectorAll(".nav-links a");
 
-  // Toggle menu
+<script>
+
+// ============================
+// HAMBURGER MENU
+// ============================
+
+const hamburger =
+  document.querySelector(".hamburger");
+
+const navLinks =
+  document.querySelector(".nav-links");
+
+const navItems =
+  document.querySelectorAll(".nav-links a");
+
+
+// Toggle menu
+
+if (hamburger && navLinks) {
+
   hamburger.addEventListener("click", () => {
+
     navLinks.classList.toggle("show");
+
   });
 
-  // Auto close after clicking any menu item
-  navItems.forEach(item => {
-    item.addEventListener("click", () => {
+}
+
+
+// Auto close after clicking any menu item
+
+navItems.forEach(item => {
+
+  item.addEventListener("click", () => {
+
+    if (navLinks) {
       navLinks.classList.remove("show");
-    });
-  });
-  </script>
-  
-<div id="mlModal" class="ml-modal">
+    }
 
+  });
+
+});
+
+</script>
+  
+
+<div id="mlModal" class="ml-modal">
   <div class="ml-modal-content">
 
     <span class="close-btn" onclick="closePipeline()">×</span>
