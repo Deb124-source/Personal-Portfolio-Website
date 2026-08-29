@@ -571,85 +571,346 @@ section + section{
 }
 /* SKILLS */
 
-.skill{
-  margin:20px 0;
-  text-align:left;
+/* =========================================
+   SKILLS SECTION
+========================================= */
+
+.skills-section {
+    position: relative;
+    padding: 100px 20px;
+    background: #050607;
+    color: #ffffff;
+    overflow: hidden;
 }
 
-.skill span{
-  display:block;
-  margin-bottom:8px;
+/* Background grid */
 
-  color:#e8f4ff;
-  font-size:14px;
+.skills-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    pointer-events: none;
 }
 
-.skill-bar{
-  width:100%;
-  height:16px;
 
-  background:rgba(255,255,255,0.08);
+/* Container */
 
-  border-radius:30px;
-  overflow:hidden;
+.skills-container {
+    position: relative;
+    z-index: 1;
 
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+    max-width: 1150px;
+    margin: 0 auto;
 }
 
-.skill-fill{
-  height:100%;
-  width:0;
 
-  border-radius:30px;
+/* =========================================
+   HEADER
+========================================= */
 
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
+.skills-header {
+    text-align: center;
+    max-width: 700px;
 
-  padding-right:8px;
-
-  font-size:11px;
-  font-weight:bold;
-
-  color:black;
-
-  transition:2s ease;
-
-  box-shadow:0 0 15px rgba(0,212,255,0.6);
+    margin: 0 auto 45px;
 }
 
-/* COLORS */
+.skills-label {
+    display: inline-block;
 
-.python,.html,.github{
-  background:linear-gradient(90deg,#00d4ff,#00ffff);
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #d9a441;
 }
 
-.java,.tensorflow,.mysql{
-  background:linear-gradient(90deg,#ff9800,#ffd54f);
+.skills-header .section-title {
+    margin: 0;
+
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
 }
 
-.pytorch,.css,.mongodb{
-  background:linear-gradient(90deg,#b44fff,#ff00ff);
+.skills-header p {
+    margin-top: 16px;
+
+    color: #858585;
+
+    font-size: 16px;
+    line-height: 1.7;
 }
 
-.sklearn,.javascript,.numpy{
-  background:linear-gradient(90deg,#00ff99,#00d4ff);
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+.skill-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 45px;
 }
 
-.opencv,.flask,.pandas{
-  background:linear-gradient(90deg,#ff4d6d,#ff758f);
+.filter-btn {
+    padding: 12px 23px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.025);
+
+    color: #999999;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
 }
 
-.nodejs,.matplotlib,.docker{
-  background:linear-gradient(90deg,#00c853,#64dd17);
+.filter-btn:hover {
+    color: #ffffff;
+
+    border-color: rgba(217,164,65,0.4);
+
+    transform: translateY(-2px);
 }
 
-.netlify,.vercel,.figma{
-  background:linear-gradient(90deg,#00bcd4,#2196f3);
+.filter-btn.active {
+    color: #e1b45b;
+
+    background: rgba(217,164,65,0.08);
+
+    border-color: rgba(217,164,65,0.55);
 }
 
-.kubernetes{
-  background:linear-gradient(90deg,#2962ff,#82b1ff);
+
+/* =========================================
+   SKILLS GRID
+========================================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================
+   SKILL CARD
+========================================= */
+
+.skill-card {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    min-height: 76px;
+
+    padding: 17px 20px;
+
+    border-radius: 15px;
+
+    border: 1px solid rgba(255,255,255,0.075);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.012)
+        );
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(217,164,65,0.45);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(217,164,65,0.09),
+            rgba(255,255,255,0.02)
+        );
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,0.35);
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.skill-icon {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.045);
+
+    border: 1px solid rgba(255,255,255,0.07);
+}
+
+.skill-icon i {
+    font-size: 25px;
+}
+
+
+/* Text fallback icons */
+
+.text-icon {
+    font-size: 20px;
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   SKILL INFORMATION
+========================================= */
+
+.skill-info h3 {
+    margin: 0;
+
+    color: #eeeeee;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.skill-info span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #777777;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   HIDDEN CARDS
+========================================= */
+
+.skill-card.hidden {
+    display: none;
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+.skill-card:not(.hidden) {
+    animation: skillFade 0.35s ease;
+}
+
+@keyframes skillFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .skills-section {
+        padding: 70px 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+    }
+
+    .skill-filters {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .skill-card {
+        min-height: 70px;
+
+        padding: 14px 16px;
+    }
+
 }
 /* GITHUB SECTION */
 
@@ -3077,197 +3338,315 @@ View All Projects
 </section>
 
   <!-- SKILLS -->
-<section id="skills">
-  <h2 class="section-title">Skills</h2>
+<section id="skills" class="skills-section">
 
-  <!-- Programming -->
-  <div class="card">
-    <h3>Programming</h3>
+  <div class="skills-container">
 
-    <div class="skill">
-      <span>Python</span>
-      <div class="skill-bar">
-        <div class="skill-fill python" data-width="90%">90%</div>
-      </div>
+    <!-- Section Header -->
+    <div class="skills-header">
+      <span class="skills-label">TECH STACK</span>
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p>
+        Technologies and tools I use to build machine learning solutions,
+        data-driven applications, and modern web projects.
+      </p>
     </div>
 
-    <div class="skill">
-      <span>Java</span>
-      <div class="skill-bar">
-        <div class="skill-fill java" data-width="85%">85%</div>
-      </div>
+    <!-- Filters -->
+    <div class="skill-filters">
+
+      <button class="filter-btn active" data-filter="all">
+        All
+      </button>
+
+      <button class="filter-btn" data-filter="programming">
+        Programming
+      </button>
+
+      <button class="filter-btn" data-filter="aiml">
+        AI / ML
+      </button>
+
+      <button class="filter-btn" data-filter="web">
+        Web
+      </button>
+
+      <button class="filter-btn" data-filter="data">
+        Data
+      </button>
+
+      <button class="filter-btn" data-filter="database">
+        Databases
+      </button>
+
+      <button class="filter-btn" data-filter="tools">
+        Tools
+      </button>
+
     </div>
+
+
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+
+
+      <!-- ================= PROGRAMMING ================= -->
+
+      <div class="skill-card" data-category="programming">
+        <div class="skill-icon python-icon">
+          <i class="devicon-python-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Python</h3>
+          <span>Programming</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="programming">
+        <div class="skill-icon java-icon">
+          <i class="devicon-java-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Java</h3>
+          <span>Programming</span>
+        </div>
+      </div>
+
+
+      <!-- ================= AI / ML ================= -->
+
+      <div class="skill-card" data-category="aiml">
+        <div class="skill-icon">
+          <i class="devicon-tensorflow-original"></i>
+        </div>
+        <div class="skill-info">
+          <h3>TensorFlow</h3>
+          <span>AI / ML</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="aiml">
+        <div class="skill-icon">
+          <i class="devicon-pytorch-original"></i>
+        </div>
+        <div class="skill-info">
+          <h3>PyTorch</h3>
+          <span>AI / ML</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="aiml">
+        <div class="skill-icon">
+          <i class="devicon-scikitlearn-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Scikit-Learn</h3>
+          <span>Machine Learning</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="aiml">
+        <div class="skill-icon">
+          <i class="devicon-opencv-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>OpenCV</h3>
+          <span>Computer Vision</span>
+        </div>
+      </div>
+
+
+      <!-- ================= WEB DEVELOPMENT ================= -->
+
+      <div class="skill-card" data-category="web">
+        <div class="skill-icon">
+          <i class="devicon-html5-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>HTML</h3>
+          <span>Frontend</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="web">
+        <div class="skill-icon">
+          <i class="devicon-css3-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>CSS</h3>
+          <span>Frontend</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="web">
+        <div class="skill-icon">
+          <i class="devicon-javascript-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>JavaScript</h3>
+          <span>Frontend</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="web">
+        <div class="skill-icon">
+          <i class="devicon-nodejs-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Node.js</h3>
+          <span>Backend</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="web">
+        <div class="skill-icon">
+          <i class="devicon-flask-original"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Flask</h3>
+          <span>Backend</span>
+        </div>
+      </div>
+
+
+      <!-- ================= DATA ================= -->
+
+      <div class="skill-card" data-category="data">
+        <div class="skill-icon">
+          <i class="devicon-numpy-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>NumPy</h3>
+          <span>Data Analysis</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="data">
+        <div class="skill-icon">
+          <i class="devicon-pandas-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Pandas</h3>
+          <span>Data Analysis</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="data">
+        <div class="skill-icon">
+          <i class="devicon-matplotlib-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Matplotlib</h3>
+          <span>Data Visualization</span>
+        </div>
+      </div>
+
+
+      <!-- ================= DATABASES ================= -->
+
+      <div class="skill-card" data-category="database">
+        <div class="skill-icon">
+          <i class="devicon-mysql-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>MySQL</h3>
+          <span>Database</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="database">
+        <div class="skill-icon">
+          <i class="devicon-mongodb-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>MongoDB</h3>
+          <span>Database</span>
+        </div>
+      </div>
+
+
+      <!-- ================= TOOLS ================= -->
+
+      <div class="skill-card" data-category="tools">
+        <div class="skill-icon">
+          <i class="devicon-github-original"></i>
+        </div>
+        <div class="skill-info">
+          <h3>GitHub</h3>
+          <span>Version Control</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="tools">
+        <div class="skill-icon">
+          <i class="devicon-figma-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Figma</h3>
+          <span>Design</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="tools">
+        <div class="skill-icon">
+          <i class="devicon-docker-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Docker</h3>
+          <span>Deployment</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="tools">
+        <div class="skill-icon">
+          <i class="devicon-kubernetes-plain"></i>
+        </div>
+        <div class="skill-info">
+          <h3>Kubernetes</h3>
+          <span>Deployment</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="tools">
+        <div class="skill-icon">
+          <span class="text-icon">N</span>
+        </div>
+        <div class="skill-info">
+          <h3>Netlify</h3>
+          <span>Deployment</span>
+        </div>
+      </div>
+
+
+      <div class="skill-card" data-category="tools">
+        <div class="skill-icon">
+          <span class="text-icon">V</span>
+        </div>
+        <div class="skill-info">
+          <h3>Vercel</h3>
+          <span>Deployment</span>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- AI/ML -->
-  <div class="card">
-    <h3>AI/ML</h3>
-
-    <div class="skill">
-      <span>TensorFlow</span>
-      <div class="skill-bar">
-        <div class="skill-fill tensorflow" data-width="80%">80%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>PyTorch</span>
-      <div class="skill-bar">
-        <div class="skill-fill pytorch" data-width="85%">85%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>Scikit-Learn</span>
-      <div class="skill-bar">
-        <div class="skill-fill sklearn" data-width="90%">90%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>OpenCV</span>
-      <div class="skill-bar">
-        <div class="skill-fill opencv" data-width="82%">82%</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Web Development -->
-  <div class="card">
-    <h3>Web Development</h3>
-
-    <div class="skill">
-      <span>HTML</span>
-      <div class="skill-bar">
-        <div class="skill-fill html" data-width="92%">92%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>CSS</span>
-      <div class="skill-bar">
-        <div class="skill-fill css" data-width="85%">85%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>JavaScript</span>
-      <div class="skill-bar">
-        <div class="skill-fill javascript" data-width="78%">78%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>Node.js</span>
-      <div class="skill-bar">
-        <div class="skill-fill nodejs" data-width="65%">65%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>Flask</span>
-      <div class="skill-bar">
-        <div class="skill-fill flask" data-width="70%">70%</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Databases -->
-  <div class="card">
-    <h3>Databases</h3>
-
-    <div class="skill">
-      <span>MySQL</span>
-      <div class="skill-bar">
-        <div class="skill-fill mysql" data-width="91%">91%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>MongoDB</span>
-      <div class="skill-bar">
-        <div class="skill-fill mongodb" data-width="68%">68%</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Data Visualization -->
-  <div class="card">
-    <h3>Data Visualization</h3>
-
-    <div class="skill">
-      <span>NumPy</span>
-      <div class="skill-bar">
-        <div class="skill-fill numpy" data-width="90%">90%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>Pandas</span>
-      <div class="skill-bar">
-        <div class="skill-fill pandas" data-width="92%">92%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>Matplotlib</span>
-      <div class="skill-bar">
-        <div class="skill-fill matplotlib" data-width="85%">85%</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Deployment -->
-  <div class="card">
-    <h3>Deployment</h3>
-
-    <div class="skill">
-      <span>Netlify</span>
-      <div class="skill-bar">
-        <div class="skill-fill netlify" data-width="78%">78%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>Vercel</span>
-      <div class="skill-bar">
-        <div class="skill-fill vercel" data-width="80%">80%</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Others -->
-  <div class="card">
-    <h3>Others</h3>
-
-    <div class="skill">
-      <span>GitHub</span>
-      <div class="skill-bar">
-        <div class="skill-fill github" data-width="93%">93%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>Figma</span>
-      <div class="skill-bar">
-        <div class="skill-fill figma" data-width="65%">65%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>Docker</span>
-      <div class="skill-bar">
-        <div class="skill-fill docker" data-width="60%">60%</div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span>Kubernetes</span>
-      <div class="skill-bar">
-        <div class="skill-fill kubernetes" data-width="50%">50%</div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section id="github">
