@@ -2879,10 +2879,10 @@ nav,
 #debdutAIChatButton {
     position: fixed;
 
-    left: 50%;
-    bottom: 24px;
+    right: 28px;
+    bottom: 85px;
 
-    transform: translateX(-50%);
+    transform: none;
 
     width: 48px;
     height: 48px;
@@ -2891,7 +2891,7 @@ nav,
 
     z-index: 99999;
 
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -2904,8 +2904,8 @@ nav,
     color: #00d4ff;
 
     box-shadow:
-        0 0 15px rgba(0, 212, 255, 0.35),
-        0 0 35px rgba(0, 212, 255, 0.15);
+        0 0 12px rgba(0, 212, 255, 0.35),
+        0 0 28px rgba(0, 212, 255, 0.15);
 
     transition:
         transform 0.3s ease,
@@ -2913,11 +2913,11 @@ nav,
 }
 
 #debdutAIChatButton:hover {
-    transform: translateX(-50%) scale(1.08);
+    transform: scale(1.08);
 
     box-shadow:
-        0 0 20px rgba(0, 212, 255, 0.55),
-        0 0 45px rgba(0, 212, 255, 0.25);
+        0 0 18px rgba(0, 212, 255, 0.55),
+        0 0 35px rgba(0, 212, 255, 0.25);
 }
 
 /* Robot icon */
@@ -2984,14 +2984,14 @@ nav,
 #debdutAIChatButton .debdut-ai-label {
     position: absolute;
 
-    bottom: 72px;
+    top: 53px;
     left: 50%;
 
     transform: translateX(-50%);
 
-    padding: 9px 14px;
+    padding: 7px 11px;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     background: rgba(5, 20, 35, 0.96);
 
@@ -2999,17 +2999,16 @@ nav,
 
     color: #00d4ff;
 
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 600;
 
     white-space: nowrap;
 
     pointer-events: none;
 
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.18);
+    box-shadow:
+        0 0 12px rgba(0, 212, 255, 0.18);
 }
-  
-
 /* =========================================================
    CHAT WINDOW
    ========================================================= */
