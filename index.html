@@ -2869,85 +2869,56 @@ nav,
     box-shadow: 0 0 0 0 rgba(0, 255, 127, 0);
   }
 }
-/* =========================================================
-   DEBDUT AI PORTFOLIO CHATBOT
-   COMPLETE CHATBOT CSS
-   ========================================================= */
 
-
+  
 /* =========================================================
-   FLOATING AI BUTTON
+   FLOATING AI ASSISTANT
+   CENTER BOTTOM
    ========================================================= */
 
 #debdutAIChatButton {
-
     position: fixed;
 
-    right: 28px;
+    left: 50%;
+    bottom: 24px;
 
-    /*
-     * Kept above the Back To Top button
-     * so both buttons never collide.
-     */
-    bottom: 90px;
+    transform: translateX(-50%);
 
-    width: 62px;
-    height: 62px;
-
-    padding: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+    width: 48px;
+    height: 48px;
 
     border-radius: 50%;
 
-    border:
-        1px solid rgba(0, 212, 255, 0.75);
+    z-index: 99999;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(5, 20, 35, 0.98),
-            rgba(15, 10, 35, 0.98)
-        );
-
-    color: #00d4ff;
-
-    font-size: 23px;
+    display: none;
+    align-items: center;
+    justify-content: center;
 
     cursor: pointer;
 
-    z-index: 99998;
+    background: rgba(5, 15, 30, 0.96);
+
+    border: 1.5px solid #00d4ff;
+
+    color: #00d4ff;
 
     box-shadow:
         0 0 15px rgba(0, 212, 255, 0.35),
-        0 0 35px rgba(180, 79, 255, 0.20);
+        0 0 35px rgba(0, 212, 255, 0.15);
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        box-shadow 0.3s ease;
 }
-
-
-/* Hover */
 
 #debdutAIChatButton:hover {
-
-    transform:
-        translateY(-4px)
-        scale(1.05);
-
-    border-color:
-        rgba(0, 212, 255, 1);
+    transform: translateX(-50%) scale(1.08);
 
     box-shadow:
-        0 0 22px rgba(0, 212, 255, 0.55),
-        0 0 50px rgba(180, 79, 255, 0.30);
+        0 0 20px rgba(0, 212, 255, 0.55),
+        0 0 45px rgba(0, 212, 255, 0.25);
 }
-
 
 /* Robot icon */
 
@@ -3011,51 +2982,33 @@ nav,
    ========================================================= */
 
 #debdutAIChatButton .debdut-ai-label {
-
     position: absolute;
 
-    top: calc(100% + 8px);
+    bottom: 72px;
+    left: 50%;
 
-    right: 50%;
+    transform: translateX(-50%);
 
-    transform:
-        translateX(50%);
+    padding: 9px 14px;
+
+    border-radius: 10px;
+
+    background: rgba(5, 20, 35, 0.96);
+
+    border: 1px solid rgba(0, 212, 255, 0.55);
+
+    color: #00d4ff;
+
+    font-size: 13px;
+    font-weight: 600;
 
     white-space: nowrap;
 
-    padding:
-        7px 12px;
-
-    border-radius: 9px;
-
-    border:
-        1px solid rgba(0, 212, 255, 0.60);
-
-    background:
-        rgba(5, 15, 30, 0.96);
-
-    color:
-        #00d4ff;
-
-    font-family:
-        inherit;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    line-height: 1.2;
-
-    box-shadow:
-        0 0 15px rgba(0, 212, 255, 0.15);
-
     pointer-events: none;
 
-    opacity: 1;
-
-    z-index: 99999;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.18);
 }
-
+  
 
 /* =========================================================
    CHAT WINDOW
