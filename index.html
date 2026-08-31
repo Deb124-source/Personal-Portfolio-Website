@@ -4632,6 +4632,50 @@ Streamlit • Gemini AI • Prompt Engineering
     </div>
   </div>
 
+
+    <div class="project-card">
+
+    <img src="images/Screenshot 2026-08-14 091514.png" class="project-img clickable">
+
+    <div class="project-content">
+
+      <h2>Carbon Credit Verification System</h2>
+
+      <p>End-to-end carbon credit verification and fraud detection platform that validates household carbon-saving claims</p>
+
+      <h3>Problem</h3>
+
+      <p>Carbon credit claims can be inaccurate or fraudulent, making manual verification slow and unreliable.</p>
+
+      <h3>Solution</h3>
+
+      <p>An ML-powered carbon credit verification platform that calculates carbon savings and detects fraudulent claims using FastAPI and Scikit-learn.</p>
+      <p class="project-meta">
+RESTAPI • Docker • SQLAlchemy
+</p>
+
+    <div class="project-buttons">
+
+  <a href="https://github.com/Deb124-source/Carbon-Credit-Verification-Pipeline-Debdut-Nandy.git"
+     target="_blank"
+     class="proj-btn">
+    View Code
+  </a>
+     <a href="https://carbon-credit-verification-pipeline.onrender.com/"
+     target="_blank"
+     class="proj-btn">
+    Live Demo
+  </a>
+        
+
+  <button class="pipeline-btn" onclick="openPipeline('carbon-x')">
+    View ML Pipeline
+  </button>
+
+</div>
+    </div>
+  </div>
+
     <!-- Truthenix -->
   <div class="project-card">
 
@@ -6192,6 +6236,8 @@ function openPipeline(project){
   }
 
 
+  
+
   // ----------------------------
   // ProMail AI
   // ----------------------------
@@ -6252,6 +6298,21 @@ function openPipeline(project){
   }
 
 
+  if(project === "carbon-x"){
+
+  title.innerText =
+    "Carbon-X Verification & Fraud Detection";
+
+  content = [
+    "Household Claim Input",
+    "Baseline & Carbon Savings Calculation",
+    "Feature Engineering",
+    "ML-Based Fraud / Anomaly Detection",
+    "Verification Decision (Approve / Review / Reject)"
+  ];
+
+}
+  
   // ----------------------------
   // Dataset Analytics
   // ----------------------------
