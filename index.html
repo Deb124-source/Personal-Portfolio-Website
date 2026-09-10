@@ -4385,6 +4385,288 @@ nav,
             360px;
     }
 }
+
+/* =========================
+   THEME TOGGLE
+========================= */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    border-radius: 50%;
+
+    background: rgba(0, 212, 255, 0.08);
+    color: #00d4ff;
+
+    font-size: 17px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg) scale(1.08);
+
+    background: rgba(0, 212, 255, 0.15);
+
+    box-shadow:
+        0 0 12px rgba(0, 212, 255, 0.4),
+        0 0 25px rgba(0, 212, 255, 0.15);
+}
+
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-mode {
+    --bg: #f5f8fc;
+    --card: #ffffff;
+    --text: #172033;
+
+    background: #f5f8fc;
+    color: #172033;
+}
+
+
+/* Navbar */
+
+body.light-mode nav {
+    background: rgba(255, 255, 255, 0.88);
+    border-bottom: 1px solid rgba(0, 150, 220, 0.15);
+}
+
+body.light-mode nav a {
+    color: #40566d;
+}
+
+body.light-mode nav a:hover {
+    color: #008dcc;
+}
+
+
+/* Hero */
+
+body.light-mode .hero-subtitle {
+    color: #52677d;
+}
+
+
+/* Sections */
+
+body.light-mode section {
+    background-color: #f5f8fc;
+    color: #172033;
+}
+
+body.light-mode #about,
+body.light-mode #projects,
+body.light-mode #certificates,
+body.light-mode #events-section,
+body.light-mode .skills-section {
+    background: #f5f8fc;
+    color: #172033;
+}
+
+body.light-mode #experience {
+    background: #eef3f8;
+}
+
+
+/* About */
+
+body.light-mode .about-card,
+body.light-mode .stat {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(20, 40, 70, 0.12);
+}
+
+body.light-mode .about-text {
+    color: #46566a;
+}
+
+body.light-mode .stat p {
+    color: #617287;
+}
+
+
+/* Skills */
+
+body.light-mode .skill-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(20, 40, 70, 0.12);
+}
+
+body.light-mode .skill-card:hover {
+    background: #ffffff;
+}
+
+body.light-mode .skill-info h3 {
+    color: #172033;
+}
+
+body.light-mode .skill-info span {
+    color: #66788c;
+}
+
+body.light-mode .skill-icon {
+    background: rgba(0, 150, 220, 0.06);
+    border-color: rgba(0, 150, 220, 0.15);
+}
+
+
+/* Terminal */
+
+body.light-mode .terminal-box {
+    background: #ffffff;
+    border-color: rgba(20, 40, 70, 0.12);
+}
+
+body.light-mode .terminal-header {
+    background: #edf2f7;
+    border-color: rgba(20, 40, 70, 0.08);
+}
+
+body.light-mode .terminal-title {
+    color: #52677d;
+}
+
+body.light-mode .terminal-body {
+    color: #26364a;
+}
+
+
+/* Project Cards */
+
+body.light-mode .project-card {
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #f1f6fa
+    );
+
+    border-color: rgba(0, 160, 200, 0.18);
+    box-shadow: 0 10px 30px rgba(30, 60, 90, 0.10);
+}
+
+body.light-mode .project-content h2 {
+    color: #172033;
+}
+
+body.light-mode .project-content p {
+    color: #4d5f72;
+}
+
+
+/* Certificates */
+
+body.light-mode .cert-container .card {
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #f1f6fa
+    );
+
+    border-color: rgba(0, 160, 200, 0.15);
+}
+
+body.light-mode .cert-container .card h3 {
+    color: #172033;
+}
+
+body.light-mode .cert-container .card p {
+    color: #526477;
+}
+
+
+/* Experience */
+
+body.light-mode #experience .card {
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #f1f6fa
+    );
+
+    border-color: rgba(0, 160, 200, 0.15);
+}
+
+body.light-mode #experience .card p {
+    color: #526477;
+}
+
+
+/* Events */
+
+body.light-mode .event-card {
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #f1f6fa
+    );
+
+    border-color: rgba(0, 160, 200, 0.15);
+}
+
+body.light-mode .event-content h3 {
+    color: #172033;
+}
+
+body.light-mode .event-content p {
+    color: #526477;
+}
+
+
+/* Blogs */
+
+body.light-mode .blog-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(20, 40, 70, 0.12);
+}
+
+body.light-mode .blog-content p {
+    color: #526477;
+}
+
+
+/* GitHub */
+
+body.light-mode .github-card,
+body.light-mode .graph-container {
+    background: #ffffff;
+    border: 1px solid rgba(20, 40, 70, 0.10);
+}
+
+
+/* Dropdown */
+
+body.light-mode .dropdown-content {
+    background: rgba(255, 255, 255, 0.97);
+}
+
+body.light-mode .dropdown-content a {
+    color: #40566d;
+}
+
+body.light-mode .dropdown-content a:hover {
+    background: #edf5fa;
+    color: #008dcc;
+}
+
+
+/* Theme button in light mode */
+
+body.light-mode .theme-toggle {
+    background: rgba(255, 180, 0, 0.10);
+    border-color: rgba(230, 160, 0, 0.35);
+    color: #e09a00;
+}
   
 </style>
 </head>
@@ -4410,6 +4692,10 @@ nav,
     </a>
 
     <a href="#contact">Contact</a>
+   <!-- Theme Toggle -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle light and dark mode">
+    <i class="fas fa-sun"></i>
+    </button>
 
     <div class="dropdown">
       <a href="#" class="dropbtn" onclick="toggleDropdown(event)">
@@ -6172,6 +6458,60 @@ document
 
 </script>
 
+<script>
+/* =========================
+   LIGHT / DARK MODE
+========================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const themeToggle = document.getElementById("themeToggle");
+
+    if (!themeToggle) return;
+
+    const icon = themeToggle.querySelector("i");
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("portfolioTheme");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+    }
+
+    themeToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("light-mode");
+
+        const isLight =
+            document.body.classList.contains("light-mode");
+
+        if (isLight) {
+
+            icon.classList.remove("fa-sun");
+            icon.classList.add("fa-moon");
+
+            localStorage.setItem(
+                "portfolioTheme",
+                "light"
+            );
+
+        } else {
+
+            icon.classList.remove("fa-moon");
+            icon.classList.add("fa-sun");
+
+            localStorage.setItem(
+                "portfolioTheme",
+                "dark"
+            );
+        }
+    });
+
+});
+</script>
+  
 
 <script>
 
