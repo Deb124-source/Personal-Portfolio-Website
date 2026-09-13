@@ -15,11 +15,6 @@
 ## About the Project
 
 <p>
-This repository contains my personal portfolio website, designed to showcase my
-technical skills, projects, experience, and professional journey.
-</p>
-
-<p>
 The portfolio provides an overview of my projects, technical skills, resume,
 professional experience, and contact information.
 </p>
