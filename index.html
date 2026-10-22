@@ -73,19 +73,28 @@ body{
 }
 
 /* NAV */
-nav{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; 
-  padding: 0.30rem 2rem;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  overflow: visible;
+/* NAV */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 65px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 30px;
+
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+
+    z-index: 1000;
+    overflow: visible;
+    box-sizing: border-box;
 }
 
 nav a{
